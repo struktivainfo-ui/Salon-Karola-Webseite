@@ -1199,6 +1199,38 @@ ul {
   gap: 0.25rem;
 }
 
+.legal-container {
+  width: min(calc(100% - 2rem), 900px);
+  margin: 0 auto;
+}
+
+.legal-content {
+  display: grid;
+  gap: 1rem;
+}
+
+.legal-content h2 {
+  font-size: clamp(1.2rem, 3.8vw, 1.8rem);
+  max-width: none;
+}
+
+.legal-content h3 {
+  font-size: clamp(1.05rem, 3.2vw, 1.3rem);
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.15rem;
+}
+
+.legal-content li {
+  color: var(--text-soft);
+}
+
+.legal-meta {
+  font-size: 0.95rem;
+}
+
 @media (min-width: 700px) {
   .section {
     padding: 5rem 0;
