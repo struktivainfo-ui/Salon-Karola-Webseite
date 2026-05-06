@@ -1039,9 +1039,10 @@ ul {
 
 .before-after-image {
   width: 100%;
-  height: clamp(140px, 18vw, 220px);
+  height: clamp(160px, 18vw, 220px);
   max-height: 220px;
   object-fit: cover;
+  object-position: center center;
   display: block;
 }
 
@@ -1629,8 +1630,8 @@ ul {
   }
 
   .before-after-image {
-    height: 160px;
-    max-height: 160px;
+    height: 180px;
+    max-height: 200px;
   }
 
   .brand-logo-wrap {
@@ -1656,8 +1657,8 @@ ul {
   }
 
   .before-after-image {
-    height: 180px;
-    max-height: 180px;
+    height: 190px;
+    max-height: 190px;
   }
 }
 
