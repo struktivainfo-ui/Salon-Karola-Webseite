@@ -415,12 +415,18 @@ ul {
   object-position: center 30%;
 }
 
+.team-photo--jessi,
 .team-card--jessi .team-photo {
   object-position: center 38%;
 }
 
+.team-photo--ute,
 .team-card--ute .team-photo {
-  object-position: center 15%;
+  width: 100%;
+  height: clamp(300px, 34vw, 440px);
+  object-fit: contain;
+  object-position: center top;
+  background: rgba(241, 233, 221, 0.9);
 }
 
 .lotto-media {
@@ -434,6 +440,14 @@ ul {
   width: 100%;
   height: 170px;
   object-fit: cover;
+}
+
+.lotto-photo {
+  width: 100%;
+  height: clamp(140px, 22vw, 220px);
+  object-fit: cover;
+  object-position: 50% 25%;
+  border-radius: var(--radius-small);
 }
 
 .image-fallback {
@@ -792,6 +806,11 @@ ul {
 
   .team-photo {
     height: clamp(300px, 33vw, 420px);
+  }
+
+  .team-photo--ute,
+  .team-card--ute .team-photo {
+    height: clamp(320px, 35vw, 460px);
   }
 }
 
