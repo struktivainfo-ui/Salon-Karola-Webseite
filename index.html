@@ -4,14 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Salon Karola – Friseur in Calw-Wimberg</title>
+    <meta name="robots" content="index,follow" />
     <meta
       name="description"
       content="Salon Karola in Calw-Wimberg – Friseursalon für Damen, Herren und Kinder. Persönliche Beratung, Haarschnitt, Farbe, Strähnen, Styling und Lotto-Annahmestelle."
     />
     <meta
       name="keywords"
-      content="Friseur Calw, Friseur Calw-Wimberg, Salon Karola, Damenfriseur Calw, Herrenfriseur Calw, Kinderhaarschnitt Calw, Friseur Ostlandstraße Calw"
+      content="Friseur Calw, Friseur Calw-Wimberg, Salon Karola, Friseursalon Calw-Wimberg, Damenfriseur Calw, Herrenfriseur Calw, Kinderhaarschnitt Calw, Friseur Ostlandstraße Calw"
     />
+    <link rel="canonical" href="https://salon-karola.vercel.app/" />
     <meta property="og:title" content="Salon Karola – Friseur in Calw-Wimberg" />
     <meta
       property="og:description"
@@ -19,6 +21,7 @@
     />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="de_DE" />
+    <meta property="og:url" content="https://salon-karola.vercel.app/" />
     <meta name="theme-color" content="#f6efe4" />
     <link rel="stylesheet" href="style.css" />
     <!-- URL nach finalem Deploy bei Bedarf anpassen -->
@@ -26,9 +29,16 @@
       {
         "@context": "https://schema.org",
         "@type": "HairSalon",
+        "@id": "https://salon-karola.vercel.app/#salon-karola",
         "name": "Salon Karola",
         "url": "https://salon-karola.vercel.app/",
+        "image": "https://salon-karola.vercel.app/images/og-salon-karola.jpg",
         "telephone": "+49 7051 6344",
+        "email": "info@salonkarola.de",
+        "priceRange": "$$",
+        "areaServed": ["Calw-Wimberg", "Calw"],
+        "sameAs": ["https://www.facebook.com/"],
+        "hasMap": "https://www.google.com/maps/search/?api=1&query=Ostlandstra%C3%9Fe+3%2C+75365+Calw-Wimberg",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Ostlandstraße 3",
@@ -36,22 +46,31 @@
           "addressLocality": "Calw-Wimberg",
           "addressCountry": "DE"
         },
-        "openingHours": [
-          "Tu 09:00-12:00",
-          "Tu 13:30-17:45",
-          "We 09:00-12:00",
-          "We 13:30-17:45",
-          "Th 09:00-12:00",
-          "Th 13:30-17:45",
-          "Fr 09:00-12:00",
-          "Fr 13:30-17:45",
-          "Sa 08:30-12:15"
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "09:00",
+            "closes": "12:00"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Wednesday", "Thursday", "Friday"],
+            "opens": "13:30",
+            "closes": "17:45"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": "Saturday",
+            "opens": "08:30",
+            "closes": "12:15"
+          }
         ]
       }
     </script>
   </head>
   <body>
-    <a class="skip-link" href="#start">Direkt zum Inhalt</a>
+    <a class="skip-link" href="#content">Direkt zum Inhalt</a>
 
     <header class="site-header" id="top">
       <div class="container header-inner">
@@ -83,13 +102,13 @@
       </div>
     </header>
 
-    <main>
-      <section class="hero" id="start">
+    <main id="content">
+      <section class="hero" id="start" aria-labelledby="hero-title">
         <div class="hero-backdrop"></div>
         <div class="container hero-grid">
           <div class="hero-copy reveal">
             <p class="eyebrow">Salon Karola in Calw-Wimberg</p>
-            <h1>Salon Karola – Ihr Friseursalon in Calw-Wimberg</h1>
+            <h1 id="hero-title">Salon Karola – Ihr Friseursalon in Calw-Wimberg</h1>
             <p class="hero-lead">
               Persönliche Beratung, professionelle Haarschnitte und eine entspannte
               Atmosphäre – für Damen, Herren und Kinder.
@@ -98,16 +117,24 @@
               Mit Lotto-Annahmestelle und mobilem Friseurservice.
             </p>
 
+            <ul class="hero-facts" aria-label="Wichtige Informationen">
+              <li>Telefon: 07051 / 6344</li>
+              <li>Handy: 0179 / 3957901</li>
+              <li>Ostlandstraße 3, 75365 Calw-Wimberg</li>
+            </ul>
+
             <div class="hero-actions">
-              <a class="button button-primary" href="https://wa.me/491793957901"
-                >Termin anfragen</a
-              >
-              <a class="button button-secondary" href="tel:070516344"
-                >Jetzt anrufen</a
-              >
-              <a class="button button-ghost" href="#oeffnungszeiten"
-                >Öffnungszeiten ansehen</a
-              >
+              <a
+                class="button button-primary"
+                href="https://wa.me/491793957901"
+                aria-label="Termin per WhatsApp anfragen"
+                >Termin anfragen</a>
+              <a
+                class="button button-secondary"
+                href="tel:070516344"
+                aria-label="Salon Karola anrufen"
+                >Jetzt anrufen</a>
+              <a class="button button-ghost" href="#oeffnungszeiten">Öffnungszeiten ansehen</a>
             </div>
           </div>
 
@@ -138,7 +165,7 @@
         </div>
       </section>
 
-      <section class="trust-strip">
+      <section class="trust-strip" aria-label="Vertrauen und Leistungen">
         <div class="container trust-grid">
           <article class="trust-card reveal">
             <h2>Persönliche Beratung</h2>
@@ -171,11 +198,11 @@
         </div>
       </section>
 
-      <section class="welcome section">
+      <section class="welcome section" aria-labelledby="welcome-title">
         <div class="container split-layout">
           <div class="section-intro reveal">
             <p class="eyebrow">Willkommen</p>
-            <h2>Ihr Salon für entspannte Termine und ehrliche Beratung</h2>
+            <h2 id="welcome-title">Ihr Salon für entspannte Termine und ehrliche Beratung</h2>
           </div>
           <div class="section-body reveal reveal-delay">
             <p>
@@ -189,11 +216,11 @@
         </div>
       </section>
 
-      <section class="services section" id="leistungen">
+      <section class="services section" id="leistungen" aria-labelledby="services-title">
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Leistungen</p>
-            <h2>Moderne Friseurleistungen mit Gefühl für Typ und Alltag</h2>
+            <h2 id="services-title">Moderne Friseurleistungen mit Gefühl für Typ und Alltag</h2>
             <p>
               Von klassischen Schnitten bis zu Farbe, Styling und besonderen
               Anlässen begleiten wir Sie mit Erfahrung und einem Blick fürs Detail.
@@ -247,11 +274,11 @@
         </div>
       </section>
 
-      <section class="team section" id="team">
+      <section class="team section" id="team" aria-labelledby="team-title">
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Team</p>
-            <h2>Die Menschen hinter Salon Karola</h2>
+            <h2 id="team-title">Die Menschen hinter Salon Karola</h2>
           </div>
 
           <div class="team-grid">
@@ -291,7 +318,7 @@
         </div>
       </section>
 
-      <section class="service-banner section">
+      <section class="service-banner section" aria-label="Zusätzliche Angebote">
         <div class="container banner-grid">
           <article class="banner-card reveal">
             <p class="eyebrow">Mobiler Friseurservice</p>
@@ -316,11 +343,11 @@
         </div>
       </section>
 
-      <section class="gallery section" id="galerie">
+      <section class="gallery section" id="galerie" aria-labelledby="gallery-title">
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Galerie</p>
-            <h2>Einblicke in unseren Salon und unsere Arbeit</h2>
+            <h2 id="gallery-title">Einblicke in unseren Salon und unsere Arbeit</h2>
             <p>
               Einblicke in unseren Salon und unsere Arbeit. Wir legen Wert auf
               natürliche Stylings, saubere Schnitte und individuelle Looks.
@@ -360,11 +387,11 @@
         </div>
       </section>
 
-      <section class="reviews section">
+      <section class="reviews section" aria-labelledby="reviews-title">
         <div class="container">
           <div class="section-heading reveal">
             <p class="eyebrow">Bewertungen</p>
-            <h2>Das sagen unsere Kundinnen und Kunden</h2>
+            <h2 id="reviews-title">Das sagen unsere Kundinnen und Kunden</h2>
           </div>
 
           <div class="reviews-grid">
@@ -388,38 +415,49 @@
         </div>
       </section>
 
-      <section class="hours section" id="oeffnungszeiten">
+      <section class="hours section" id="oeffnungszeiten" aria-labelledby="hours-title">
         <div class="container hours-grid">
           <div class="section-intro reveal">
             <p class="eyebrow">Öffnungszeiten</p>
-            <h2>Gut lesbar, klar und schnell erreichbar</h2>
+            <h2 id="hours-title">Gut lesbar, klar und schnell erreichbar</h2>
+            <p class="hours-intro">
+              Für Terminwünsche erreichen Sie uns am besten telefonisch oder per
+              WhatsApp. Auf Mobilgeräten sind die Zeiten bewusst groß und klar gesetzt.
+            </p>
           </div>
-          <div class="hours-card reveal reveal-delay">
+          <dl class="hours-card reveal reveal-delay">
             <div class="hours-row">
-              <span>Dienstag – Freitag</span>
-              <strong>09:00 – 12:00 Uhr</strong>
-            </div>
-            <div class="hours-row hours-row-secondary">
-              <span></span>
-              <strong>13:30 – 17:45 Uhr</strong>
-            </div>
-            <div class="hours-row">
-              <span>Samstag</span>
-              <strong>08:30 – 12:15 Uhr</strong>
+              <dt>Dienstag – Freitag</dt>
+              <dd>
+                <strong>09:00 – 12:00 Uhr</strong>
+                <span>13:30 – 17:45 Uhr</span>
+              </dd>
             </div>
             <div class="hours-row">
-              <span>Sonntag &amp; Montag</span>
-              <strong>geschlossen</strong>
+              <dt>Samstag</dt>
+              <dd>
+                <strong>08:30 – 12:15 Uhr</strong>
+              </dd>
             </div>
-          </div>
+            <div class="hours-row">
+              <dt>Sonntag &amp; Montag</dt>
+              <dd>
+                <strong>geschlossen</strong>
+              </dd>
+            </div>
+          </dl>
         </div>
       </section>
 
-      <section class="contact section" id="kontakt">
+      <section class="contact section" id="kontakt" aria-labelledby="contact-title">
         <div class="container contact-grid">
           <div class="contact-copy reveal">
             <p class="eyebrow">Kontakt</p>
-            <h2>Wir freuen uns auf Ihre Anfrage</h2>
+            <h2 id="contact-title">Wir freuen uns auf Ihre Anfrage</h2>
+            <p class="contact-intro">
+              Schnell erreichbar für Terminwünsche, Rückfragen und mobilen
+              Friseurservice in Calw-Wimberg.
+            </p>
             <address>
               <strong>Salon Karola</strong><br />
               Ostlandstraße 3<br />
@@ -437,8 +475,8 @@
           </div>
 
           <div class="contact-panel reveal reveal-delay">
-            <a class="button button-primary" href="tel:070516344">Jetzt anrufen</a>
-            <a class="button button-secondary" href="https://wa.me/491793957901"
+            <a class="button button-primary" href="tel:070516344" aria-label="Salon Karola telefonisch kontaktieren">Jetzt anrufen</a>
+            <a class="button button-secondary" href="https://wa.me/491793957901" aria-label="Salon Karola per WhatsApp kontaktieren"
               >Per WhatsApp anfragen</a
             >
             <a
@@ -471,8 +509,8 @@
     </footer>
 
     <div class="mobile-cta" aria-label="Schnellkontakt">
-      <a href="tel:070516344">Anrufen</a>
-      <a href="https://wa.me/491793957901">WhatsApp</a>
+      <a href="tel:070516344" aria-label="Salon Karola anrufen">Anrufen</a>
+      <a href="https://wa.me/491793957901" aria-label="Salon Karola per WhatsApp kontaktieren">WhatsApp</a>
     </div>
 
     <button class="back-to-top" type="button" aria-label="Nach oben scrollen">
