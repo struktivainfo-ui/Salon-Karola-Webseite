@@ -5,6 +5,7 @@ const backToTopButton = document.querySelector(".back-to-top");
 const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const managedImages = document.querySelectorAll("img[data-fallback-target]");
+const logoImages = document.querySelectorAll(".brand-logo, .splash-logo, .hero-logo, .footer-logo");
 const splashScreen = document.getElementById("splash-screen");
 
 if (splashScreen) {
@@ -138,7 +139,7 @@ if (managedImages.length > 0) {
   managedImages.forEach((img) => {
     const fallbackId = img.dataset.fallbackTarget;
     const fallback = fallbackId ? document.querySelector(`[data-fallback-id="${fallbackId}"]`) : null;
-    const wrapper = img.closest(".image-frame, .team-photo-wrap, .lotto-media, .gallery-card, .logo-frame");
+    const wrapper = img.closest(".image-frame, .team-photo-wrap, .lotto-media, .gallery-card");
 
     if (!fallback || !wrapper) return;
 
@@ -166,5 +167,15 @@ if (managedImages.length > 0) {
         showFallback();
       }
     }
+  });
+}
+
+if (logoImages.length > 0) {
+  logoImages.forEach((img) => {
+    const wrapper = img.closest(".logo-wrap");
+    if (!wrapper) return;
+    img.addEventListener("error", () => wrapper.classList.add("has-logo-error"));
+    img.addEventListener("load", () => wrapper.classList.remove("has-logo-error"));
+    if (img.complete && img.naturalWidth === 0) wrapper.classList.add("has-logo-error");
   });
 }

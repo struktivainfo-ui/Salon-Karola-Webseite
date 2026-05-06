@@ -51,8 +51,7 @@ Bilder vor dem Upload komprimieren, damit die Seite schnell bleibt.
 
 ## Logo
 
-Logo-Datei: `assets/images/logo-salon-karola.jpg` oder `assets/images/logo-salon-karola.png`.
-Logo-Datei liegt unter `assets/images/logo-salon-karola.jpg`.
+Verwendete Logo-Datei: `assets/images/logo-salon-karola.jpg`.
 
 Wenn keine Logo-Datei vorhanden ist, zeigt die Website automatisch ein Textfallback an.
 
