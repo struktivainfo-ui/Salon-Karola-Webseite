@@ -1,4 +1,4 @@
-# Salon Karola – Website
+﻿# Salon Karola – Website
 
 Moderne, mobile-first Website für den Friseursalon **Salon Karola** in Calw-Wimberg.  
 Die Website ist statisch (HTML, CSS, JavaScript) und direkt für GitHub + Vercel geeignet.
@@ -35,10 +35,13 @@ Empfohlene Dateinamen:
 - `salon-aussen.jpg`
 - `salon-innen.jpg`
 - `team-jessi.jpg`
+- `team-jessi-neu.jpg`
 - `team-ute.jpg`
 - `styling-1.jpg`
 - `styling-2.jpg`
 - `styling-3.jpg`
+- `styling-4.jpg`
+- `styling-5.jpg`
 - `beratung.jpg`
 - `lotto.jpg`
 
@@ -63,6 +66,7 @@ Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwend
 
 ## Hinweise
 
+- Die Website verwendet UTF-8 und deutsche Umlaute in sichtbaren Texten.
 - Impressum rechtlich final prüfen.
 - Datenschutz rechtlich final prüfen.
 - Google-Bewertungslink später im Bewertungsbereich ersetzen.
@@ -70,3 +74,4 @@ Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwend
   - Facebook: https://www.facebook.com/1JA6WLS31m/
   - Instagram: https://www.instagram.com/salonkarola
   - YouTube: https://www.youtube.com/@SalonKarola
+

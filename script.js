@@ -1,4 +1,4 @@
-const menuToggle = document.querySelector(".menu-toggle");
+﻿const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const backToTopButton = document.querySelector(".back-to-top");
@@ -190,3 +190,4 @@ if (externalLogoImages.length > 0) {
     if (img.complete && img.naturalWidth === 0) card.classList.add("has-logo-error");
   });
 }
+
