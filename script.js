@@ -145,6 +145,10 @@ if (managedImages.length > 0) {
     if (!fallback || !wrapper) return;
 
     const showFallback = () => {
+      if (wrapper.classList.contains("gallery-card")) {
+        wrapper.style.display = "none";
+        return;
+      }
       wrapper.classList.add("is-fallback");
     };
 

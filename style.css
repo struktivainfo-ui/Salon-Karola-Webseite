@@ -674,7 +674,7 @@ ul {
   height: var(--image-team-h);
   max-height: 360px;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 45%;
 }
 
 .team-photo--ute,
@@ -683,7 +683,7 @@ ul {
   height: var(--image-team-h);
   max-height: 360px;
   object-fit: contain;
-  object-position: center top;
+  object-position: center bottom;
   background: rgba(241, 233, 221, 0.9);
 }
 
@@ -938,23 +938,39 @@ ul {
 }
 
 .gallery-photo--beratung {
-  object-position: center 32%;
+  object-position: center 35%;
 }
 
 .gallery-photo--schnitt {
-  object-position: center 72%;
+  object-position: center 68%;
 }
 
 .gallery-photo--farbe {
   object-position: center 50%;
 }
 
-.gallery-photo--styling {
+.gallery-photo--styling-1 {
   object-position: center 45%;
 }
 
-.gallery-photo--hochsteck {
-  object-position: center 40%;
+.gallery-photo--styling-2 {
+  object-position: center 45%;
+}
+
+.gallery-photo--styling-3 {
+  object-position: center 45%;
+}
+
+.gallery-photo--styling-4 {
+  object-position: center 45%;
+}
+
+.gallery-photo--styling-5 {
+  object-position: center 45%;
+}
+
+.gallery-photo--frisur {
+  object-position: center 45%;
 }
 
 .gallery-photo--salon {
@@ -1681,7 +1697,7 @@ ul {
 
   .team-photo--jessi,
   .team-card--jessi .team-photo {
-    object-position: center 44%;
+    object-position: center 45%;
   }
 
   .mobile-cta {
