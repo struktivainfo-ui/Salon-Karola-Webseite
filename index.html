@@ -71,8 +71,26 @@
     <header class="site-header" id="top">
       <div class="container header-inner">
         <a class="brand" href="#start" aria-label="Salon Karola Startseite">
-          <span class="brand-mark">Salon Karola</span>
-          <span class="brand-subline">Friseursalon in Calw-Wimberg</span>
+          <span class="logo-frame brand-logo-frame">
+            <picture>
+              <source srcset="assets/images/logo-salon-karola.png" type="image/png" />
+              <img
+                class="brand-logo"
+                src="assets/images/logo-salon-karola.jpg"
+                alt="Salon Karola Logo"
+                width="280"
+                height="280"
+                loading="eager"
+                decoding="async"
+                data-fallback-target="brand-logo-fallback"
+              />
+            </picture>
+            <span class="logo-fallback" data-fallback-id="brand-logo-fallback">Salon Karola</span>
+          </span>
+          <span class="brand-text">
+            <span class="brand-mark">Salon Karola</span>
+            <span class="brand-subline">Friseursalon in Calw-Wimberg</span>
+          </span>
         </a>
 
         <button
@@ -315,7 +333,26 @@
 
     <footer class="site-footer">
       <div class="container footer-grid">
-        <div><p class="footer-brand">Salon Karola</p><p>Friseursalon in Calw-Wimberg</p></div>
+        <div class="footer-brand-block">
+          <span class="logo-frame footer-logo-frame">
+            <picture>
+              <source srcset="assets/images/logo-salon-karola.png" type="image/png" />
+              <img
+                class="footer-logo"
+                src="assets/images/logo-salon-karola.jpg"
+                alt="Logo Salon Karola"
+                width="280"
+                height="280"
+                loading="lazy"
+                decoding="async"
+                data-fallback-target="footer-logo-fallback"
+              />
+            </picture>
+            <span class="logo-fallback" data-fallback-id="footer-logo-fallback">Salon Karola</span>
+          </span>
+          <p class="footer-brand">Salon Karola</p>
+          <p>Friseursalon in Calw-Wimberg</p>
+        </div>
         <div><p>Ostlandstraße 3, 75365 Calw-Wimberg</p><p>Telefon: <a href="tel:070516344">07051 / 6344</a></p></div>
         <div class="footer-links"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
       </div>

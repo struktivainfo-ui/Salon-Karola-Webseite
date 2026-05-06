@@ -121,7 +121,7 @@ if (managedImages.length > 0) {
   managedImages.forEach((img) => {
     const fallbackId = img.dataset.fallbackTarget;
     const fallback = fallbackId ? document.querySelector(`[data-fallback-id="${fallbackId}"]`) : null;
-    const wrapper = img.closest(".image-frame, .team-photo-wrap, .lotto-media, .gallery-card");
+    const wrapper = img.closest(".image-frame, .team-photo-wrap, .lotto-media, .gallery-card, .logo-frame");
 
     if (!fallback || !wrapper) return;
 

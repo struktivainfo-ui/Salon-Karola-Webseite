@@ -192,8 +192,14 @@ ul {
 
 .brand {
   display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+}
+
+.brand-text {
+  display: inline-flex;
   flex-direction: column;
-  gap: 0.15rem;
+  gap: 0.12rem;
 }
 
 .brand-mark,
@@ -206,6 +212,66 @@ ul {
 .brand-subline {
   color: var(--text-soft);
   font-size: 0.82rem;
+}
+
+.logo-frame {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border: 1px solid rgba(138, 98, 50, 0.25);
+  border-radius: 14px;
+  background: #0b0b0b;
+  box-shadow: 0 10px 28px rgba(10, 10, 10, 0.22);
+}
+
+.brand-logo-frame {
+  width: clamp(44px, 10vw, 68px);
+  height: clamp(44px, 10vw, 68px);
+  flex: 0 0 auto;
+}
+
+.brand-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.footer-logo-frame {
+  width: 84px;
+  height: 84px;
+  margin-bottom: 0.45rem;
+}
+
+.footer-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.logo-fallback {
+  position: absolute;
+  inset: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 0.35rem;
+  text-align: center;
+  font-size: 0.72rem;
+  line-height: 1.1;
+  font-weight: 800;
+  color: #f4dca9;
+  letter-spacing: 0.02em;
+}
+
+.is-fallback .logo-fallback {
+  display: flex;
+}
+
+.is-fallback .brand-logo,
+.is-fallback .footer-logo {
+  opacity: 0;
 }
 
 .menu-toggle {
@@ -650,6 +716,12 @@ ul {
   background: rgba(255, 250, 244, 0.88);
 }
 
+.footer-brand-block {
+  display: grid;
+  justify-items: start;
+  gap: 0.2rem;
+}
+
 .footer-grid {
   display: grid;
   gap: 1rem;
@@ -802,6 +874,10 @@ ul {
   .hero-actions {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .brand {
+    gap: 0.9rem;
   }
 
   .team-photo {
