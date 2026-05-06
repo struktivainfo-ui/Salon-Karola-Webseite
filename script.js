@@ -4,6 +4,7 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const backToTopButton = document.querySelector(".back-to-top");
 const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
+const managedImages = document.querySelectorAll("img[data-fallback-target]");
 
 if (menuToggle && siteNav) {
   const closeMenu = () => {
@@ -114,4 +115,39 @@ if ("IntersectionObserver" in window && revealItems.length > 0) {
   revealItems.forEach((item) => revealObserver.observe(item));
 } else {
   revealItems.forEach((item) => item.classList.add("is-visible"));
+}
+
+if (managedImages.length > 0) {
+  managedImages.forEach((img) => {
+    const fallbackId = img.dataset.fallbackTarget;
+    const fallback = fallbackId ? document.querySelector(`[data-fallback-id="${fallbackId}"]`) : null;
+    const wrapper = img.closest(".image-frame, .team-photo-wrap, .lotto-media, .gallery-card");
+
+    if (!fallback || !wrapper) return;
+
+    const showFallback = () => {
+      wrapper.classList.add("is-fallback");
+    };
+
+    const hideFallback = () => {
+      wrapper.classList.remove("is-fallback");
+    };
+
+    img.addEventListener("error", showFallback);
+    img.addEventListener("load", () => {
+      if (img.naturalWidth > 0) {
+        hideFallback();
+      } else {
+        showFallback();
+      }
+    });
+
+    if (img.complete) {
+      if (img.naturalWidth > 0) {
+        hideFallback();
+      } else {
+        showFallback();
+      }
+    }
+  });
 }

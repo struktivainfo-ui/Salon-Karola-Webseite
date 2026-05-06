@@ -111,6 +111,7 @@
               <li><strong>Adresse:</strong> Ostlandstraße 3, 75365 Calw-Wimberg</li>
             </ul>
             <p class="hero-status" id="opening-status">Öffnungszeiten ansehen</p>
+
             <div class="hero-actions">
               <a class="button button-primary" href="tel:070516344" aria-label="Jetzt anrufen">Jetzt anrufen</a>
               <a class="button button-secondary" href="https://wa.me/4970516344" aria-label="WhatsApp schreiben">WhatsApp schreiben</a>
@@ -118,29 +119,21 @@
             </div>
           </div>
 
-          <aside class="hero-panel reveal reveal-delay" aria-label="Schnellübersicht">
-            <div class="hero-panel-card">
-              <p class="panel-label">Heute im Blick</p>
-              <ul class="contact-highlights">
-                <li><span>Anrufen</span><a href="tel:070516344">07051 / 6344</a></li>
-                <li><span>WhatsApp</span><a href="https://wa.me/4970516344">07051 / 6344</a></li>
-                <li><span>Öffnungszeiten</span><a href="#oeffnungszeiten">Di–Fr 09:00–12:00, 13:30–17:45 · Sa 08:30–12:15</a></li>
-                <li>
-                  <span>Standort</span>
-                  <a href="https://www.google.com/maps/search/?api=1&query=Ostlandstra%C3%9Fe%203%2C%2075365%20Calw-Wimberg" target="_blank" rel="noreferrer">Ostlandstraße 3, 75365 Calw-Wimberg</a>
-                </li>
-              </ul>
+          <aside class="hero-panel reveal reveal-delay" aria-label="Salon Karola in Calw-Wimberg">
+            <div class="image-frame hero-image-frame">
+              <img
+                class="hero-image"
+                src="assets/images/salon-aussen.jpg"
+                alt="Salon Karola in Calw-Wimberg"
+                width="1200"
+                height="900"
+                decoding="async"
+                fetchpriority="high"
+                data-fallback-target="hero-fallback"
+              />
+              <div class="image-fallback hero-fallback" data-fallback-id="hero-fallback">Salon Karola</div>
             </div>
           </aside>
-        </div>
-      </section>
-
-      <section class="trust-strip" aria-label="Vertrauen und Leistungen">
-        <div class="container trust-grid">
-          <article class="trust-card reveal"><h2>Persönliche Beratung</h2><p>Wir nehmen uns Zeit für Ihre Wünsche und beraten ehrlich, ruhig und individuell.</p></article>
-          <article class="trust-card reveal"><h2>Damen, Herren &amp; Kinder</h2><p>Haarschnitte und Stylings für die ganze Familie in angenehmer Atmosphäre.</p></article>
-          <article class="trust-card reveal"><h2>Farbe, Strähnen &amp; Styling</h2><p>Moderne Techniken, gepflegte Ergebnisse und typgerechte Empfehlungen für Ihren Look.</p></article>
-          <article class="trust-card reveal"><h2>Langjährige Erfahrung im Salon</h2><p>Erfahrung, Beständigkeit und persönliche Nähe prägen Salon Karola seit vielen Jahren.</p></article>
         </div>
       </section>
 
@@ -149,9 +142,22 @@
           <div class="section-intro reveal">
             <p class="eyebrow">Willkommen</p>
             <h2 id="welcome-title">Willkommen im Salon Karola</h2>
-          </div>
-          <div class="section-body reveal reveal-delay">
             <p>Willkommen im Salon Karola. Jessi und Ute freuen sich, Sie in unserem Salon in Calw-Wimberg begrüßen zu dürfen. Bei uns stehen Sie und Ihre Wünsche im Mittelpunkt.</p>
+          </div>
+          <div class="section-media reveal reveal-delay">
+            <div class="image-frame section-image-frame">
+              <img
+                class="section-image"
+                src="assets/images/salon-innen.jpg"
+                alt="Innenbereich des Salon Karola"
+                width="1200"
+                height="900"
+                loading="lazy"
+                decoding="async"
+                data-fallback-target="welcome-fallback"
+              />
+              <div class="image-fallback" data-fallback-id="welcome-fallback">Bild folgt</div>
+            </div>
           </div>
         </div>
       </section>
@@ -178,11 +184,36 @@
           <div class="section-heading reveal"><p class="eyebrow">Team</p><h2 id="team-title">Das Team</h2></div>
           <div class="team-grid">
             <article class="team-card reveal">
-              <div class="portrait-placeholder" role="img" aria-label="Platzhalter Teamfoto Jessica Wacker"><span>Jessica Wacker</span></div>
+              <div class="team-photo-wrap">
+                <img
+                  class="team-photo"
+                  src="assets/images/team-jessi.jpg"
+                  alt="Jessica Wacker, Inhaberin und Friseurmeisterin im Salon Karola"
+                  width="800"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback-target="team-jessi-fallback"
+                />
+                <div class="image-fallback" data-fallback-id="team-jessi-fallback">Salon Karola</div>
+              </div>
               <div class="team-card-content"><p class="team-role">Inhaberin &amp; Friseurmeisterin</p><h3>Jessica Wacker</h3><p>Jessica führt den Salon Karola mit Erfahrung, Herz und einem klaren Blick für typgerechte Frisuren.</p></div>
             </article>
+
             <article class="team-card reveal reveal-delay">
-              <div class="portrait-placeholder portrait-alt" role="img" aria-label="Platzhalter Teamfoto Ute Baier"><span>Ute Baier</span></div>
+              <div class="team-photo-wrap">
+                <img
+                  class="team-photo"
+                  src="assets/images/team-ute.jpg"
+                  alt="Ute Baier, Friseurin im Salon Karola"
+                  width="800"
+                  height="900"
+                  loading="lazy"
+                  decoding="async"
+                  data-fallback-target="team-ute-fallback"
+                />
+                <div class="image-fallback" data-fallback-id="team-ute-fallback">Salon Karola</div>
+              </div>
               <div class="team-card-content"><p class="team-role">Friseurin &amp; langjähriges Gesicht des Salons</p><h3>Ute Baier</h3><p>Ute prägt den Salon seit vielen Jahren mit Erfahrung, Ruhe und persönlicher Nähe zu den Kundinnen und Kunden.</p></div>
             </article>
           </div>
@@ -198,6 +229,19 @@
             <a class="button button-secondary" href="tel:070516344">Mobilen Friseur anfragen</a>
           </article>
           <article class="banner-card banner-card-small reveal lotto-card" id="lotto">
+            <div class="lotto-media">
+              <img
+                class="lotto-image"
+                src="assets/images/lotto.jpg"
+                alt="Lotto-Annahmestelle im Salon Karola"
+                width="800"
+                height="520"
+                loading="lazy"
+                decoding="async"
+                data-fallback-target="lotto-fallback"
+              />
+              <div class="image-fallback" data-fallback-id="lotto-fallback">Bild folgt</div>
+            </div>
             <p class="eyebrow">Lotto-Annahmestelle</p>
             <h2>Lotto im Salon</h2>
             <p>Zusätzlich finden Sie bei uns eine Lotto-Annahmestelle direkt im Salon.</p>
@@ -209,12 +253,36 @@
         <div class="container">
           <div class="section-heading reveal"><p class="eyebrow">Galerie</p><h2 id="gallery-title">Einblicke in unseren Salon und unsere Arbeit</h2><p>Hier später echte Salonbilder einfügen.</p></div>
           <div class="gallery-grid">
-            <article class="gallery-item reveal"><!-- Hier später echte Salonbilder einfügen. --><div class="gallery-placeholder" role="img" aria-label="Galerie Platzhalter Salon"><span>Salon</span></div></article>
-            <article class="gallery-item reveal"><!-- Hier später echte Salonbilder einfügen. --><div class="gallery-placeholder gallery-placeholder-alt" role="img" aria-label="Galerie Platzhalter Styling"><span>Styling</span></div></article>
-            <article class="gallery-item reveal"><!-- Hier später echte Salonbilder einfügen. --><div class="gallery-placeholder" role="img" aria-label="Galerie Platzhalter Farbe"><span>Farbe</span></div></article>
-            <article class="gallery-item reveal"><!-- Hier später echte Salonbilder einfügen. --><div class="gallery-placeholder gallery-placeholder-soft" role="img" aria-label="Galerie Platzhalter Beratung"><span>Beratung</span></div></article>
-            <article class="gallery-item reveal"><!-- Hier später echte Salonbilder einfügen. --><div class="gallery-placeholder" role="img" aria-label="Galerie Platzhalter Schnitt"><span>Schnitt</span></div></article>
-            <article class="gallery-item reveal"><!-- Hier später echte Salonbilder einfügen. --><div class="gallery-placeholder gallery-placeholder-soft" role="img" aria-label="Galerie Platzhalter Atmosphäre"><span>Atmosphäre</span></div></article>
+            <article class="gallery-card reveal">
+              <img src="assets/images/salon-innen.jpg" alt="Salon Karola Innenbereich" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-1" />
+              <div class="image-fallback" data-fallback-id="gallery-1">Salon Karola</div>
+              <p>Salon</p>
+            </article>
+            <article class="gallery-card reveal">
+              <img src="assets/images/beratung.jpg" alt="Beratung im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-2" />
+              <div class="image-fallback" data-fallback-id="gallery-2">Bild folgt</div>
+              <p>Beratung</p>
+            </article>
+            <article class="gallery-card reveal">
+              <img src="assets/images/styling-1.jpg" alt="Schnitt im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-3" />
+              <div class="image-fallback" data-fallback-id="gallery-3">Bild folgt</div>
+              <p>Schnitt</p>
+            </article>
+            <article class="gallery-card reveal">
+              <img src="assets/images/styling-2.jpg" alt="Farbbehandlung im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-4" />
+              <div class="image-fallback" data-fallback-id="gallery-4">Bild folgt</div>
+              <p>Farbe</p>
+            </article>
+            <article class="gallery-card reveal">
+              <img src="assets/images/styling-3.jpg" alt="Styling im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-5" />
+              <div class="image-fallback" data-fallback-id="gallery-5">Bild folgt</div>
+              <p>Styling</p>
+            </article>
+            <article class="gallery-card reveal">
+              <img src="assets/images/salon-aussen.jpg" alt="Atmosphäre im und um den Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-6" />
+              <div class="image-fallback" data-fallback-id="gallery-6">Bild folgt</div>
+              <p>Atmosphäre</p>
+            </article>
           </div>
         </div>
       </section>
