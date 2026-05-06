@@ -641,15 +641,18 @@ ul {
   width: 100%;
   height: var(--image-hero-h);
   max-height: 480px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .section-image {
   width: 100%;
   height: var(--image-section-h);
   max-height: 320px;
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .team-photo-wrap {
@@ -664,8 +667,9 @@ ul {
   width: 100%;
   height: var(--image-team-h);
   max-height: 360px;
-  object-fit: cover;
-  object-position: center 30%;
+  object-fit: contain;
+  object-position: center center;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .team-photo--jessi,
@@ -698,16 +702,19 @@ ul {
 .lotto-image {
   width: 100%;
   height: var(--image-lotto-h);
-  object-fit: cover;
+  object-fit: contain;
+  object-position: center center;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .lotto-photo {
   width: 100%;
   height: var(--image-lotto-h);
   max-height: 190px;
-  object-fit: cover;
-  object-position: 50% 25%;
+  object-fit: contain;
+  object-position: center center;
   border-radius: var(--radius-small);
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .image-fallback {
@@ -926,16 +933,18 @@ ul {
   width: 100%;
   height: var(--image-gallery-h);
   max-height: 260px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .gallery-photo {
   width: 100%;
   height: clamp(210px, 20vw, 270px);
   max-height: 270px;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .gallery-photo--beratung {
