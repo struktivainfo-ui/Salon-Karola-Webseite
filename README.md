@@ -51,9 +51,15 @@ Bilder vor dem Upload komprimieren, damit die Seite schnell bleibt.
 
 ## Logo
 
-Verwendete Logo-Datei: `assets/images/logo-salon-karola.jpg`.
+Logo-Dateien:
+- `assets/images/logos/logo-salon-karola-original.png`
+- `assets/images/logos/logo-facebook.svg` oder `.png`
+- `assets/images/logos/logo-instagram.svg` oder `.png`
+- `assets/images/logos/logo-youtube.svg` oder `.png`
+- `assets/images/logos/logo-revlon.png`
+- `assets/images/logos/logo-american-crew.png`
 
-Wenn keine Logo-Datei vorhanden ist, zeigt die Website automatisch ein Textfallback an.
+Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwenden.
 
 ## Hinweise
 

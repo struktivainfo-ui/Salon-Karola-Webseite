@@ -6,6 +6,7 @@ const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const managedImages = document.querySelectorAll("img[data-fallback-target]");
 const logoImages = document.querySelectorAll(".brand-logo, .splash-logo, .hero-logo, .footer-logo");
+const externalLogoImages = document.querySelectorAll(".social-logo, .brand-product-logo");
 const splashScreen = document.getElementById("splash-screen");
 
 if (splashScreen) {
@@ -177,5 +178,15 @@ if (logoImages.length > 0) {
     img.addEventListener("error", () => wrapper.classList.add("has-logo-error"));
     img.addEventListener("load", () => wrapper.classList.remove("has-logo-error"));
     if (img.complete && img.naturalWidth === 0) wrapper.classList.add("has-logo-error");
+  });
+}
+
+if (externalLogoImages.length > 0) {
+  externalLogoImages.forEach((img) => {
+    const card = img.closest(".social-card, .product-card");
+    if (!card) return;
+    img.addEventListener("error", () => card.classList.add("has-logo-error"));
+    img.addEventListener("load", () => card.classList.remove("has-logo-error"));
+    if (img.complete && img.naturalWidth === 0) card.classList.add("has-logo-error");
   });
 }

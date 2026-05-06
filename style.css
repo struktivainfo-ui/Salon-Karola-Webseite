@@ -323,7 +323,7 @@ ul {
   object-fit: contain;
 }
 
-.logo-text-fallback {
+.logo-fallback {
   position: absolute;
   inset: 0;
   display: none;
@@ -338,7 +338,7 @@ ul {
   letter-spacing: 0.02em;
 }
 
-.logo-wrap.has-logo-error .logo-text-fallback {
+.logo-wrap.has-logo-error .logo-fallback {
   display: flex;
 }
 
@@ -347,6 +347,14 @@ ul {
 .logo-wrap.has-logo-error .hero-logo,
 .logo-wrap.has-logo-error .footer-logo {
   display: none;
+}
+
+.logo-fallback--inline {
+  position: static;
+  inset: auto;
+  padding: 0;
+  font-size: 0.84rem;
+  line-height: 1.2;
 }
 
 .menu-toggle {
@@ -740,6 +748,13 @@ ul {
   margin-top: 0.7rem;
 }
 
+.brand-product-logo {
+  max-width: 160px;
+  height: 54px;
+  object-fit: contain;
+  margin-bottom: 0.55rem;
+}
+
 .products-note {
   margin-top: 1rem;
   color: var(--text-soft);
@@ -936,18 +951,26 @@ ul {
   font-weight: 700;
 }
 
-.social-icon {
-  width: 1.8rem;
-  height: 1.8rem;
-  border-radius: 999px;
+.social-logo {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+  flex: 0 0 auto;
+}
+
+.social-card .logo-fallback--inline,
+.product-card .logo-fallback--inline {
+  display: none;
+}
+
+.social-card.has-logo-error .social-logo,
+.product-card.has-logo-error .brand-product-logo {
+  display: none;
+}
+
+.social-card.has-logo-error .logo-fallback--inline,
+.product-card.has-logo-error .logo-fallback--inline {
   display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid rgba(138, 98, 50, 0.28);
-  background: rgba(250, 242, 231, 0.9);
-  color: var(--accent-deep);
-  font-size: 0.78rem;
-  text-transform: uppercase;
 }
 
 .hours-card {
