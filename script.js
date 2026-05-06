@@ -5,6 +5,23 @@ const backToTopButton = document.querySelector(".back-to-top");
 const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const managedImages = document.querySelectorAll("img[data-fallback-target]");
+const splashScreen = document.getElementById("splash-screen");
+
+if (splashScreen) {
+  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const visibleDuration = prefersReducedMotion ? 250 : 1500;
+  const teardownSplash = () => {
+    splashScreen.classList.add("splash--hidden");
+    const removeSplash = () => {
+      splashScreen.setAttribute("hidden", "hidden");
+      splashScreen.style.display = "none";
+    };
+    splashScreen.addEventListener("transitionend", removeSplash, { once: true });
+    window.setTimeout(removeSplash, prefersReducedMotion ? 220 : 900);
+  };
+
+  window.setTimeout(teardownSplash, visibleDuration);
+}
 
 if (menuToggle && siteNav) {
   const closeMenu = () => {

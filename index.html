@@ -66,6 +66,39 @@
     </script>
   </head>
   <body>
+    <div id="splash-screen" class="splash-screen" aria-hidden="true">
+      <div class="splash-card">
+        <span class="logo-frame splash-logo-frame">
+          <picture>
+            <source srcset="assets/images/logo-salon-karola.png" type="image/png" />
+            <img
+              class="splash-logo"
+              src="assets/images/logo-salon-karola.jpg"
+              alt="Salon Karola Logo"
+              width="280"
+              height="280"
+              loading="eager"
+              decoding="async"
+              data-fallback-target="splash-logo-fallback"
+            />
+          </picture>
+          <span class="logo-fallback" data-fallback-id="splash-logo-fallback">Salon Karola</span>
+        </span>
+        <p class="splash-title">Salon Karola</p>
+        <p class="splash-subtitle">Friseurhandwerk in Calw-Wimberg</p>
+        <p class="splash-services">Schnitt · Farbe · Styling</p>
+        <div class="splash-line" aria-hidden="true">✂︎ ───────── ✦ ───────── ✂︎</div>
+      </div>
+    </div>
+
+    <noscript>
+      <style>
+        #splash-screen {
+          display: none !important;
+        }
+      </style>
+    </noscript>
+
     <a class="skip-link" href="#content">Direkt zum Inhalt</a>
 
     <header class="site-header" id="top">
