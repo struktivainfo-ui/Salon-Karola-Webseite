@@ -673,8 +673,9 @@ ul {
   width: 100%;
   height: var(--image-team-h);
   max-height: 360px;
-  object-fit: cover;
-  object-position: center 28%;
+  object-fit: contain;
+  object-position: center center;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .team-photo--ute,
@@ -1718,7 +1719,7 @@ ul {
 
   .team-photo--jessi,
   .team-card--jessi .team-photo {
-    object-position: center 24%;
+    object-position: center center;
   }
 
   .mobile-cta {
