@@ -60,3 +60,8 @@ Wenn keine Logo-Datei vorhanden ist, zeigt die Website automatisch ein Textfallb
 - Impressum rechtlich final prüfen.
 - Datenschutz rechtlich final prüfen.
 - Google-Bewertungslink später im Bewertungsbereich ersetzen.
+- Social-Media-Links ersetzen:
+  - Facebook-Link eintragen
+  - Instagram-Link eintragen
+  - YouTube-Link eintragen
+  - Google-Bewertungslink eintragen
