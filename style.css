@@ -642,7 +642,7 @@ ul {
   height: var(--image-hero-h);
   max-height: 480px;
   object-fit: contain;
-  object-position: center;
+  object-position: center 42%;
   background: rgba(243, 237, 227, 0.95);
 }
 
@@ -651,7 +651,7 @@ ul {
   height: var(--image-section-h);
   max-height: 320px;
   object-fit: contain;
-  object-position: center center;
+  object-position: center 40%;
   background: rgba(243, 237, 227, 0.95);
 }
 
@@ -668,7 +668,7 @@ ul {
   height: var(--image-team-h);
   max-height: 360px;
   object-fit: contain;
-  object-position: center center;
+  object-position: center 36%;
   background: rgba(243, 237, 227, 0.95);
 }
 
@@ -678,7 +678,7 @@ ul {
   height: var(--image-team-h);
   max-height: 360px;
   object-fit: contain;
-  object-position: center center;
+  object-position: center 34%;
   background: rgba(243, 237, 227, 0.95);
 }
 
@@ -688,7 +688,7 @@ ul {
   height: var(--image-team-h);
   max-height: 360px;
   object-fit: contain;
-  object-position: center bottom;
+  object-position: center 78%;
   background: rgba(241, 233, 221, 0.9);
 }
 
@@ -703,7 +703,7 @@ ul {
   width: 100%;
   height: var(--image-lotto-h);
   object-fit: contain;
-  object-position: center center;
+  object-position: center 32%;
   background: rgba(243, 237, 227, 0.95);
 }
 
@@ -712,7 +712,7 @@ ul {
   height: var(--image-lotto-h);
   max-height: 190px;
   object-fit: contain;
-  object-position: center center;
+  object-position: center 30%;
   border-radius: var(--radius-small);
   background: rgba(243, 237, 227, 0.95);
 }
@@ -976,7 +976,7 @@ ul {
 }
 
 .gallery-photo--styling-4 {
-  object-position: center 24%;
+  object-position: center 22%;
   object-fit: contain;
   background: rgba(243, 237, 227, 0.95);
 }
@@ -992,7 +992,7 @@ ul {
 }
 
 .gallery-photo--frisur {
-  object-position: center 45%;
+  object-position: center 38%;
 }
 
 .gallery-photo--salon {
@@ -1069,11 +1069,11 @@ ul {
 }
 
 .before-after-image--before {
-  object-position: center 36%;
+  object-position: center 32%;
 }
 
 .before-after-image--after {
-  object-position: center 34%;
+  object-position: center 30%;
 }
 
 .before-after-chip {
@@ -1728,7 +1728,7 @@ ul {
 
   .team-photo--jessi,
   .team-card--jessi .team-photo {
-    object-position: center center;
+    object-position: center 32%;
   }
 
   .mobile-cta {
