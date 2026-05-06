@@ -404,14 +404,23 @@ ul {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius) var(--radius) 0 0;
-  min-height: 220px;
+  min-height: 260px;
+  background: linear-gradient(180deg, #efe4d4, #e2d4c0);
 }
 
 .team-photo {
   width: 100%;
-  height: clamp(250px, 44vw, 360px);
+  height: clamp(260px, 32vw, 420px);
   object-fit: cover;
-  object-position: center 24%;
+  object-position: center 30%;
+}
+
+.team-card--jessi .team-photo {
+  object-position: center 38%;
+}
+
+.team-card--ute .team-photo {
+  object-position: center 15%;
 }
 
 .lotto-media {
@@ -508,10 +517,17 @@ ul {
 .team-card {
   overflow: hidden;
   padding: 0;
+  display: flex;
+  flex-direction: column;
 }
 
 .team-card-content {
   padding: 1.2rem;
+  flex: 1;
+}
+
+.team-grid {
+  align-items: stretch;
 }
 
 .team-role {
@@ -772,6 +788,10 @@ ul {
   .hero-actions {
     flex-direction: row;
     flex-wrap: wrap;
+  }
+
+  .team-photo {
+    height: clamp(300px, 33vw, 420px);
   }
 }
 
