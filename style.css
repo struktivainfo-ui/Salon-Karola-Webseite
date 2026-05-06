@@ -462,6 +462,10 @@ ul {
   gap: 0.6rem;
 }
 
+.hero-actions .button {
+  width: 100%;
+}
+
 .hero-copy.is-visible h1,
 .hero-copy.is-visible .hero-mini-note,
 .hero-copy.is-visible .hero-actions .button,
@@ -869,6 +873,10 @@ ul {
   gap: 0.8rem;
 }
 
+.contact-panel .button {
+  width: 100%;
+}
+
 .site-footer {
   padding: 2rem 0 8.75rem;
   border-top: 1px solid rgba(38, 23, 15, 0.08);
@@ -1095,6 +1103,10 @@ ul {
     flex-wrap: wrap;
   }
 
+  .hero-actions .button {
+    width: auto;
+  }
+
   .brand {
     gap: 0.9rem;
   }
@@ -1106,6 +1118,10 @@ ul {
   .team-photo--ute,
   .team-card--ute .team-photo {
     height: clamp(320px, 35vw, 460px);
+  }
+
+  .contact-panel .button {
+    width: auto;
   }
 }
 
@@ -1159,6 +1175,89 @@ ul {
 
   .back-to-top {
     bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 414px) {
+  :root {
+    --header-height: 70px;
+  }
+
+  .container {
+    width: min(calc(100% - 1.25rem), var(--container));
+  }
+
+  .section {
+    padding: 3rem 0;
+  }
+
+  .hero {
+    padding: 0.95rem 0 1.35rem;
+  }
+
+  h1 {
+    font-size: clamp(1.95rem, 10.8vw, 2.45rem);
+    max-width: 12ch;
+  }
+
+  h2 {
+    font-size: clamp(1.65rem, 8.2vw, 2rem);
+  }
+
+  .hero-facts li,
+  p,
+  .contact-card p,
+  .contact-card a {
+    font-size: 0.98rem;
+  }
+
+  .team-photo {
+    height: clamp(250px, 68vw, 330px);
+  }
+
+  .team-photo--ute,
+  .team-card--ute .team-photo {
+    height: clamp(270px, 72vw, 360px);
+  }
+
+  .mobile-cta {
+    left: 0.7rem;
+    right: 0.7rem;
+    gap: 0.5rem;
+    padding: 0.52rem;
+    border-radius: 16px;
+  }
+
+  .mobile-cta a {
+    min-height: 48px;
+    font-size: 0.84rem;
+    padding: 0 0.3rem;
+  }
+
+  .site-footer {
+    padding-bottom: 8.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .brand-mark {
+    font-size: 1.55rem;
+  }
+
+  .brand-subline {
+    font-size: 0.74rem;
+  }
+
+  .hero-badge {
+    font-size: 0.72rem;
+  }
+
+  .hero-status {
+    font-size: 0.86rem;
+  }
+
+  .contact-card-grid {
+    gap: 0.65rem;
   }
 }
 
