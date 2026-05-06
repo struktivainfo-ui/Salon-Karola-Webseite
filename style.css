@@ -652,7 +652,10 @@ ul {
 
 .team-photo--jessi,
 .team-card--jessi .team-photo {
-  object-position: center 38%;
+  width: 100%;
+  height: clamp(320px, 34vw, 460px);
+  object-fit: cover;
+  object-position: center 42%;
 }
 
 .team-photo--ute,
@@ -1494,6 +1497,12 @@ ul {
 
   .team-photo {
     height: clamp(250px, 68vw, 330px);
+  }
+
+  .team-photo--jessi,
+  .team-card--jessi .team-photo {
+    height: clamp(280px, 70vw, 360px);
+    object-position: center 44%;
   }
 
   .team-photo--ute,
