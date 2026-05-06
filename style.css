@@ -943,10 +943,14 @@ ul {
 
 .gallery-photo--schnitt {
   object-position: center 68%;
+  object-fit: contain;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .gallery-photo--farbe {
   object-position: center 50%;
+  object-fit: contain;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .gallery-photo--styling-1 {
@@ -967,6 +971,12 @@ ul {
 
 .gallery-photo--styling-5 {
   object-position: center 45%;
+}
+
+.gallery-photo--schnitt,
+.gallery-photo--farbe {
+  height: clamp(170px, 16vw, 210px);
+  max-height: 210px;
 }
 
 .gallery-photo--frisur {
