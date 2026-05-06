@@ -3,6 +3,7 @@ const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
 const backToTopButton = document.querySelector(".back-to-top");
 const revealItems = document.querySelectorAll(".reveal");
+const openingStatus = document.querySelector("#opening-status");
 
 if (menuToggle && siteNav) {
   const closeMenu = () => {
@@ -55,6 +56,53 @@ if (backToTopButton) {
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
+}
+
+if (openingStatus) {
+  const now = new Date();
+  const day = now.getDay(); // 0=Sonntag ... 6=Samstag
+  const minutes = now.getHours() * 60 + now.getMinutes();
+
+  const setStatus = (text, tone) => {
+    openingStatus.textContent = text;
+    openingStatus.dataset.tone = tone;
+  };
+
+  const isTueToFri = day >= 2 && day <= 5;
+  const isSaturday = day === 6;
+  const morningOpen = 9 * 60;
+  const morningClose = 12 * 60;
+  const afternoonOpen = 13 * 60 + 30;
+  const afternoonClose = 17 * 60 + 45;
+  const saturdayOpen = 8 * 60 + 30;
+  const saturdayClose = 12 * 60 + 15;
+
+  if (isTueToFri) {
+    if (
+      (minutes >= morningOpen && minutes < morningClose) ||
+      (minutes >= afternoonOpen && minutes < afternoonClose)
+    ) {
+      setStatus("Heute geöffnet · Aktuell geöffnet", "open");
+    } else if (minutes >= morningClose && minutes < afternoonOpen) {
+      setStatus("Heute geöffnet · Mittagspause", "pause");
+    } else if (minutes < morningOpen) {
+      setStatus("Heute geöffnet", "open");
+    } else {
+      setStatus("Heute geschlossen", "closed");
+    }
+  } else if (isSaturday) {
+    if (minutes >= saturdayOpen && minutes < saturdayClose) {
+      setStatus("Heute geöffnet · Aktuell geöffnet", "open");
+    } else if (minutes < saturdayOpen) {
+      setStatus("Heute geöffnet", "open");
+    } else {
+      setStatus("Heute geschlossen", "closed");
+    }
+  } else if (day === 0 || day === 1) {
+    setStatus("Heute geschlossen · Öffnet wieder am Dienstag", "closed");
+  } else {
+    setStatus("Öffnungszeiten ansehen", "neutral");
+  }
 }
 
 if ("IntersectionObserver" in window && revealItems.length > 0) {
