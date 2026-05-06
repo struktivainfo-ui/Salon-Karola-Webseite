@@ -437,30 +437,36 @@
           <div class="social-grid">
             <a class="social-card reveal" href="https://www.facebook.com/1JA6WLS31m/" target="_blank" rel="noopener noreferrer" aria-label="Salon Karola auf Facebook öffnen">
               <!-- Hier den echten Facebook-Link eintragen -->
-              <picture>
-                <source srcset="assets/images/logos/logo-facebook.svg" type="image/svg+xml" />
-                <img class="social-logo" src="assets/images/logos/logo-facebook.png" alt="Facebook Logo" loading="lazy" decoding="async" />
-              </picture>
-              <span class="logo-fallback logo-fallback--inline">Facebook</span>
-              <span>Facebook</span>
+              <span class="social-icon-wrap">
+                <picture>
+                  <source srcset="assets/images/logos/logo-facebook.svg" type="image/svg+xml" />
+                  <img class="social-logo" src="assets/images/logos/logo-facebook.png" alt="" loading="lazy" decoding="async" onerror="this.closest('.social-card')?.classList.add('has-logo-error')" />
+                </picture>
+                <span class="social-icon-fallback" aria-hidden="true">f</span>
+              </span>
+              <span class="social-name">Facebook</span>
             </a>
             <a class="social-card reveal reveal-delay" href="https://www.instagram.com/salonkarola" target="_blank" rel="noopener noreferrer" aria-label="Salon Karola auf Instagram öffnen">
               <!-- Hier den echten Instagram-Link eintragen -->
-              <picture>
-                <source srcset="assets/images/logos/logo-instagram.svg" type="image/svg+xml" />
-                <img class="social-logo" src="assets/images/logos/logo-instagram.png" alt="Instagram Logo" loading="lazy" decoding="async" />
-              </picture>
-              <span class="logo-fallback logo-fallback--inline">Instagram</span>
-              <span>Instagram</span>
+              <span class="social-icon-wrap">
+                <picture>
+                  <source srcset="assets/images/logos/logo-instagram.svg" type="image/svg+xml" />
+                  <img class="social-logo" src="assets/images/logos/logo-instagram.png" alt="" loading="lazy" decoding="async" onerror="this.closest('.social-card')?.classList.add('has-logo-error')" />
+                </picture>
+                <span class="social-icon-fallback" aria-hidden="true">IG</span>
+              </span>
+              <span class="social-name">Instagram</span>
             </a>
             <a class="social-card reveal" href="https://www.youtube.com/@SalonKarola" target="_blank" rel="noopener noreferrer" aria-label="Salon Karola auf YouTube öffnen">
               <!-- Hier den echten YouTube-Link eintragen -->
-              <picture>
-                <source srcset="assets/images/logos/logo-youtube.svg" type="image/svg+xml" />
-                <img class="social-logo" src="assets/images/logos/logo-youtube.png" alt="YouTube Logo" loading="lazy" decoding="async" />
-              </picture>
-              <span class="logo-fallback logo-fallback--inline">YouTube</span>
-              <span>YouTube</span>
+              <span class="social-icon-wrap">
+                <picture>
+                  <source srcset="assets/images/logos/logo-youtube.svg" type="image/svg+xml" />
+                  <img class="social-logo" src="assets/images/logos/logo-youtube.png" alt="" loading="lazy" decoding="async" onerror="this.closest('.social-card')?.classList.add('has-logo-error')" />
+                </picture>
+                <span class="social-icon-fallback" aria-hidden="true">▶</span>
+              </span>
+              <span class="social-name">YouTube</span>
             </a>
           </div>
         </div>
