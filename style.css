@@ -975,6 +975,78 @@ ul {
   margin-top: 1.1rem;
 }
 
+.before-after-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-top: 0.9rem;
+}
+
+.before-after-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(16px);
+  box-shadow: var(--shadow);
+  padding: 0.75rem;
+  display: grid;
+  gap: 0.65rem;
+}
+
+.before-after-card > p {
+  color: var(--text);
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.before-after-images {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+}
+
+.before-after-item {
+  margin: 0;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  background: rgba(255, 255, 255, 0.55);
+}
+
+.before-after-image {
+  width: 100%;
+  height: clamp(130px, 14vw, 180px);
+  max-height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.before-after-chip {
+  position: absolute;
+  left: 0.45rem;
+  top: 0.45rem;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 999px;
+  background: rgba(42, 23, 16, 0.82);
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.before-after-item.is-fallback .image-fallback {
+  display: flex;
+}
+
+.before-after-item.is-fallback .before-after-image {
+  display: none;
+}
+
 .review-card,
 .review-cta,
 .social-card {
@@ -1533,9 +1605,24 @@ ul {
     max-height: 220px;
   }
 
+  .before-after-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .before-after-image {
+    height: 145px;
+    max-height: 160px;
+  }
+
   .brand-logo-wrap {
     width: clamp(52px, 12vw, 64px);
     min-height: clamp(52px, 12vw, 64px);
+  }
+}
+
+@media (max-width: 380px) {
+  .before-after-images {
+    grid-template-columns: 1fr;
   }
 }
 

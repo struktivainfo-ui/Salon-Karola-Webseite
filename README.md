@@ -67,6 +67,7 @@ Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwend
 ## Hinweise
 
 - Die Website verwendet UTF-8 und deutsche Umlaute in sichtbaren Texten.
+- Für Vorher/Nachher-Bilder von Kundinnen und Kunden sollte vor Veröffentlichung eine ausdrückliche Einwilligung vorliegen.
 - Impressum rechtlich final prüfen.
 - Datenschutz rechtlich final prüfen.
 - Google-Bewertungslink später im Bewertungsbereich ersetzen.
