@@ -1034,16 +1034,24 @@ ul {
   overflow: hidden;
   border-radius: 12px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(243, 237, 227, 0.9);
 }
 
 .before-after-image {
   width: 100%;
   height: clamp(160px, 18vw, 220px);
   max-height: 220px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center center;
   display: block;
+}
+
+.before-after-image--before {
+  object-position: center 36%;
+}
+
+.before-after-image--after {
+  object-position: center 34%;
 }
 
 .before-after-chip {
