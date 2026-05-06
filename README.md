@@ -44,6 +44,8 @@ Empfohlene Dateinamen:
 - `styling-5.jpg`
 - `beratung.jpg`
 - `lotto.jpg`
+- `before-after-before.jpg`
+- `before-after-after.jpg`
 
 Empfohlene Bildgrößen:
 
@@ -67,6 +69,10 @@ Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwend
 ## Hinweise
 
 - Die Website verwendet UTF-8 und deutsche Umlaute in sichtbaren Texten.
+- Vorher/Nachher-Bilder:
+  - `assets/images/before-after-before.jpg`
+  - `assets/images/before-after-after.jpg`
+- Aktuell ist nur ein Vorher/Nachher-Beispiel vorgesehen. Für weitere Beispiele kann der Bereich später erweitert werden.
 - Für Vorher/Nachher-Bilder von Kundinnen und Kunden sollte vor Veröffentlichung eine ausdrückliche Einwilligung vorliegen.
 - Impressum rechtlich final prüfen.
 - Datenschutz rechtlich final prüfen.
