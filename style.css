@@ -966,7 +966,9 @@ ul {
 }
 
 .gallery-photo--styling-4 {
-  object-position: center 45%;
+  object-position: center 24%;
+  object-fit: contain;
+  background: rgba(243, 237, 227, 0.95);
 }
 
 .gallery-photo--styling-5 {
