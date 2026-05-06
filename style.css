@@ -186,8 +186,8 @@ h3 {
 }
 
 h1 {
-  font-size: clamp(2.3rem, 10vw, 5.8rem);
-  max-width: 10ch;
+  font-size: clamp(2rem, 6vw, 4.4rem);
+  max-width: 12ch;
 }
 
 h2 {
@@ -261,7 +261,9 @@ ul {
 }
 
 .header-inner {
-  min-height: var(--header-height);
+  min-height: auto;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -303,8 +305,8 @@ ul {
 }
 
 .brand-logo-wrap {
-  width: clamp(44px, 10vw, 68px);
-  min-height: clamp(44px, 10vw, 68px);
+  width: clamp(58px, 5vw, 88px);
+  min-height: clamp(58px, 5vw, 88px);
   flex: 0 0 auto;
 }
 
@@ -449,7 +451,9 @@ ul {
 .hero {
   position: relative;
   overflow: clip;
-  padding: 1.2rem 0 1.8rem;
+  min-height: auto;
+  padding-top: clamp(2rem, 5vw, 5rem);
+  padding-bottom: clamp(2rem, 5vw, 5rem);
 }
 
 .hero-backdrop {
@@ -466,8 +470,15 @@ ul {
   position: relative;
   z-index: 1;
   display: grid;
-  gap: 1rem;
+  gap: clamp(1.5rem, 4vw, 3rem);
   align-items: start;
+}
+
+.hero h1 {
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  max-width: 850px;
 }
 
 .hero-copy {
@@ -549,9 +560,7 @@ ul {
 }
 
 .hero-logo-mark {
-  width: 48px;
-  min-height: 48px;
-  border-radius: 12px;
+  display: none;
 }
 
 .hero-logo {
@@ -624,7 +633,8 @@ ul {
 
 .hero-image {
   width: 100%;
-  height: clamp(250px, 45vw, 460px);
+  height: clamp(280px, 38vw, 520px);
+  max-height: clamp(360px, 46vw, 620px);
   object-fit: cover;
   object-position: center;
 }
@@ -1390,11 +1400,6 @@ ul {
     gap: 0.9rem;
   }
 
-  .hero-logo-mark {
-    width: 54px;
-    min-height: 54px;
-  }
-
   .team-photo {
     height: clamp(300px, 33vw, 420px);
   }
@@ -1431,8 +1436,8 @@ ul {
   }
 
   .hero-grid {
-    grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-    gap: 2.4rem;
+    grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.85fr);
+    gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
   }
 
@@ -1459,6 +1464,28 @@ ul {
 
   .back-to-top {
     bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero h1 {
+    font-size: clamp(2.2rem, 12vw, 3.6rem);
+    line-height: 0.98;
+    max-width: 12ch;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .hero-image {
+    max-height: 360px;
+  }
+
+  .brand-logo-wrap {
+    width: clamp(52px, 12vw, 64px);
+    min-height: clamp(52px, 12vw, 64px);
   }
 }
 
