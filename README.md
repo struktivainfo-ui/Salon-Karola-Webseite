@@ -60,8 +60,7 @@ Wenn keine Logo-Datei vorhanden ist, zeigt die Website automatisch ein Textfallb
 - Impressum rechtlich final prüfen.
 - Datenschutz rechtlich final prüfen.
 - Google-Bewertungslink später im Bewertungsbereich ersetzen.
-- Social-Media-Links ersetzen:
-  - Facebook-Link eintragen
-  - Instagram-Link eintragen
-  - YouTube-Link eintragen
-  - Google-Bewertungslink eintragen
+- Social-Media-Links:
+  - Facebook: https://www.facebook.com/1JA6WLS31m/
+  - Instagram: https://www.instagram.com/salonkarola
+  - YouTube: https://www.youtube.com/@SalonKarola
