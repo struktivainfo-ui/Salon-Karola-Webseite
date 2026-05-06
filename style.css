@@ -926,6 +926,39 @@ ul {
   height: var(--image-gallery-h);
   max-height: 260px;
   object-fit: cover;
+  object-position: center center;
+}
+
+.gallery-photo {
+  width: 100%;
+  height: clamp(210px, 20vw, 270px);
+  max-height: 270px;
+  object-fit: cover;
+  display: block;
+}
+
+.gallery-photo--beratung {
+  object-position: center 32%;
+}
+
+.gallery-photo--schnitt {
+  object-position: center 72%;
+}
+
+.gallery-photo--farbe {
+  object-position: center 50%;
+}
+
+.gallery-photo--styling {
+  object-position: center 45%;
+}
+
+.gallery-photo--hochsteck {
+  object-position: center 40%;
+}
+
+.gallery-photo--salon {
+  object-position: center center;
 }
 
 .gallery-card p {
@@ -1493,6 +1526,11 @@ ul {
 
   .hero-image {
     max-height: 300px;
+  }
+
+  .gallery-photo {
+    height: 220px;
+    max-height: 220px;
   }
 
   .brand-logo-wrap {
