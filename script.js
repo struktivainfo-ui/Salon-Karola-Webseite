@@ -22,9 +22,7 @@ if (menuToggle && siteNav) {
     document.body.classList.toggle("menu-open", isOpen);
   });
 
-  navLinks.forEach((link) => {
-    link.addEventListener("click", closeMenu);
-  });
+  navLinks.forEach((link) => link.addEventListener("click", closeMenu));
 
   document.addEventListener("click", (event) => {
     if (!siteNav.contains(event.target) && !menuToggle.contains(event.target)) {
@@ -33,15 +31,11 @@ if (menuToggle && siteNav) {
   });
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") {
-      closeMenu();
-    }
+    if (event.key === "Escape") closeMenu();
   });
 
   window.addEventListener("resize", () => {
-    if (window.innerWidth >= 960) {
-      closeMenu();
-    }
+    if (window.innerWidth >= 960) closeMenu();
   });
 }
 
@@ -52,56 +46,56 @@ if (backToTopButton) {
 
   toggleBackToTop();
   window.addEventListener("scroll", toggleBackToTop, { passive: true });
-
   backToTopButton.addEventListener("click", () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
 if (openingStatus) {
-  const now = new Date();
-  const day = now.getDay(); // 0=Sonntag ... 6=Samstag
-  const minutes = now.getHours() * 60 + now.getMinutes();
+  try {
+    const now = new Date();
+    const day = now.getDay(); // 0=So,1=Mo,...6=Sa
+    const minutes = now.getHours() * 60 + now.getMinutes();
 
-  const setStatus = (text, tone) => {
-    openingStatus.textContent = text;
-    openingStatus.dataset.tone = tone;
-  };
+    const setStatus = (text, tone = "neutral") => {
+      openingStatus.textContent = text;
+      openingStatus.dataset.tone = tone;
+    };
 
-  const isTueToFri = day >= 2 && day <= 5;
-  const isSaturday = day === 6;
-  const morningOpen = 9 * 60;
-  const morningClose = 12 * 60;
-  const afternoonOpen = 13 * 60 + 30;
-  const afternoonClose = 17 * 60 + 45;
-  const saturdayOpen = 8 * 60 + 30;
-  const saturdayClose = 12 * 60 + 15;
+    const inRange = (start, end) => minutes >= start && minutes < end;
+    const tuFriMorningOpen = 9 * 60;
+    const tuFriMorningClose = 12 * 60;
+    const tuFriAfternoonOpen = 13 * 60 + 30;
+    const tuFriAfternoonClose = 17 * 60 + 45;
+    const satOpen = 8 * 60 + 30;
+    const satClose = 12 * 60 + 15;
 
-  if (isTueToFri) {
-    if (
-      (minutes >= morningOpen && minutes < morningClose) ||
-      (minutes >= afternoonOpen && minutes < afternoonClose)
-    ) {
-      setStatus("Heute geöffnet · Aktuell geöffnet", "open");
-    } else if (minutes >= morningClose && minutes < afternoonOpen) {
-      setStatus("Heute geöffnet · Mittagspause", "pause");
-    } else if (minutes < morningOpen) {
-      setStatus("Heute geöffnet", "open");
+    if (day >= 2 && day <= 5) {
+      if (inRange(tuFriMorningOpen, tuFriMorningClose) || inRange(tuFriAfternoonOpen, tuFriAfternoonClose)) {
+        setStatus("Aktuell geöffnet", "open");
+      } else if (inRange(tuFriMorningClose, tuFriAfternoonOpen)) {
+        setStatus("Aktuell Mittagspause · Öffnet heute um 13:30 Uhr", "pause");
+      } else if (minutes < tuFriMorningOpen) {
+        setStatus("Öffnet heute um 09:00 Uhr", "neutral");
+      } else {
+        setStatus("Heute geschlossen", "closed");
+      }
+    } else if (day === 6) {
+      if (inRange(satOpen, satClose)) {
+        setStatus("Aktuell geöffnet", "open");
+      } else if (minutes < satOpen) {
+        setStatus("Öffnet heute um 08:30 Uhr", "neutral");
+      } else {
+        setStatus("Heute geschlossen", "closed");
+      }
+    } else if (day === 0 || day === 1) {
+      setStatus("Öffnet wieder am Dienstag um 09:00 Uhr", "closed");
     } else {
-      setStatus("Heute geschlossen", "closed");
+      setStatus("Öffnungszeiten ansehen", "neutral");
     }
-  } else if (isSaturday) {
-    if (minutes >= saturdayOpen && minutes < saturdayClose) {
-      setStatus("Heute geöffnet · Aktuell geöffnet", "open");
-    } else if (minutes < saturdayOpen) {
-      setStatus("Heute geöffnet", "open");
-    } else {
-      setStatus("Heute geschlossen", "closed");
-    }
-  } else if (day === 0 || day === 1) {
-    setStatus("Heute geschlossen · Öffnet wieder am Dienstag", "closed");
-  } else {
-    setStatus("Öffnungszeiten ansehen", "neutral");
+  } catch (error) {
+    openingStatus.textContent = "Öffnungszeiten ansehen";
+    openingStatus.dataset.tone = "neutral";
   }
 }
 
@@ -109,18 +103,12 @@ if ("IntersectionObserver" in window && revealItems.length > 0) {
   const revealObserver = new IntersectionObserver(
     (entries, observer) => {
       entries.forEach((entry) => {
-        if (!entry.isIntersecting) {
-          return;
-        }
-
+        if (!entry.isIntersecting) return;
         entry.target.classList.add("is-visible");
         observer.unobserve(entry.target);
       });
     },
-    {
-      threshold: 0.18,
-      rootMargin: "0px 0px -48px 0px"
-    }
+    { threshold: 0.18, rootMargin: "0px 0px -48px 0px" }
   );
 
   revealItems.forEach((item) => revealObserver.observe(item));
