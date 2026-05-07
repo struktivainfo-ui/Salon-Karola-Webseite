@@ -127,6 +127,54 @@ section {
   color: var(--gold-light);
 }
 
+.welcome-section {
+  padding: clamp(48px, 6vw, 90px) clamp(20px, 5vw, 90px);
+}
+
+.welcome-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(280px, 420px);
+  gap: 36px;
+  align-items: center;
+  background: linear-gradient(180deg, rgba(16, 11, 6, 0.98), rgba(5, 3, 2, 0.99));
+  border: 1px solid rgba(212, 175, 55, 0.55);
+  border-radius: 30px;
+  padding: clamp(26px, 4vw, 48px);
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.55), 0 0 26px rgba(212, 175, 55, 0.12);
+}
+
+.welcome-text h2 {
+  color: #ffffff;
+  margin: 0 0 18px;
+}
+
+.welcome-text p {
+  color: #e8ddc8;
+  line-height: 1.7;
+}
+
+.welcome-image {
+  width: 100%;
+  max-width: 420px;
+  justify-self: end;
+  position: static !important;
+  min-height: 0 !important;
+}
+
+.welcome-image img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 380px !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block;
+  border-radius: 24px;
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.35),
+    0 0 30px rgba(212, 175, 55, 0.22),
+    0 18px 46px rgba(0, 0, 0, 0.55);
+}
+
 .site-header {
   position: sticky;
   top: 0;
@@ -740,5 +788,21 @@ a.btn {
 
   .hero-actions .btn {
     width: 100%;
+  }
+}
+
+@media (max-width: 800px) {
+  .welcome-card {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .welcome-image {
+    max-width: 100%;
+    justify-self: center;
+  }
+
+  .welcome-image img {
+    max-height: 280px !important;
   }
 }
