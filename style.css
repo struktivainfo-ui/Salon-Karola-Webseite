@@ -2397,6 +2397,217 @@ p {
   }
 }
 
+/* Final visibility fixes: before/after, mobile dust, compact why-cards */
+#vorher-nachher .before-after-card {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: clamp(18px, 2.4vw, 26px) !important;
+  border: 1px solid rgba(212, 175, 55, 0.38) !important;
+  border-radius: 28px !important;
+  background:
+    radial-gradient(circle at 15% 10%, rgba(212, 175, 55, 0.16), transparent 34%),
+    linear-gradient(145deg, rgba(10, 7, 3, 0.96), rgba(2, 2, 2, 0.98)) !important;
+  box-shadow:
+    0 0 34px rgba(212, 175, 55, 0.12),
+    0 22px 55px rgba(0, 0, 0, 0.55) !important;
+}
+
+#vorher-nachher .before-after-images {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2vw, 22px) !important;
+  align-items: start !important;
+}
+
+#vorher-nachher .before-after-item,
+#vorher-nachher .before-after-media {
+  position: relative !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+  border-radius: 20px !important;
+  background: #050402 !important;
+  min-height: 0 !important;
+}
+
+#vorher-nachher .before-after-item img,
+#vorher-nachher .before-after-media img {
+  width: 100% !important;
+  height: clamp(160px, 20vw, 230px) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  display: block !important;
+  background: #050402 !important;
+}
+
+#vorher-nachher .before-after-label {
+  position: absolute !important;
+  top: 10px !important;
+  left: 10px !important;
+  z-index: 2 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  min-height: 30px !important;
+  padding: 6px 12px !important;
+  border-radius: 999px !important;
+  background: rgba(3, 2, 1, 0.86) !important;
+  color: #f7d774 !important;
+  border: 1px solid rgba(247, 215, 116, 0.75) !important;
+  font-weight: 900 !important;
+  font-size: 14px !important;
+  line-height: 1 !important;
+  box-shadow: 0 0 18px rgba(212, 175, 55, 0.22) !important;
+}
+
+#vorher-nachher .before-after-text h3,
+#vorher-nachher .before-after-text p {
+  color: #ffffff !important;
+}
+
+#vorher-nachher .before-after-text h3 {
+  margin: 16px 0 6px !important;
+}
+
+#vorher-nachher .before-after-text p {
+  margin: 0 !important;
+  color: rgba(255, 255, 255, 0.82) !important;
+}
+
+/* Mobile gold dust safety */
+@media (max-width: 760px) {
+  .gold-dust-layer,
+  .gold-dust-layer--near,
+  .gold-dust-layer--far {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  .gold-dust-layer::before {
+    opacity: 0.48 !important;
+    background-size: 90px 90px, 150px 150px !important;
+  }
+}
+
+/* Why cards compact premium on mobile */
+.why-grid,
+.benefits-grid,
+.reason-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 2vw, 22px);
+}
+
+.why-card,
+.benefit-card,
+.reason-card {
+  padding: clamp(16px, 2vw, 24px) !important;
+  border-radius: 24px !important;
+  border: 1px solid rgba(212, 175, 55, 0.38) !important;
+  background:
+    radial-gradient(circle at 15% 12%, rgba(212, 175, 55, 0.10), transparent 32%),
+    linear-gradient(145deg, rgba(12, 8, 3, 0.92), rgba(2, 2, 2, 0.96)) !important;
+  min-height: auto !important;
+}
+
+.why-card h3,
+.benefit-card h3,
+.reason-card h3 {
+  color: #ffffff !important;
+  font-size: clamp(20px, 2vw, 28px) !important;
+  line-height: 1.1 !important;
+  margin: 0 0 10px !important;
+}
+
+.why-card p,
+.benefit-card p,
+.reason-card p {
+  color: rgba(255, 255, 255, 0.78) !important;
+  font-size: 16px !important;
+  line-height: 1.45 !important;
+  margin: 0 !important;
+}
+
+/* Mobile header spacing safety */
+@media (max-width: 760px) {
+  header,
+  .site-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+  }
+
+  main {
+    padding-top: 0;
+  }
+
+  section:first-of-type {
+    padding-top: 28px !important;
+  }
+}
+
+@media (max-width: 760px) {
+  .why-grid,
+  .benefits-grid,
+  .reason-grid {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  .why-card,
+  .benefit-card,
+  .reason-card {
+    padding: 16px !important;
+    border-radius: 20px !important;
+  }
+
+  .why-card h3,
+  .benefit-card h3,
+  .reason-card h3 {
+    font-size: 22px !important;
+    margin-bottom: 6px !important;
+  }
+
+  .why-card p,
+  .benefit-card p,
+  .reason-card p {
+    font-size: 15px !important;
+    line-height: 1.4 !important;
+  }
+}
+
+@media (min-width: 430px) and (max-width: 760px) {
+  .why-grid,
+  .benefits-grid,
+  .reason-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #vorher-nachher .before-after-card {
+    max-width: calc(100% - 24px) !important;
+    padding: 16px !important;
+    border-radius: 24px !important;
+  }
+
+  #vorher-nachher .before-after-images {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 10px !important;
+  }
+
+  #vorher-nachher .before-after-item img,
+  #vorher-nachher .before-after-media img {
+    height: 150px !important;
+  }
+
+  #vorher-nachher .before-after-label {
+    font-size: 12px !important;
+    padding: 5px 9px !important;
+    min-height: 26px !important;
+  }
+}
+
 .premium-splash {
   position: fixed;
   inset: 0;
