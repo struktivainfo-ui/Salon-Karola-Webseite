@@ -6,22 +6,27 @@ const openingStatus = document.querySelector("#opening-status");
 const managedImages = document.querySelectorAll("img[data-fallback-target]");
 const logoImages = document.querySelectorAll(".brand-logo, .splash-logo, .hero-logo, .footer-logo");
 const externalLogoImages = document.querySelectorAll(".social-logo, .brand-product-logo");
-const splashScreen = document.getElementById("splash-screen");
+const premiumSplash = document.getElementById("premiumSplash");
 
-if (splashScreen) {
-  const prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-  const visibleDuration = prefersReducedMotion ? 250 : 1500;
-  const teardownSplash = () => {
-    splashScreen.classList.add("splash--hidden");
-    const removeSplash = () => {
-      splashScreen.setAttribute("hidden", "hidden");
-      splashScreen.style.display = "none";
-    };
-    splashScreen.addEventListener("transitionend", removeSplash, { once: true });
-    window.setTimeout(removeSplash, prefersReducedMotion ? 220 : 900);
-  };
+if (premiumSplash) {
+  window.addEventListener("load", () => {
+    if (sessionStorage.getItem("salonKarolaSplashSeen") === "true") {
+      premiumSplash.remove();
+      return;
+    }
 
-  window.setTimeout(teardownSplash, visibleDuration);
+    const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const delay = prefersReducedMotion ? 300 : 1800;
+
+    window.setTimeout(() => {
+      premiumSplash.classList.add("is-hidden");
+      sessionStorage.setItem("salonKarolaSplashSeen", "true");
+
+      window.setTimeout(() => {
+        premiumSplash.remove();
+      }, 950);
+    }, delay);
+  });
 }
 
 if (menuToggle && siteNav) {
