@@ -93,7 +93,7 @@ body.menu-open {
   inset: 0;
   pointer-events: none;
   z-index: 1;
-  opacity: 0.22;
+  opacity: 0.18;
   background-image:
     radial-gradient(circle, rgba(247, 215, 116, 0.7) 0 1px, transparent 1.6px),
     radial-gradient(circle, rgba(212, 175, 55, 0.42) 0 1px, transparent 1.8px),
@@ -1002,6 +1002,7 @@ ul {
 
 .product-card p {
   margin-top: 0.7rem;
+  color: #2a1a11;
 }
 
 .brand-product-logo {
@@ -1014,7 +1015,7 @@ ul {
 
 .products-note {
   margin-top: 1rem;
-  color: var(--text-soft);
+  color: #5e4b3c;
 }
 
 .products-cta {
@@ -1197,6 +1198,7 @@ ul {
   border-left: 3px solid var(--accent);
   background: rgba(255, 250, 240, 0.72);
   border-radius: 0 18px 18px 0;
+  color: #2a1a11;
 }
 
 .salon-note-line {
@@ -1290,6 +1292,10 @@ ul {
 .why-card h3 {
   margin-bottom: 0.35rem;
   color: var(--color-blue-dark);
+}
+
+.why-card p {
+  color: #2a1a11;
 }
 
 .gallery-grid {
@@ -1398,7 +1404,7 @@ ul {
 .gallery-card p {
   margin: 0;
   padding: 0.5rem 0.65rem;
-  color: var(--text);
+  color: #1b120d;
   font-weight: 700;
 }
 
@@ -1524,8 +1530,16 @@ ul {
 }
 
 .review-card p {
-  color: var(--text);
+  color: #1b120d;
   font-weight: 600;
+}
+
+.review-cta h3 {
+  color: #1b120d;
+}
+
+.review-cta p {
+  color: #2a1a11;
 }
 
 .review-cta {
@@ -1643,7 +1657,7 @@ ul {
 }
 
 .contact-local-note {
-  color: var(--color-blue-dark);
+  color: #f5d76e;
   font-weight: 600;
 }
 
