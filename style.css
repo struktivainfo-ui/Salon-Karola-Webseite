@@ -887,7 +887,7 @@ ul {
 }
 
 .services .services-grid {
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 }
 
 .section-heading,
@@ -1995,10 +1995,6 @@ ul {
     grid-template-columns: minmax(0, 0.95fr) minmax(360px, 0.85fr);
     gap: clamp(2rem, 5vw, 5rem);
     align-items: center;
-  }
-
-  .services-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
   .gallery-grid {
