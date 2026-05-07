@@ -183,7 +183,7 @@
         </div>
       </section>
 
-      <div class="section-divider reveal" aria-hidden="true"><span>✂︎</span></div>
+      <div class="hair-divider reveal" aria-hidden="true"><span></span><strong>✂</strong><span></span></div>
 
       <section class="trust-strip section section-compact" aria-label="Stärken von Salon Karola">
         <div class="container">
@@ -197,6 +197,7 @@
 
       <section class="welcome-section section-dark section" aria-labelledby="welcome-title">
         <div class="container">
+          <span class="hair-ornament hair-ornament--welcome" aria-hidden="true">✂</span>
           <div class="welcome-card">
             <div class="welcome-text section-intro reveal">
             <p class="eyebrow">Willkommen</p>
@@ -215,6 +216,7 @@
 
       <section class="services section section-angled section-premium" id="leistungen" aria-labelledby="services-title">
         <div class="container">
+          <span class="hair-ornament hair-ornament--services" aria-hidden="true">≋</span>
           <div class="section-heading reveal">
             <p class="eyebrow">Leistungen</p>
             <h2 id="services-title">Unsere Leistungen</h2>
@@ -353,20 +355,23 @@
         </div>
       </section>
 
-      <section class="service-banner section" aria-label="Zusätzliche Angebote">
+      <section class="service-banner section lotto-section" aria-label="Zusätzliche Angebote">
         <div class="container banner-grid">
-          <article class="banner-card banner-card-small reveal lotto-card" id="lotto">
+          <article class="banner-card banner-card-small reveal lotto-card lotto-compact-card" id="lotto">
             <div class="lotto-media image-fusion">
               <img class="lotto-image lotto-photo" src="assets/images/lotto.jpg" alt="Lotto-Annahmestelle im Salon Karola" width="800" height="520" loading="lazy" decoding="async" data-fallback-target="lotto-fallback" />
               <div class="image-fallback" data-fallback-id="lotto-fallback">Bild folgt</div>
             </div>
-            <p class="eyebrow">Lotto-Annahmestelle</p>
-            <h2>Lotto im Salon</h2>
-            <p>Zusätzlich finden Sie bei uns eine Lotto-Annahmestelle direkt im Salon.</p>
+            <div class="lotto-content">
+              <p class="eyebrow">Lotto-Annahmestelle</p>
+              <h2>Lotto im Salon</h2>
+              <p>Zusätzlich finden Sie bei uns eine Lotto-Annahmestelle direkt im Salon.</p>
+            </div>
           </article>
         </div>
       </section>
 
+      <div class="hair-divider reveal" aria-hidden="true"><span></span><strong>✂</strong><span></span></div>
       <section class="gallery section section-premium" id="galerie" aria-labelledby="gallery-title">
         <div class="container">
           <div class="section-heading reveal">
@@ -438,12 +443,12 @@
               <p class="before-after-highlight">Kleine Veränderung, große Wirkung</p>
               <div class="before-after-images before-after-media image-fusion">
                 <figure class="before-after-item">
-                  <span class="before-after-chip">Vorher</span>
+                  <span class="before-after-chip before-after-label">Vorher</span>
                   <img class="before-after-image before-after-image--before" src="assets/images/before-after-before-clean.jpg" alt="Vorher-Bild einer Frisur im Salon Karola" width="700" height="700" loading="lazy" decoding="async" data-fallback-target="ba-before-clean" data-image-key="before-after-before-clean" />
                   <div class="image-fallback" data-fallback-id="ba-before-clean">Vorher-Bild folgt</div>
                 </figure>
                 <figure class="before-after-item">
-                  <span class="before-after-chip">Nachher</span>
+                  <span class="before-after-chip before-after-label">Nachher</span>
                   <img class="before-after-image before-after-image--after" src="assets/images/before-after-after-clean.jpg" alt="Nachher-Bild einer Frisur im Salon Karola" width="700" height="700" loading="lazy" decoding="async" data-fallback-target="ba-after-clean" data-image-key="before-after-after-clean" />
                   <div class="image-fallback" data-fallback-id="ba-after-clean">Nachher-Bild folgt</div>
                 </figure>
@@ -491,10 +496,10 @@
         </div>
       </section>
 
-      <div class="section-divider reveal" aria-hidden="true"><span>✂︎</span></div>
+      <div class="hair-divider reveal" aria-hidden="true"><span></span><strong>✂</strong><span></span></div>
 
       <section class="contact section contact-premium section-premium" id="kontakt" aria-labelledby="contact-title">
-        <div class="container contact-grid">
+        <div class="container contact-grid contact-area">
           <div class="contact-copy reveal">
             <p class="eyebrow">Kontakt</p>
             <h2 id="contact-title">Kontakt &amp; Anfahrt</h2>
@@ -520,11 +525,11 @@
               </li>
             </ul>
           </div>
-          <div class="contact-panel reveal reveal-delay">
-            <a class="button button-primary" href="tel:070516344" aria-label="Salon Karola telefonisch kontaktieren">Jetzt anrufen</a>
-            <a class="button button-secondary" href="https://wa.me/4970516344" aria-label="Salon Karola per WhatsApp kontaktieren">WhatsApp schreiben</a>
-            <a class="button button-ghost" href="https://www.google.com/maps/search/?api=1&query=Ostlandstra%C3%9Fe%203%2C%2075365%20Calw-Wimberg" target="_blank" rel="noreferrer" aria-label="Route planen">Route planen</a>
-            <a class="button button-ghost" href="mailto:jwacker27@gmail.com" aria-label="E-Mail an Salon Karola senden">E-Mail</a>
+          <div class="contact-panel contact-actions reveal reveal-delay">
+            <a class="button button-primary btn-gold" href="tel:070516344" aria-label="Salon Karola telefonisch kontaktieren">Jetzt anrufen</a>
+            <a class="button button-secondary btn-gold" href="https://wa.me/4970516344" aria-label="Salon Karola per WhatsApp kontaktieren">WhatsApp schreiben</a>
+            <a class="button button-ghost btn-dark" href="https://www.google.com/maps/search/?api=1&query=Ostlandstra%C3%9Fe%203%2C%2075365%20Calw-Wimberg" target="_blank" rel="noreferrer" aria-label="Route planen">Route planen</a>
+            <a class="button button-ghost btn-dark" href="mailto:jwacker27@gmail.com" aria-label="E-Mail an Salon Karola senden">E-Mail</a>
           </div>
         </div>
         <div class="container">
