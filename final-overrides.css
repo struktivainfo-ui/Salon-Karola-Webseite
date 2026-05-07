@@ -357,6 +357,187 @@ footer {
   line-height: 1.6;
 }
 
+/* ===== Final photo design fix: no cream boxes + subtle gold flame glow ===== */
+.gallery-card,
+.gallery-item,
+.gallery-image-frame,
+.gallery-photo,
+.image-card,
+.photo-card,
+.before-after-card,
+.before-after-image,
+.comparison-image,
+.team-photo,
+.team-image-frame,
+.styling-card,
+.styling-image,
+.service-image-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.gallery-card,
+.gallery-item,
+.gallery-image-frame,
+.before-after-image,
+.comparison-image {
+  background-color: transparent !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img,
+.team-card img,
+.team-photo,
+.team-photo img,
+.team-image-frame img,
+.styling-card img,
+.styling-image img,
+.service-image-card img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 360px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+  border-radius: 22px !important;
+}
+
+@media (max-width: 700px) {
+  .gallery-card img,
+  .gallery-item img,
+  .gallery-image-frame img,
+  .before-after-card img,
+  .before-after-image img,
+  .comparison-image img {
+    max-height: 280px !important;
+  }
+}
+
+.gallery-card,
+.gallery-item,
+.gallery-image-frame {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  min-height: unset !important;
+  height: auto !important;
+}
+
+.gallery-grid .gallery-card,
+.gallery-grid .gallery-item {
+  min-height: unset !important;
+  height: auto !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img,
+.team-photo,
+.team-photo img,
+.team-image-frame img,
+.styling-card img,
+.styling-image img,
+.service-image-card img {
+  box-shadow:
+    0 0 0 1px rgba(212, 175, 55, 0.35),
+    0 0 18px rgba(212, 175, 55, 0.18),
+    0 0 42px rgba(247, 215, 116, 0.1),
+    0 18px 42px rgba(0, 0, 0, 0.45) !important;
+}
+
+.gallery-card,
+.gallery-item,
+.before-after-card {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+.gallery-card::before,
+.gallery-item::before,
+.before-after-card::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.55;
+  background:
+    radial-gradient(circle at 20% 10%, rgba(247, 215, 116, 0.45), transparent 28%),
+    radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.3), transparent 32%),
+    radial-gradient(circle at 50% 100%, rgba(247, 215, 116, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(212, 175, 55, 0.22), transparent 45%, rgba(247, 215, 116, 0.18));
+  filter: blur(10px);
+  animation: karolaGoldFlame 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes karolaGoldFlame {
+  0% {
+    opacity: 0.36;
+    transform: scale(0.985);
+    filter: blur(12px);
+  }
+
+  100% {
+    opacity: 0.68;
+    transform: scale(1.015);
+    filter: blur(16px);
+  }
+}
+
+.gallery-card .label,
+.gallery-card .badge,
+.gallery-card .chip,
+.gallery-card .gallery-label,
+.gallery-card .gallery-chip,
+.gallery-item .label,
+.gallery-item .badge,
+.gallery-item .chip,
+.gallery-item .gallery-label,
+.gallery-item .gallery-chip {
+  background: rgba(7, 4, 2, 0.86) !important;
+  color: #fffaf0 !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.42),
+    0 0 14px rgba(212, 175, 55, 0.22) !important;
+  font-weight: 800 !important;
+}
+
+.gallery-card .label *,
+.gallery-card .badge *,
+.gallery-card .chip *,
+.gallery-card .gallery-label *,
+.gallery-card .gallery-chip *,
+.gallery-item .label *,
+.gallery-item .badge *,
+.gallery-item .chip *,
+.gallery-item .gallery-label *,
+.gallery-item .gallery-chip * {
+  color: #fffaf0 !important;
+}
+
+.gallery-grid {
+  gap: 2.2rem !important;
+  align-items: start !important;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid {
+    gap: 1.4rem !important;
+  }
+}
+
 /* ===== Final professional contrast + hero icons + photo presentation ===== */
 :root {
   --karola-dark: #070402;
