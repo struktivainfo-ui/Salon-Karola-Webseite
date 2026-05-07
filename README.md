@@ -66,6 +66,12 @@ Logo-Dateien:
 
 Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwenden.
 
+## WhatsApp-Floating-Button
+
+- Link: `https://wa.me/4970516344`
+- Icon-Datei: `assets/images/logos/whatsapp-original.svg` oder `assets/images/logos/whatsapp-original.png`
+- Falls keine Datei vorhanden ist, zeigt die Website automatisch einen runden `WA`-Fallback.
+
 ## Hinweise
 
 - Die Website verwendet UTF-8 und deutsche Umlaute in sichtbaren Texten.
