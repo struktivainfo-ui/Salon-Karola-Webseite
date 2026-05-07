@@ -2288,6 +2288,115 @@ p {
   }
 }
 
+/* Salon insights hard final override (must stay at end) */
+#galerie .salon-insights-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(160px, 220px)) !important;
+  gap: clamp(18px, 2.2vw, 30px) !important;
+  justify-content: center !important;
+  align-items: start !important;
+  margin-top: 24px !important;
+}
+
+#galerie .salon-insight-circle,
+#galerie .salon-insights-grid .gallery-card,
+#galerie .salon-insights-grid .image-card {
+  width: clamp(145px, 16vw, 220px) !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  position: relative !important;
+  margin: 0 auto !important;
+  background: #030201 !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  padding: 0 !important;
+  min-height: auto !important;
+  max-height: none !important;
+  box-shadow:
+    0 0 0 1px rgba(247, 215, 116, 0.10),
+    0 0 24px rgba(212, 175, 55, 0.20),
+    0 16px 38px rgba(0, 0, 0, 0.55) !important;
+}
+
+#galerie .salon-insight-circle img,
+#galerie .salon-insights-grid .gallery-card img,
+#galerie .salon-insights-grid .image-card img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  display: block !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* label cleanup only in salon-insights circle area */
+#galerie .salon-insights-grid .gallery-chip,
+#galerie .salon-insights-grid .gallery-label,
+#galerie .salon-insights-grid .image-label,
+#galerie .salon-insights-grid .salon-label,
+#galerie .salon-insights-grid .insight-label,
+#galerie .salon-insights-grid .card-label,
+#galerie .salon-insights-grid .badge,
+#galerie .salon-insights-grid .tag {
+  display: none !important;
+}
+
+/* motif tuning */
+#galerie .salon-insights-grid .gallery-photo--schnitt,
+#galerie .salon-insights-grid img[alt*="Schnitt"],
+#galerie .salon-insights-grid img[src*="styling-1"] {
+  object-position: center 70% !important;
+}
+
+#galerie .salon-insights-grid .gallery-photo--beratung,
+#galerie .salon-insights-grid .gallery-photo--farbe,
+#galerie .salon-insights-grid .gallery-photo--styling-2,
+#galerie .salon-insights-grid .gallery-photo--styling-3,
+#galerie .salon-insights-grid .gallery-photo--styling-4,
+#galerie .salon-insights-grid .gallery-photo--styling-5 {
+  object-position: center center !important;
+}
+
+/* subtle sparkle only */
+#galerie .salon-insight-circle::after,
+#galerie .salon-insights-grid .gallery-card::after,
+#galerie .salon-insights-grid .image-card::after {
+  content: "✦" !important;
+  position: absolute !important;
+  top: 10px !important;
+  right: 14px !important;
+  color: rgba(247, 215, 116, 0.85) !important;
+  font-size: 13px !important;
+  text-shadow: 0 0 10px rgba(247, 215, 116, 0.75) !important;
+  pointer-events: none !important;
+}
+
+@media (max-width: 1000px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(150px, 210px)) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(130px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  #galerie .salon-insight-circle,
+  #galerie .salon-insights-grid .gallery-card,
+  #galerie .salon-insights-grid .image-card {
+    width: min(42vw, 170px) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
 .premium-splash {
   position: fixed;
   inset: 0;
