@@ -281,8 +281,6 @@ body.menu-open {
 .site-header,
 main,
 footer,
-.whatsapp-float,
-.back-to-top,
 .mobile-cta {
   position: relative;
   z-index: 10;
@@ -2256,104 +2254,6 @@ ul {
   color: var(--color-blue-dark);
 }
 
-.back-to-top {
-  position: fixed;
-  right: 1rem;
-  bottom: 6.4rem;
-  z-index: 24;
-  width: 48px;
-  height: 48px;
-  border: 0;
-  border-radius: 50%;
-  background: var(--text);
-  color: #fff;
-  font-size: 1.15rem;
-  box-shadow: 0 16px 30px rgba(38, 23, 15, 0.18);
-  opacity: 0;
-  pointer-events: none;
-  transform: translateY(12px);
-  transition:
-    opacity var(--transition),
-    transform var(--transition);
-  cursor: pointer;
-}
-
-.whatsapp-float {
-  position: fixed;
-  right: 22px;
-  bottom: 22px;
-  width: 58px;
-  height: 58px;
-  border-radius: 999px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  background: #25d366;
-  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
-  border: 2px solid rgba(255, 255, 255, 0.9);
-  transition: transform 180ms ease, box-shadow 180ms ease;
-}
-
-.whatsapp-float:hover,
-.whatsapp-float:focus-visible {
-  transform: translateY(-3px) scale(1.04);
-  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.34);
-}
-
-.whatsapp-float-icon {
-  width: 34px;
-  height: 34px;
-  object-fit: contain;
-  display: block;
-}
-
-.whatsapp-float-fallback {
-  color: #fff;
-  font-size: 0.92rem;
-  font-weight: 800;
-  letter-spacing: 0.04em;
-}
-
-.whatsapp-float::after {
-  content: "";
-  position: absolute;
-  inset: -5px;
-  border-radius: inherit;
-  border: 1px solid rgba(37, 211, 102, 0.35);
-  animation: whatsappPulse 2.4s ease-out infinite;
-}
-
-@keyframes whatsappPulse {
-  0% {
-    transform: scale(0.9);
-    opacity: 0.6;
-  }
-  70% {
-    transform: scale(1.22);
-    opacity: 0;
-  }
-  100% {
-    transform: scale(1.22);
-    opacity: 0;
-  }
-}
-
-@media (max-width: 959px) {
-  .whatsapp-float {
-    bottom: 86px;
-  }
-
-  .back-to-top {
-    bottom: 152px;
-  }
-}
-
-.back-to-top.is-visible {
-  opacity: 1;
-  pointer-events: auto;
-  transform: translateY(0);
-}
 
 .reveal {
   opacity: 0;
@@ -2600,9 +2500,6 @@ ul {
     display: none;
   }
 
-  .back-to-top {
-    bottom: 92px;
-  }
 }
 
 @media (max-width: 700px) {
@@ -2632,22 +2529,6 @@ ul {
 
   .hero-image {
     max-height: 270px;
-  }
-
-  .whatsapp-float {
-    right: 16px;
-    bottom: 86px;
-    width: 52px;
-    height: 52px;
-  }
-
-  .whatsapp-float-icon {
-    width: 30px;
-    height: 30px;
-  }
-
-  .back-to-top {
-    bottom: 152px;
   }
 
   .lotto-card {
@@ -2839,12 +2720,6 @@ ul {
 
   .splash-screen {
     transition-duration: 150ms;
-  }
-
-  .whatsapp-float,
-  .whatsapp-float::after {
-    animation: none;
-    transition: none;
   }
 
   .gold-dust-layer::before,
@@ -3087,20 +2962,6 @@ a[href*="wa.me"] * {
 .gold-line,
 .gold-divider {
   background: linear-gradient(135deg, #7a5111 0%, #d4af37 40%, #f7d774 60%, #b8860b 100%);
-}
-
-.back-to-top {
-  background: linear-gradient(135deg, #1b120d, #050403);
-  color: #f7d774 !important;
-  border: 2px solid rgba(212, 175, 55, 0.85);
-  z-index: 9999;
-}
-
-.back-to-top *,
-.back-to-top svg,
-.back-to-top path {
-  color: #f7d774 !important;
-  stroke: #f7d774 !important;
 }
 
 .gold-dust-layer {
@@ -3562,9 +3423,7 @@ a[href*="wa.me"].is-green * {
 
 .site-header,
 main,
-footer,
-.whatsapp-float,
-.back-to-top {
+footer {
   position: relative;
   z-index: 2;
 }
@@ -3589,4 +3448,404 @@ footer,
 .light-card {
   position: relative;
   z-index: 3;
+}
+
+/* ===== FINALER FARBFIX (VEREINFACHT) ===== */
+:root {
+  --dark: #070402;
+  --dark-soft: #120c08;
+  --brown: #1b120d;
+  --brown-soft: #2a1a11;
+  --cream: #fffaf0;
+  --cream-soft: #f4ead8;
+  --gold: #d4af37;
+  --gold-light: #f7d774;
+  --gold-dark: #8a6116;
+  --muted-dark: #5e4b3c;
+  --muted-light: #d9cdb8;
+}
+
+body {
+  background: var(--dark) !important;
+  color: var(--cream) !important;
+}
+
+.section-dark,
+.premium-section,
+.hero-section,
+.gallery-section,
+.contact-section,
+.social-section,
+.footer,
+.site-footer {
+  background: var(--dark) !important;
+  color: var(--cream) !important;
+}
+
+.section-dark h1,
+.section-dark h2,
+.section-dark h3,
+.premium-section h1,
+.premium-section h2,
+.premium-section h3,
+.hero-section h1,
+.hero-section h2,
+.hero-section h3,
+.gallery-section h1,
+.gallery-section h2,
+.gallery-section h3,
+.contact-section h1,
+.contact-section h2,
+.contact-section h3,
+.social-section h1,
+.social-section h2,
+.social-section h3,
+.site-footer h1,
+.site-footer h2,
+.site-footer h3 {
+  color: var(--cream) !important;
+}
+
+.section-dark p,
+.premium-section p,
+.hero-section p,
+.gallery-section p,
+.contact-section p,
+.social-section p,
+.site-footer p {
+  color: var(--muted-light) !important;
+}
+
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.mobile-service-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.light-card,
+.social-card,
+.card,
+.panel,
+.box {
+  background: var(--cream) !important;
+  color: var(--brown) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+}
+
+.service-card *,
+.team-card *,
+.gallery-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.before-after-card *,
+.mobile-service-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.light-card *,
+.social-card *,
+.card *,
+.panel *,
+.box * {
+  color: inherit !important;
+}
+
+.service-card h1,
+.service-card h2,
+.service-card h3,
+.team-card h1,
+.team-card h2,
+.team-card h3,
+.gallery-card h1,
+.gallery-card h2,
+.gallery-card h3,
+.product-card h1,
+.product-card h2,
+.product-card h3,
+.brand-card h1,
+.brand-card h2,
+.brand-card h3,
+.review-card h1,
+.review-card h2,
+.review-card h3,
+.contact-card h1,
+.contact-card h2,
+.contact-card h3,
+.info-card h1,
+.info-card h2,
+.info-card h3,
+.trust-card h1,
+.trust-card h2,
+.trust-card h3,
+.before-after-card h1,
+.before-after-card h2,
+.before-after-card h3,
+.mobile-service-card h1,
+.mobile-service-card h2,
+.mobile-service-card h3,
+.lotto-card h1,
+.lotto-card h2,
+.lotto-card h3,
+.welcome-card h1,
+.welcome-card h2,
+.welcome-card h3,
+.opening-card h1,
+.opening-card h2,
+.opening-card h3,
+.hours-card h1,
+.hours-card h2,
+.hours-card h3,
+.highlight-card h1,
+.highlight-card h2,
+.highlight-card h3,
+.feature-card h1,
+.feature-card h2,
+.feature-card h3,
+.light-card h1,
+.light-card h2,
+.light-card h3,
+.card h1,
+.card h2,
+.card h3,
+.panel h1,
+.panel h2,
+.panel h3,
+.box h1,
+.box h2,
+.box h3 {
+  color: var(--brown) !important;
+}
+
+.service-card p,
+.service-card li,
+.team-card p,
+.team-card li,
+.gallery-card p,
+.gallery-card li,
+.product-card p,
+.product-card li,
+.brand-card p,
+.brand-card li,
+.review-card p,
+.review-card li,
+.contact-card p,
+.contact-card li,
+.info-card p,
+.info-card li,
+.trust-card p,
+.trust-card li,
+.before-after-card p,
+.before-after-card li,
+.mobile-service-card p,
+.mobile-service-card li,
+.lotto-card p,
+.lotto-card li,
+.welcome-card p,
+.welcome-card li,
+.opening-card p,
+.opening-card li,
+.hours-card p,
+.hours-card li,
+.highlight-card p,
+.highlight-card li,
+.feature-card p,
+.feature-card li,
+.light-card p,
+.light-card li,
+.card p,
+.card li,
+.panel p,
+.panel li,
+.box p,
+.box li {
+  color: var(--brown-soft) !important;
+}
+
+.eyebrow,
+.section-eyebrow,
+.card-eyebrow,
+.label,
+.badge,
+.chip {
+  color: var(--gold-dark) !important;
+}
+
+.chip,
+.badge {
+  background: #fff1b8 !important;
+  border: 1px solid rgba(212, 175, 55, 0.65) !important;
+  color: var(--brown) !important;
+}
+
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  background: var(--cream) !important;
+  color: var(--brown) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+.btn *,
+.button *,
+.cta-button *,
+.contact-button *,
+.contact-link *,
+.contact-actions a *,
+.contact-actions button * {
+  color: inherit !important;
+}
+
+.btn-primary,
+.button-primary,
+.cta-primary,
+.hero .btn:first-child,
+.hero-section .btn:first-child {
+  background: linear-gradient(135deg, var(--brown), var(--dark)) !important;
+  color: var(--cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+}
+
+.btn-primary *,
+.button-primary *,
+.cta-primary *,
+.hero .btn:first-child *,
+.hero-section .btn:first-child * {
+  color: var(--cream) !important;
+}
+
+.btn:hover,
+.button:hover,
+.cta-button:hover,
+.contact-button:hover,
+.contact-link:hover,
+.contact-actions a:hover,
+.contact-actions button:hover {
+  background: var(--gold-light) !important;
+  color: var(--brown) !important;
+  border-color: var(--gold) !important;
+}
+
+.products-section,
+.brands-section {
+  background: var(--cream) !important;
+  color: var(--brown) !important;
+}
+
+.products-section h1,
+.products-section h2,
+.products-section h3,
+.brands-section h1,
+.brands-section h2,
+.brands-section h3 {
+  color: var(--brown) !important;
+}
+
+.products-section p,
+.products-section span,
+.products-section li,
+.brands-section p,
+.brands-section span,
+.brands-section li {
+  color: var(--brown-soft) !important;
+}
+
+.products-section .eyebrow,
+.brands-section .eyebrow {
+  color: var(--gold-dark) !important;
+}
+
+.contact-card,
+.opening-card,
+.hours-card {
+  background: var(--cream) !important;
+  color: var(--brown) !important;
+}
+
+.contact-card *,
+.opening-card *,
+.hours-card * {
+  color: inherit !important;
+}
+
+.opening-card strong,
+.hours-card strong,
+.time-value,
+.hours-time {
+  color: var(--gold-dark) !important;
+  font-weight: 900 !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+.gallery-image-frame,
+.before-after-image,
+.comparison-image {
+  overflow: hidden !important;
+  background: var(--cream-soft) !important;
+}
+
+.social-logo-link {
+  width: 72px;
+  height: 72px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  overflow: hidden;
+}
+
+.social-logo-link img {
+  width: 38px;
+  height: 38px;
+  object-fit: contain !important;
+  display: block;
+}
+
+.gold-dust-layer {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 2;
 }

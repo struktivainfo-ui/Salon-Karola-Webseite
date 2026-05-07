@@ -1,7 +1,6 @@
 ﻿const menuToggle = document.querySelector(".menu-toggle");
 const siteNav = document.querySelector(".site-nav");
 const navLinks = document.querySelectorAll(".site-nav a");
-const backToTopButton = document.querySelector(".back-to-top");
 const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const managedImages = document.querySelectorAll("img[data-fallback-target]");
@@ -56,18 +55,6 @@ if (menuToggle && siteNav) {
 
   window.addEventListener("resize", () => {
     if (window.innerWidth >= 960) closeMenu();
-  });
-}
-
-if (backToTopButton) {
-  const toggleBackToTop = () => {
-    backToTopButton.classList.toggle("is-visible", window.scrollY > 480);
-  };
-
-  toggleBackToTop();
-  window.addEventListener("scroll", toggleBackToTop, { passive: true });
-  backToTopButton.addEventListener("click", () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
   });
 }
 
