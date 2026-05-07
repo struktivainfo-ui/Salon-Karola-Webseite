@@ -538,6 +538,453 @@ footer {
   }
 }
 
+/* ===== FINAL THEME SWITCH: BLACK / GOLD / WHITE ===== */
+:root {
+  --black: #030201;
+  --black-soft: #080604;
+  --black-card: #0f0b07;
+  --white: #ffffff;
+  --white-soft: #f7f2e8;
+  --white-muted: #d8cfc0;
+  --gold: #d4af37;
+  --gold-light: #f7d774;
+  --gold-soft: rgba(212, 175, 55, 0.22);
+  --gold-border: rgba(212, 175, 55, 0.55);
+  --gold-dark: #8a6116;
+}
+
+html,
+body {
+  background: var(--black) !important;
+  color: var(--white-soft) !important;
+}
+
+main,
+section,
+.site-section {
+  background: transparent !important;
+  color: var(--white-soft) !important;
+}
+
+.card,
+.panel,
+.box,
+.light-card,
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.social-card,
+.home-visit-note {
+  background: linear-gradient(180deg, rgba(15, 11, 7, 0.96), rgba(5, 3, 2, 0.98)) !important;
+  color: var(--white-soft) !important;
+  border: 1px solid var(--gold-border) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 24px rgba(212, 175, 55, 0.08) !important;
+}
+
+.card *,
+.panel *,
+.box *,
+.light-card *,
+.service-card *,
+.team-card *,
+.gallery-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.before-after-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.social-card *,
+.home-visit-note * {
+  color: inherit !important;
+}
+
+h1,
+h2,
+h3,
+.section-title,
+.card-title {
+  color: var(--white) !important;
+}
+
+p,
+li,
+.section-text,
+.section-lead,
+.card-text {
+  color: var(--white-muted) !important;
+}
+
+strong,
+b {
+  color: var(--white-soft) !important;
+}
+
+.eyebrow,
+.section-eyebrow,
+.card-eyebrow,
+.label,
+.badge,
+.chip,
+.gold-label {
+  color: var(--gold-light) !important;
+}
+
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.06)) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--gold-border) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35), inset 0 0 0 1px rgba(255, 255, 255, 0.03) !important;
+}
+
+.btn *,
+.button *,
+.cta-button *,
+.contact-button *,
+.contact-link *,
+.contact-actions a *,
+.contact-actions button * {
+  color: var(--white) !important;
+}
+
+.btn:hover,
+.button:hover,
+.cta-button:hover,
+.contact-button:hover,
+.contact-link:hover,
+.contact-actions a:hover,
+.contact-actions button:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--black) !important;
+  border-color: var(--gold-light) !important;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.45), 0 0 22px rgba(212, 175, 55, 0.26) !important;
+}
+
+.btn:hover *,
+.button:hover *,
+.cta-button:hover *,
+.contact-button:hover *,
+.contact-link:hover *,
+.contact-actions a:hover *,
+.contact-actions button:hover * {
+  color: var(--black) !important;
+}
+
+.btn-primary,
+.button-primary,
+.cta-primary,
+.hero .btn-primary,
+.hero-section .btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--black) !important;
+  border: 1px solid var(--gold-light) !important;
+}
+
+.btn-primary *,
+.button-primary *,
+.cta-primary *,
+.hero .btn-primary *,
+.hero-section .btn-primary * {
+  color: var(--black) !important;
+}
+
+.site-header,
+.header,
+.navbar,
+.hero,
+.hero-section {
+  background: linear-gradient(180deg, rgba(3, 2, 1, 0.96), rgba(8, 6, 4, 0.92)) !important;
+  color: var(--white) !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
+}
+
+.site-header *,
+.header *,
+.navbar *,
+.hero *,
+.hero-section * {
+  color: inherit;
+}
+
+.hero h1,
+.hero-section h1 {
+  color: var(--white) !important;
+  text-shadow: 0 0 18px rgba(212, 175, 55, 0.1), 0 10px 30px rgba(0, 0, 0, 0.55);
+}
+
+.hero p,
+.hero-section p {
+  color: var(--white-muted) !important;
+}
+
+.hero-contact-pill {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 0.55rem !important;
+  padding: 0.48rem 0.78rem !important;
+  border-radius: 999px !important;
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(212, 175, 55, 0.48) !important;
+  color: var(--white) !important;
+  text-decoration: none !important;
+  font-weight: 800 !important;
+}
+
+.hero-contact-pill span {
+  color: var(--white) !important;
+}
+
+.hero-contact-icon {
+  width: 24px !important;
+  height: 24px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--gold) !important;
+  color: var(--black) !important;
+  flex: 0 0 auto !important;
+}
+
+.hero-contact-icon img {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain !important;
+}
+
+.gallery-card,
+.gallery-item,
+.gallery-image-frame,
+.gallery-photo,
+.image-card,
+.photo-card,
+.before-after-image,
+.comparison-image,
+.team-photo,
+.team-image-frame,
+.styling-card,
+.styling-image,
+.service-image-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img,
+.team-photo img,
+.team-image-frame img,
+.styling-card img,
+.styling-image img,
+.service-image-card img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 360px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+  border-radius: 22px !important;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 0 18px rgba(212, 175, 55, 0.18), 0 0 42px rgba(247, 215, 116, 0.1), 0 18px 42px rgba(0, 0, 0, 0.45) !important;
+}
+
+@media (max-width: 700px) {
+  .gallery-card img,
+  .gallery-item img,
+  .gallery-image-frame img,
+  .before-after-card img,
+  .before-after-image img,
+  .comparison-image img {
+    max-height: 280px !important;
+  }
+}
+
+.gallery-card,
+.gallery-item,
+.before-after-card,
+.team-card {
+  position: relative !important;
+  isolation: isolate !important;
+}
+
+.gallery-card::before,
+.gallery-item::before,
+.before-after-card::before,
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 28px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.48;
+  background: radial-gradient(circle at 20% 10%, rgba(247, 215, 116, 0.42), transparent 28%), radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.26), transparent 32%), radial-gradient(circle at 50% 100%, rgba(247, 215, 116, 0.18), transparent 34%), linear-gradient(135deg, rgba(212, 175, 55, 0.18), transparent 45%, rgba(247, 215, 116, 0.14));
+  filter: blur(12px);
+  animation: karolaGoldFlame 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes karolaGoldFlame {
+  0% {
+    opacity: 0.32;
+    transform: scale(0.985);
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 0.62;
+    transform: scale(1.015);
+    filter: blur(16px);
+  }
+}
+
+.gallery-card .label,
+.gallery-card .badge,
+.gallery-card .chip,
+.gallery-card .gallery-label,
+.gallery-item .label,
+.gallery-item .badge,
+.gallery-item .chip,
+.gallery-item .gallery-label {
+  background: rgba(3, 2, 1, 0.86) !important;
+  color: var(--white) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.42), 0 0 14px rgba(212, 175, 55, 0.22) !important;
+  font-weight: 800 !important;
+}
+
+.gallery-card .label *,
+.gallery-card .badge *,
+.gallery-card .chip *,
+.gallery-card .gallery-label *,
+.gallery-item .label *,
+.gallery-item .badge *,
+.gallery-item .chip *,
+.gallery-item .gallery-label * {
+  color: var(--white) !important;
+}
+
+.products-section,
+.brands-section {
+  background: transparent !important;
+  color: var(--white-soft) !important;
+}
+
+.products-section *,
+.brands-section * {
+  color: inherit !important;
+}
+
+.products-section h1,
+.products-section h2,
+.products-section h3,
+.brands-section h1,
+.brands-section h2,
+.brands-section h3 {
+  color: var(--white) !important;
+}
+
+.products-section p,
+.brands-section p {
+  color: var(--white-muted) !important;
+}
+
+.contact-card,
+.opening-card,
+.hours-card {
+  background: linear-gradient(180deg, rgba(15, 11, 7, 0.96), rgba(5, 3, 2, 0.98)) !important;
+  color: var(--white-soft) !important;
+  border: 1px solid var(--gold-border) !important;
+}
+
+.contact-card *,
+.opening-card *,
+.hours-card * {
+  color: inherit !important;
+}
+
+.opening-card strong,
+.hours-card strong,
+.time-value,
+.hours-time {
+  color: var(--gold-light) !important;
+  font-weight: 900 !important;
+}
+
+.social-logo-link {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.24), rgba(3, 2, 1, 0.95)) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 18px rgba(212, 175, 55, 0.18) !important;
+}
+
+.social-logo-link img {
+  width: 38px !important;
+  height: 38px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.gold-dust-layer,
+.gold-dust,
+.dust-layer,
+.particles,
+.sparkles {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+main,
+header,
+footer,
+section {
+  position: relative;
+  z-index: 2;
+}
+
+*[style*="#fffaf0"],
+*[style*="#f4ead8"] {
+  background: var(--black-card) !important;
+  color: var(--white-soft) !important;
+}
+
 /* ===== Final professional contrast + hero icons + photo presentation ===== */
 :root {
   --karola-dark: #070402;
