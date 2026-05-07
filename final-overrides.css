@@ -1281,3 +1281,388 @@ button *,
 .gallery-item .gallery-chip * {
   color: var(--karola-cream) !important;
 }
+
+/* ===== ULTIMATE FINAL ENFORCER (loaded last) ===== */
+:root {
+  --black: #030201;
+  --black-soft: #080604;
+  --black-card: #0f0b07;
+  --white: #ffffff;
+  --white-soft: #f7f2e8;
+  --white-muted: #d8cfc0;
+  --gold: #d4af37;
+  --gold-light: #f7d774;
+  --gold-border: rgba(212, 175, 55, 0.55);
+}
+
+html,
+body {
+  background: var(--black) !important;
+  color: var(--white-soft) !important;
+}
+
+main,
+section,
+.site-section {
+  background: transparent !important;
+  color: var(--white-soft) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+.section-title,
+.card-title {
+  color: var(--white) !important;
+}
+
+p,
+li,
+.section-text,
+.section-lead,
+.card-text {
+  color: var(--white-muted) !important;
+}
+
+strong,
+b {
+  color: var(--white-soft) !important;
+}
+
+.eyebrow,
+.section-eyebrow,
+.card-eyebrow,
+.label,
+.badge,
+.chip,
+.gold-label {
+  color: var(--gold-light) !important;
+}
+
+.card,
+.panel,
+.box,
+.light-card,
+.service-card,
+.team-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.social-card,
+.before-after-card,
+.home-visit-note {
+  background: linear-gradient(180deg, rgba(15, 11, 7, 0.96), rgba(5, 3, 2, 0.98)) !important;
+  color: var(--white-soft) !important;
+  border: 1px solid var(--gold-border) !important;
+  box-shadow: 0 18px 44px rgba(0, 0, 0, 0.45), 0 0 24px rgba(212, 175, 55, 0.08) !important;
+}
+
+.card *,
+.panel *,
+.box *,
+.light-card *,
+.service-card *,
+.team-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.social-card *,
+.before-after-card *,
+.home-visit-note * {
+  color: inherit !important;
+}
+
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.18), rgba(212, 175, 55, 0.06)) !important;
+  color: var(--white) !important;
+  border: 1px solid var(--gold-border) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+.btn *,
+.button *,
+.cta-button *,
+.contact-button *,
+.contact-link *,
+.contact-actions a *,
+.contact-actions button * {
+  color: var(--white) !important;
+}
+
+.btn:hover,
+.button:hover,
+.cta-button:hover,
+.contact-button:hover,
+.contact-link:hover,
+.contact-actions a:hover,
+.contact-actions button:hover {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--black) !important;
+}
+
+.btn:hover *,
+.button:hover *,
+.cta-button:hover *,
+.contact-button:hover *,
+.contact-link:hover *,
+.contact-actions a:hover *,
+.contact-actions button:hover * {
+  color: var(--black) !important;
+}
+
+.btn-primary,
+.button-primary,
+.cta-primary,
+.hero .btn-primary,
+.hero-section .btn-primary {
+  background: linear-gradient(135deg, var(--gold), var(--gold-light)) !important;
+  color: var(--black) !important;
+  border: 1px solid var(--gold-light) !important;
+}
+
+.btn-primary *,
+.button-primary *,
+.cta-primary *,
+.hero .btn-primary *,
+.hero-section .btn-primary * {
+  color: var(--black) !important;
+}
+
+.hero-contact-pill {
+  background: rgba(255, 255, 255, 0.06) !important;
+  border: 1px solid rgba(212, 175, 55, 0.48) !important;
+  color: var(--white) !important;
+}
+
+.hero-contact-pill span {
+  color: var(--white) !important;
+}
+
+.hero-contact-icon {
+  background: var(--gold) !important;
+  color: var(--black) !important;
+}
+
+.hero-contact-icon img {
+  width: 18px !important;
+  height: 18px !important;
+  object-fit: contain !important;
+}
+
+.products-section,
+.brands-section {
+  background: transparent !important;
+  color: var(--white-soft) !important;
+}
+
+.products-section *,
+.brands-section * {
+  color: inherit !important;
+}
+
+.products-section h1,
+.products-section h2,
+.products-section h3,
+.brands-section h1,
+.brands-section h2,
+.brands-section h3 {
+  color: var(--white) !important;
+}
+
+.products-section p,
+.brands-section p {
+  color: var(--white-muted) !important;
+}
+
+.gallery-card,
+.gallery-item,
+.gallery-image-frame,
+.gallery-photo,
+.image-card,
+.photo-card,
+.before-after-image,
+.comparison-image,
+.team-photo,
+.team-image-frame,
+.styling-card,
+.styling-image,
+.service-image-card {
+  background: transparent !important;
+  background-color: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: visible !important;
+  padding: 0 !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img,
+.team-card img,
+.team-photo img,
+.team-image-frame img,
+.styling-card img,
+.styling-image img,
+.service-image-card img {
+  width: 100% !important;
+  height: auto !important;
+  max-height: 380px !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+  border-radius: 22px !important;
+  box-shadow: 0 0 0 1px rgba(212, 175, 55, 0.35), 0 0 22px rgba(212, 175, 55, 0.22), 0 0 52px rgba(247, 215, 116, 0.13), 0 18px 46px rgba(0, 0, 0, 0.55) !important;
+}
+
+@media (max-width: 700px) {
+  .gallery-card img,
+  .gallery-item img,
+  .gallery-image-frame img,
+  .before-after-card img,
+  .before-after-image img,
+  .comparison-image img,
+  .team-card img,
+  .team-photo img,
+  .team-image-frame img {
+    max-height: 280px !important;
+  }
+}
+
+.gallery-card,
+.gallery-item,
+.before-after-card,
+.team-card {
+  position: relative !important;
+  isolation: isolate !important;
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.gallery-card::before,
+.gallery-item::before,
+.before-after-card::before,
+.team-card::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  border-radius: 30px;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.55;
+  background: radial-gradient(circle at 20% 10%, rgba(247, 215, 116, 0.45), transparent 28%), radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.3), transparent 32%), radial-gradient(circle at 50% 100%, rgba(247, 215, 116, 0.22), transparent 34%), linear-gradient(135deg, rgba(212, 175, 55, 0.22), transparent 45%, rgba(247, 215, 116, 0.18));
+  filter: blur(12px);
+  animation: karolaGoldFlame 5.5s ease-in-out infinite alternate;
+}
+
+@keyframes karolaGoldFlame {
+  0% {
+    opacity: 0.34;
+    transform: scale(0.985);
+    filter: blur(12px);
+  }
+  100% {
+    opacity: 0.68;
+    transform: scale(1.015);
+    filter: blur(16px);
+  }
+}
+
+.gallery-card .label,
+.gallery-card .badge,
+.gallery-card .chip,
+.gallery-card .gallery-label,
+.gallery-item .label,
+.gallery-item .badge,
+.gallery-item .chip,
+.gallery-item .gallery-label {
+  background: rgba(3, 2, 1, 0.86) !important;
+  color: var(--white) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.42), 0 0 14px rgba(212, 175, 55, 0.22) !important;
+  font-weight: 800 !important;
+}
+
+.gallery-card .label *,
+.gallery-card .badge *,
+.gallery-card .chip *,
+.gallery-card .gallery-label *,
+.gallery-item .label *,
+.gallery-item .badge *,
+.gallery-item .chip *,
+.gallery-item .gallery-label * {
+  color: var(--white) !important;
+}
+
+.social-logo-link {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.24), rgba(3, 2, 1, 0.95)) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 18px rgba(212, 175, 55, 0.18) !important;
+}
+
+.social-logo-link img {
+  width: 38px !important;
+  height: 38px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+.gold-dust-layer,
+.gold-dust,
+.dust-layer,
+.particles,
+.sparkles {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+main,
+header,
+footer,
+section {
+  position: relative;
+  z-index: 2;
+}
+
+*[style*="#fffaf0"],
+*[style*="#f4ead8"] {
+  background: var(--black-card) !important;
+  color: var(--white-soft) !important;
+}
