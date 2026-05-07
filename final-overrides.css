@@ -253,3 +253,83 @@ footer {
   position: relative;
   z-index: 2;
 }
+
+/* ===== Galerie: vollständig sichtbar + helle Labels ===== */
+.gallery-card,
+.gallery-item,
+.gallery-image-frame {
+  background: linear-gradient(180deg, #120c08, #070402) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+.gallery-image-frame,
+.gallery-card {
+  min-height: 280px;
+}
+
+@media (max-width: 700px) {
+  .gallery-image-frame,
+  .gallery-card {
+    min-height: 220px;
+  }
+}
+
+.gallery-card .label,
+.gallery-card .badge,
+.gallery-card .chip,
+.gallery-card .gallery-label,
+.gallery-card .gallery-chip,
+.gallery-item .label,
+.gallery-item .badge,
+.gallery-item .chip,
+.gallery-item .gallery-label,
+.gallery-item .gallery-chip {
+  background: rgba(7, 4, 2, 0.82) !important;
+  color: #fffaf0 !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35), 0 0 12px rgba(212, 175, 55, 0.18) !important;
+  font-weight: 800 !important;
+}
+
+.gallery-card .label *,
+.gallery-card .badge *,
+.gallery-card .chip *,
+.gallery-card .gallery-label *,
+.gallery-card .gallery-chip *,
+.gallery-item .label *,
+.gallery-item .badge *,
+.gallery-item .chip *,
+.gallery-item .gallery-label *,
+.gallery-item .gallery-chip * {
+  color: #fffaf0 !important;
+}
+
+.label,
+.badge,
+.chip,
+.card-label,
+.gallery-label {
+  font-weight: 800 !important;
+}
+
+.label.on-dark,
+.badge.on-dark,
+.chip.on-dark,
+.card-label.on-dark,
+.gallery-label.on-dark {
+  background: rgba(7, 4, 2, 0.82) !important;
+  color: #fffaf0 !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+}
