@@ -88,6 +88,30 @@ body.menu-open {
   overflow: hidden;
 }
 
+.gold-dust {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle, rgba(247, 215, 116, 0.7) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(212, 175, 55, 0.42) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 241, 184, 0.48) 0 0.8px, transparent 1.4px);
+  background-size: 180px 180px, 260px 260px, 340px 340px;
+  background-position: 12px 24px, 80px 120px, 140px 60px;
+  animation: goldDustMove 26s linear infinite;
+}
+
+@keyframes goldDustMove {
+  0% {
+    background-position: 12px 24px, 80px 120px, 140px 60px;
+  }
+  100% {
+    background-position: 80px 120px, 20px 40px, 200px 180px;
+  }
+}
+
 .splash-screen {
   position: fixed;
   inset: 0;
@@ -161,6 +185,16 @@ body.menu-open {
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
+}
+
+.site-header,
+main,
+footer,
+.whatsapp-float,
+.back-to-top,
+.mobile-cta {
+  position: relative;
+  z-index: 2;
 }
 
 img {
@@ -252,6 +286,18 @@ p {
   margin: 0;
   color: var(--text-soft);
   font-size: 1rem;
+}
+
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.review-card,
+.contact-card,
+.before-after-card,
+.info-card,
+.trust-card {
+  color: var(--color-text-dark);
 }
 
 ul {
@@ -786,7 +832,17 @@ ul {
 .section-angled .review-card p,
 .section-angled .review-cta h3,
 .section-angled .review-cta p {
-  color: var(--color-text);
+  color: var(--color-text-dark);
+}
+
+.section-angled .service-card,
+.section-angled .team-card,
+.section-angled .contact-card,
+.section-angled .product-card,
+.section-angled .gallery-card,
+.section-angled .review-card,
+.section-angled .before-after-card {
+  color: #1b120d;
 }
 
 .section-image {
@@ -1008,6 +1064,24 @@ ul {
   box-shadow: var(--shadow-dark);
 }
 
+.service-card h2,
+.service-card h3,
+.service-card .card-title,
+.service-card .service-title {
+  color: #1b120d;
+}
+
+.service-card p,
+.service-card li,
+.service-card .service-text {
+  color: #2a1a11;
+}
+
+.service-card .muted,
+.service-card .service-description {
+  color: #5e4b3c;
+}
+
 .gold-divider,
 .gold-line {
   width: min(180px, 40vw);
@@ -1074,6 +1148,15 @@ ul {
   background: rgba(255, 241, 184, 0.78);
   color: var(--color-text-dark);
   font-size: 0.72rem;
+  font-weight: 700;
+}
+
+.chip,
+.badge,
+.service-chip {
+  background: #fff1b8;
+  color: #1b120d;
+  border: 1px solid rgba(212, 175, 55, 0.65);
   font-weight: 700;
 }
 
@@ -1337,7 +1420,7 @@ ul {
 .before-after-card {
   border: 1px solid var(--line);
   border-radius: var(--radius);
-  background: linear-gradient(180deg, rgba(10, 7, 5, 0.95), rgba(29, 19, 12, 0.94));
+  background: linear-gradient(180deg, #fffaf0, #f4ead8);
   backdrop-filter: blur(16px);
   box-shadow: var(--shadow);
   padding: var(--card-padding-small);
@@ -1346,7 +1429,7 @@ ul {
 }
 
 .before-after-card > p {
-  color: #fff;
+  color: #1b120d;
   font-weight: 700;
   font-size: 0.92rem;
 }
@@ -1365,7 +1448,7 @@ ul {
 
 .before-after-note {
   font-weight: 500;
-  color: #e4ebf6;
+  color: #5e4b3c;
   font-size: 0.95rem;
 }
 
@@ -1601,7 +1684,7 @@ ul {
   height: 1.4rem;
   border-radius: 999px;
   border: 1px solid rgba(212, 175, 55, 0.3);
-  background: rgba(220, 234, 247, 0.9);
+  background: rgba(255, 241, 184, 0.6);
   color: var(--color-gold-dark);
   font-size: 0.8rem;
 }
@@ -2296,5 +2379,9 @@ ul {
   .whatsapp-float::after {
     animation: none;
     transition: none;
+  }
+
+  .gold-dust {
+    animation: none;
   }
 }
