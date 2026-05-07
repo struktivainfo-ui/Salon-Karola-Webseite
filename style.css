@@ -2715,3 +2715,257 @@ ul {
     animation: none;
   }
 }
+
+/* === FINAL CONTRAST OVERRIDES (Hardening) === */
+.light-card,
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.mobile-service-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.social-card,
+.contact-button,
+.contact-link,
+.brand-panel,
+.products-panel {
+  color: #1b120d !important;
+}
+
+.light-card *,
+.service-card *,
+.team-card *,
+.gallery-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.before-after-card *,
+.mobile-service-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.social-card *,
+.contact-button *,
+.contact-link *,
+.brand-panel *,
+.products-panel * {
+  color: inherit;
+}
+
+.opening-card,
+.hours-card,
+.opening-hours,
+.hours-list {
+  color: #1b120d !important;
+}
+
+.opening-card h2,
+.opening-card h3,
+.hours-card h2,
+.hours-card h3,
+.opening-hours h2,
+.opening-hours h3 {
+  color: #1b120d !important;
+}
+
+.opening-card p,
+.opening-card span,
+.opening-card strong,
+.opening-card li,
+.hours-card p,
+.hours-card span,
+.hours-card strong,
+.hours-card li,
+.opening-hours p,
+.opening-hours span,
+.opening-hours strong,
+.opening-hours li {
+  color: #2a1a11 !important;
+}
+
+.opening-card strong,
+.hours-card strong,
+.opening-hours strong,
+.time-value,
+.hours-time {
+  color: #8a6116 !important;
+  font-weight: 800;
+}
+
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  background: #fffaf0;
+  color: #1b120d !important;
+  border: 1px solid rgba(212, 175, 55, 0.75);
+}
+
+.contact-button *,
+.contact-link *,
+.contact-actions a *,
+.contact-actions button * {
+  color: inherit !important;
+}
+
+.contact-button:hover,
+.contact-link:hover,
+.contact-actions a:hover,
+.contact-actions button:hover {
+  background: #fff1b8;
+  color: #1b120d !important;
+  border-color: #d4af37;
+}
+
+.whatsapp-button,
+a[href*="wa.me"] {
+  color: #ffffff !important;
+}
+
+.whatsapp-button *,
+a[href*="wa.me"] * {
+  color: inherit !important;
+}
+
+.social-card,
+.social-links a,
+.social-item {
+  background: #fffaf0;
+  color: #1b120d !important;
+  border: 1px solid rgba(212, 175, 55, 0.65);
+}
+
+.social-card *,
+.social-links a *,
+.social-item * {
+  color: inherit !important;
+}
+
+.social-card .social-icon,
+.social-links .social-icon,
+.social-item .social-icon {
+  background: #8a6116;
+  color: #fffaf0 !important;
+}
+
+.social-card .social-icon *,
+.social-links .social-icon *,
+.social-item .social-icon * {
+  color: #fffaf0 !important;
+}
+
+.products-section,
+.brands-section {
+  color: #1b120d !important;
+}
+
+.products-section h1,
+.products-section h2,
+.products-section h3,
+.brands-section h1,
+.brands-section h2,
+.brands-section h3 {
+  color: #1b120d !important;
+}
+
+.products-section p,
+.products-section span,
+.products-section li,
+.brands-section p,
+.brands-section span,
+.brands-section li {
+  color: #4a3729 !important;
+}
+
+.products-section .eyebrow,
+.brands-section .eyebrow,
+.products-section .section-label,
+.brands-section .section-label {
+  color: #8a6116 !important;
+}
+
+.product-card,
+.brand-card {
+  background: linear-gradient(180deg, #fffaf0, #f4ead8);
+  color: #1b120d !important;
+}
+
+.product-card *,
+.brand-card * {
+  color: inherit !important;
+}
+
+.product-card p,
+.brand-card p {
+  color: #2a1a11 !important;
+}
+
+.products-section .btn,
+.products-section .button,
+.products-section .cta-button,
+.brands-section .btn,
+.brands-section .button,
+.brands-section .cta-button {
+  background: linear-gradient(135deg, #1b120d, #050403);
+  color: #fffaf0 !important;
+  border: 1px solid rgba(212, 175, 55, 0.85);
+  font-weight: 800;
+}
+
+.products-section .btn *,
+.products-section .button *,
+.products-section .cta-button *,
+.brands-section .btn *,
+.brands-section .button *,
+.brands-section .cta-button * {
+  color: inherit !important;
+}
+
+.gold,
+.gold-text,
+.gold-label,
+.card-eyebrow,
+.section-eyebrow,
+.eyebrow {
+  color: #8a6116 !important;
+}
+
+.gold-line,
+.gold-divider {
+  background: linear-gradient(135deg, #7a5111 0%, #d4af37 40%, #f7d774 60%, #b8860b 100%);
+}
+
+.back-to-top {
+  background: linear-gradient(135deg, #1b120d, #050403);
+  color: #f7d774 !important;
+  border: 2px solid rgba(212, 175, 55, 0.85);
+  z-index: 9999;
+}
+
+.back-to-top *,
+.back-to-top svg,
+.back-to-top path {
+  color: #f7d774 !important;
+  stroke: #f7d774 !important;
+}
+
+.gold-dust-layer {
+  pointer-events: none;
+}
