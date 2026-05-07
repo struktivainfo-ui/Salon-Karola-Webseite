@@ -1,0 +1,255 @@
+:root {
+  --dark: #070402;
+  --brown: #1b120d;
+  --brown-soft: #2a1a11;
+  --cream: #fffaf0;
+  --cream-soft: #f4ead8;
+  --gold: #D4AF37;
+  --gold-light: #F7D774;
+  --gold-dark: #8A6116;
+  --muted-light: #d9cdb8;
+}
+
+/* Grundfarbe */
+body {
+  background: var(--dark) !important;
+  color: var(--cream) !important;
+}
+
+/* Dunkle Bereiche */
+section,
+.section-dark,
+.premium-section,
+.hero-section,
+.gallery-section,
+.contact-section,
+.social-section,
+.site-footer,
+footer {
+  color: var(--cream) !important;
+}
+
+section > h1,
+section > h2,
+section > h3,
+.section-title {
+  color: var(--cream) !important;
+}
+
+section > p,
+.section-text,
+.section-lead {
+  color: var(--muted-light) !important;
+}
+
+/* Helle Karten: IMMER dunkle Schrift */
+.card,
+.panel,
+.box,
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.mobile-service-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.light-card,
+.social-card {
+  background: linear-gradient(180deg, var(--cream), var(--cream-soft)) !important;
+  color: var(--brown) !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+}
+
+/* Alles innerhalb heller Karten dunkel */
+.card *,
+.panel *,
+.box *,
+.service-card *,
+.team-card *,
+.gallery-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.before-after-card *,
+.mobile-service-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.light-card *,
+.social-card * {
+  color: var(--brown) !important;
+}
+
+/* Absätze in Karten etwas weicher */
+.card p,
+.panel p,
+.box p,
+.service-card p,
+.team-card p,
+.gallery-card p,
+.product-card p,
+.brand-card p,
+.review-card p,
+.contact-card p,
+.info-card p,
+.trust-card p,
+.before-after-card p,
+.mobile-service-card p,
+.lotto-card p,
+.welcome-card p,
+.opening-card p,
+.hours-card p,
+.highlight-card p,
+.feature-card p,
+.light-card p,
+.social-card p {
+  color: var(--brown-soft) !important;
+}
+
+/* Goldlabels lesbar */
+.eyebrow,
+.section-eyebrow,
+.card-eyebrow,
+.label,
+.badge,
+.chip {
+  color: var(--gold-dark) !important;
+}
+
+/* Buttons immer lesbar */
+a,
+button,
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  color: var(--brown) !important;
+}
+
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  background: var(--cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+/* Dunkle Hauptbuttons */
+.btn-primary,
+.button-primary,
+.cta-primary,
+.hero a:first-of-type,
+.hero-section a:first-of-type {
+  background: linear-gradient(135deg, var(--brown), var(--dark)) !important;
+  color: var(--cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+}
+
+.btn-primary *,
+.button-primary *,
+.cta-primary *,
+.hero a:first-of-type *,
+.hero-section a:first-of-type * {
+  color: var(--cream) !important;
+}
+
+/* Produkte & Marken hell und lesbar */
+.products-section,
+.brands-section {
+  background: var(--cream) !important;
+  color: var(--brown) !important;
+}
+
+.products-section *,
+.brands-section * {
+  color: var(--brown) !important;
+}
+
+.products-section p,
+.brands-section p {
+  color: var(--brown-soft) !important;
+}
+
+/* Floating-Buttons sicher verstecken, falls HTML noch vorhanden ist */
+.whatsapp-float,
+.floating-whatsapp,
+.back-to-top,
+.scroll-top,
+.to-top-button {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Social-Logos */
+.social-logo-link {
+  width: 72px !important;
+  height: 72px !important;
+  border-radius: 999px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  background: var(--cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  overflow: hidden !important;
+  text-decoration: none !important;
+}
+
+.social-logo-link img {
+  width: 38px !important;
+  height: 38px !important;
+  object-fit: contain !important;
+  display: block !important;
+}
+
+/* Galerie-Bilder besser füllen */
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+/* Goldstaub darf bleiben */
+.gold-dust-layer {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+main,
+header,
+footer {
+  position: relative;
+  z-index: 2;
+}
