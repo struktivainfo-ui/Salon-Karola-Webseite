@@ -93,7 +93,7 @@ body.menu-open {
   inset: 0;
   pointer-events: none;
   z-index: 5;
-  opacity: 0.45;
+  opacity: 0.35;
   mix-blend-mode: screen;
   background-image:
     radial-gradient(circle, rgba(247, 215, 116, 0.95) 0 1.2px, transparent 1.8px),
@@ -1686,6 +1686,299 @@ ul {
   font-weight: 700;
 }
 
+/* === Global Contrast Hardening === */
+:root {
+  --color-text-light: #fffaf0;
+  --color-text-dark: #1b120d;
+  --color-muted-light: #d9cdb8;
+  --color-muted-dark: #5e4b3c;
+  --color-card-light: #fffaf0;
+  --color-card-soft: #f4ead8;
+  --color-card-dark: #080604;
+}
+
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.mobile-service-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.light-card {
+  background: linear-gradient(180deg, #fffaf0, #f4ead8);
+  color: var(--color-text-dark);
+}
+
+.service-card h1,
+.service-card h2,
+.service-card h3,
+.team-card h1,
+.team-card h2,
+.team-card h3,
+.gallery-card h1,
+.gallery-card h2,
+.gallery-card h3,
+.product-card h1,
+.product-card h2,
+.product-card h3,
+.brand-card h1,
+.brand-card h2,
+.brand-card h3,
+.review-card h1,
+.review-card h2,
+.review-card h3,
+.contact-card h1,
+.contact-card h2,
+.contact-card h3,
+.info-card h1,
+.info-card h2,
+.info-card h3,
+.trust-card h1,
+.trust-card h2,
+.trust-card h3,
+.before-after-card h1,
+.before-after-card h2,
+.before-after-card h3,
+.mobile-service-card h1,
+.mobile-service-card h2,
+.mobile-service-card h3,
+.lotto-card h1,
+.lotto-card h2,
+.lotto-card h3,
+.welcome-card h1,
+.welcome-card h2,
+.welcome-card h3,
+.opening-card h1,
+.opening-card h2,
+.opening-card h3,
+.hours-card h1,
+.hours-card h2,
+.hours-card h3,
+.highlight-card h1,
+.highlight-card h2,
+.highlight-card h3,
+.feature-card h1,
+.feature-card h2,
+.feature-card h3,
+.light-card h1,
+.light-card h2,
+.light-card h3 {
+  color: var(--color-text-dark);
+}
+
+.service-card p,
+.service-card li,
+.team-card p,
+.team-card li,
+.gallery-card p,
+.gallery-card li,
+.product-card p,
+.product-card li,
+.brand-card p,
+.brand-card li,
+.review-card p,
+.review-card li,
+.contact-card p,
+.contact-card li,
+.info-card p,
+.info-card li,
+.trust-card p,
+.trust-card li,
+.before-after-card p,
+.before-after-card li,
+.mobile-service-card p,
+.mobile-service-card li,
+.lotto-card p,
+.lotto-card li,
+.welcome-card p,
+.welcome-card li,
+.opening-card p,
+.opening-card li,
+.hours-card p,
+.hours-card li,
+.highlight-card p,
+.highlight-card li,
+.feature-card p,
+.feature-card li,
+.light-card p,
+.light-card li {
+  color: #2a1a11;
+}
+
+.service-card .eyebrow,
+.service-card .label,
+.lotto-card .eyebrow,
+.lotto-card .label,
+.mobile-service-card .eyebrow,
+.mobile-service-card .label,
+.product-card .eyebrow,
+.product-card .label,
+.brand-card .eyebrow,
+.brand-card .label {
+  color: #8a6116;
+}
+
+.section-dark {
+  color: var(--color-text-light);
+}
+
+.section-dark .service-card,
+.section-dark .team-card,
+.section-dark .gallery-card,
+.section-dark .product-card,
+.section-dark .brand-card,
+.section-dark .review-card,
+.section-dark .contact-card,
+.section-dark .info-card,
+.section-dark .trust-card,
+.section-dark .before-after-card,
+.section-dark .mobile-service-card,
+.section-dark .lotto-card,
+.section-dark .welcome-card,
+.section-dark .opening-card,
+.section-dark .hours-card,
+.section-dark .highlight-card,
+.section-dark .feature-card,
+.section-dark .light-card {
+  color: var(--color-text-dark);
+}
+
+.section-dark .service-card *,
+.section-dark .team-card *,
+.section-dark .gallery-card *,
+.section-dark .product-card *,
+.section-dark .brand-card *,
+.section-dark .review-card *,
+.section-dark .contact-card *,
+.section-dark .info-card *,
+.section-dark .trust-card *,
+.section-dark .before-after-card *,
+.section-dark .mobile-service-card *,
+.section-dark .lotto-card *,
+.section-dark .welcome-card *,
+.section-dark .opening-card *,
+.section-dark .hours-card *,
+.section-dark .highlight-card *,
+.section-dark .feature-card *,
+.section-dark .light-card * {
+  color: inherit;
+}
+
+.service-chip,
+.chip,
+.badge {
+  background: #fff1b8;
+  color: #1b120d;
+  border: 1px solid rgba(212, 175, 55, 0.7);
+  font-weight: 700;
+}
+
+.btn,
+.button,
+.cta-button {
+  color: inherit;
+}
+
+.btn-primary,
+.button-primary,
+.cta-primary {
+  background: linear-gradient(135deg, #1b120d, #050403);
+  color: #fffaf0;
+  border: 1px solid rgba(212, 175, 55, 0.8);
+}
+
+.btn-secondary,
+.button-secondary,
+.cta-secondary {
+  background: #fffaf0;
+  color: #1b120d;
+  border: 1px solid rgba(212, 175, 55, 0.75);
+}
+
+/* === Global Image Fill Rules === */
+.card-image,
+.card-media,
+.image-frame,
+.photo-frame,
+.lotto-image-frame,
+.salon-image-frame,
+.gallery-image-frame,
+.team-photo-frame {
+  overflow: hidden;
+  border-radius: inherit;
+  background: #120c08;
+}
+
+.card-image img,
+.card-media img,
+.image-frame img,
+.photo-frame img,
+.lotto-image-frame img,
+.salon-image-frame img,
+.gallery-image-frame img,
+.team-photo-frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.lotto-card {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.85fr) 1fr;
+  gap: 1.25rem;
+  align-items: stretch;
+}
+
+.lotto-image-frame,
+.lotto-media {
+  min-height: 230px;
+  height: 100%;
+}
+
+.lotto-card .lotto-image,
+.lotto-card img,
+.lotto-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.section-image,
+.salon-photo,
+.interior-photo {
+  width: 100%;
+  height: clamp(240px, 26vw, 360px);
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+.salon-image-card,
+.interior-photo-frame,
+.section-image-frame {
+  overflow: hidden;
+  min-height: 260px;
+}
+
+/* Explicit exception: Ute portrait should remain fully visible */
+.team-photo--ute {
+  object-fit: contain !important;
+  object-position: center bottom !important;
+}
+
 .contact-card h3 {
   display: inline-flex;
   align-items: center;
@@ -2234,6 +2527,22 @@ ul {
 
   .back-to-top {
     bottom: 152px;
+  }
+
+  .lotto-card {
+    grid-template-columns: 1fr;
+  }
+
+  .lotto-image-frame,
+  .lotto-media {
+    height: 190px;
+    min-height: 190px;
+  }
+
+  .section-image,
+  .salon-photo,
+  .interior-photo {
+    height: 220px;
   }
 
   .gold-dust-layer {
