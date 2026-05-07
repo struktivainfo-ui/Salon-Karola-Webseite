@@ -93,24 +93,113 @@ body.menu-open {
   inset: 0;
   pointer-events: none;
   z-index: 5;
-  opacity: 0.35;
   mix-blend-mode: screen;
-  background-image:
-    radial-gradient(circle, rgba(247, 215, 116, 0.95) 0 1.2px, transparent 1.8px),
-    radial-gradient(circle, rgba(212, 175, 55, 0.75) 0 1px, transparent 1.7px),
-    radial-gradient(circle, rgba(255, 241, 184, 0.75) 0 0.9px, transparent 1.5px),
-    radial-gradient(circle, rgba(184, 134, 11, 0.55) 0 1.1px, transparent 1.9px);
-  background-size: 90px 90px, 140px 140px, 210px 210px, 280px 280px;
-  background-position: 10px 20px, 60px 80px, 130px 40px, 200px 170px;
-  animation: goldDustMove 26s linear infinite;
 }
 
-@keyframes goldDustMove {
+.gold-dust-layer::before,
+.gold-dust-layer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.gold-dust-layer::before {
+  opacity: 0.48;
+  background-image:
+    radial-gradient(circle, rgba(247, 215, 116, 0.95) 0 1.1px, transparent 1.8px),
+    radial-gradient(circle, rgba(212, 175, 55, 0.7) 0 0.9px, transparent 1.6px),
+    radial-gradient(circle, rgba(255, 241, 184, 0.62) 0 0.8px, transparent 1.5px);
+  background-size: 82px 82px, 136px 136px, 210px 210px;
+  background-position: 12px 22px, 68px 92px, 140px 40px;
+  animation: goldDustDriftA 32s linear infinite;
+}
+
+.gold-dust-layer::after {
+  opacity: 0.36;
+  background-image:
+    radial-gradient(circle, rgba(212, 175, 55, 0.85) 0 1px, transparent 1.7px),
+    radial-gradient(circle, rgba(247, 215, 116, 0.55) 0 0.7px, transparent 1.4px);
+  background-size: 120px 120px, 260px 260px;
+  background-position: 30px 60px, 180px 130px;
+  animation: goldDustDriftB 44s linear infinite reverse;
+}
+
+.gold-dust-layer--near::before {
+  opacity: 0.28;
+  background-image:
+    radial-gradient(circle, rgba(247, 215, 116, 0.9) 0 1.6px, transparent 2.4px),
+    radial-gradient(circle, rgba(255, 241, 184, 0.7) 0 1.2px, transparent 2px);
+  background-size: 190px 190px, 310px 310px;
+  background-position: 60px 80px, 220px 140px;
+  filter: blur(0.2px);
+  animation: goldDustDriftNear 58s linear infinite;
+}
+
+.gold-dust-layer--near::after {
+  opacity: 0;
+  background: none;
+  animation: none;
+}
+
+.gold-dust-layer--far::before {
+  opacity: 0.32;
+  background-image:
+    radial-gradient(circle, rgba(212, 175, 55, 0.55) 0 0.7px, transparent 1.3px),
+    radial-gradient(circle, rgba(247, 215, 116, 0.45) 0 0.6px, transparent 1.2px),
+    radial-gradient(circle, rgba(255, 241, 184, 0.35) 0 0.5px, transparent 1px);
+  background-size: 64px 64px, 96px 96px, 155px 155px;
+  background-position: 10px 20px, 44px 70px, 100px 30px;
+  animation: goldDustDriftFar 26s linear infinite;
+}
+
+.gold-dust-layer--far::after {
+  opacity: 0;
+  background: none;
+  animation: none;
+}
+
+@keyframes goldDustDriftA {
   0% {
-    background-position: 10px 20px, 60px 80px, 130px 40px, 200px 170px;
+    transform: translate3d(0, 0, 0);
+    background-position: 12px 22px, 68px 92px, 140px 40px;
   }
   100% {
-    background-position: 120px 160px, 20px 220px, 220px 120px, 80px 40px;
+    transform: translate3d(18px, -28px, 0);
+    background-position: 98px 160px, 20px 220px, 230px 120px;
+  }
+}
+
+@keyframes goldDustDriftB {
+  0% {
+    transform: translate3d(0, 0, 0);
+    background-position: 30px 60px, 180px 130px;
+  }
+  100% {
+    transform: translate3d(-22px, 18px, 0);
+    background-position: 160px 20px, 40px 260px;
+  }
+}
+
+@keyframes goldDustDriftNear {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    background-position: 60px 80px, 220px 140px;
+  }
+  100% {
+    transform: translate3d(28px, -34px, 0) scale(1.02);
+    background-position: 260px 40px, 80px 300px;
+  }
+}
+
+@keyframes goldDustDriftFar {
+  0% {
+    transform: translate3d(0, 0, 0);
+    background-position: 10px 20px, 44px 70px, 100px 30px;
+  }
+  100% {
+    transform: translate3d(-16px, -18px, 0);
+    background-position: 90px 140px, 160px 20px, 20px 190px;
   }
 }
 
@@ -973,6 +1062,38 @@ ul {
   opacity: 0.55;
   box-shadow: 0 0 22px rgba(212, 175, 55, 0.25);
   pointer-events: none;
+}
+
+.section-dark::after,
+.premium-section::after,
+.hero::after,
+.site-footer::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    radial-gradient(circle, rgba(247, 215, 116, 0.95) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(212, 175, 55, 0.65) 0 0.8px, transparent 1.5px);
+  background-size: 72px 72px, 145px 145px;
+  background-position: 24px 36px, 90px 110px;
+}
+
+.section-dark,
+.premium-section,
+.hero,
+.site-footer {
+  position: relative;
+  overflow: hidden;
+}
+
+.section-dark > *,
+.premium-section > *,
+.hero > *,
+.site-footer > * {
+  position: relative;
+  z-index: 1;
 }
 
 .section-heading,
@@ -2167,7 +2288,7 @@ ul {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  z-index: 999;
+  z-index: 9999;
   background: #25d366;
   box-shadow: 0 14px 34px rgba(0, 0, 0, 0.28);
   border: 2px solid rgba(255, 255, 255, 0.9);
@@ -2546,8 +2667,23 @@ ul {
   }
 
   .gold-dust-layer {
-    opacity: 0.32;
-    background-size: 120px 120px, 190px 190px, 260px 260px, 340px 340px;
+    mix-blend-mode: screen;
+  }
+
+  .gold-dust-layer::before {
+    opacity: 0.34;
+  }
+
+  .gold-dust-layer::after {
+    opacity: 0.24;
+  }
+
+  .gold-dust-layer--near::before {
+    opacity: 0.18;
+  }
+
+  .gold-dust-layer--far::before {
+    opacity: 0.24;
   }
 
   .section-angled::before {
@@ -2711,8 +2847,9 @@ ul {
     transition: none;
   }
 
-  .gold-dust-layer {
-    animation: none;
+  .gold-dust-layer::before,
+  .gold-dust-layer::after {
+    animation: none !important;
   }
 }
 
