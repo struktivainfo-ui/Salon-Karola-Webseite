@@ -3168,3 +3168,425 @@ a[href*="wa.me"] * {
     height: 32px;
   }
 }
+
+/* ===== FINAL KAROLA CONTRAST + LOGO + IMAGE FIT OVERRIDES ===== */
+:root {
+  --karola-dark: #070402;
+  --karola-brown: #1b120d;
+  --karola-brown-soft: #2a1a11;
+  --karola-cream: #fffaf0;
+  --karola-cream-2: #f4ead8;
+  --karola-gold: #d4af37;
+  --karola-gold-light: #f7d774;
+  --karola-gold-dark: #8a6116;
+  --karola-muted-dark: #5e4b3c;
+  --karola-muted-light: #d9cdb8;
+}
+
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.mobile-service-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.light-card,
+.social-card,
+.mobile-service,
+.products-section .card,
+.brands-section .card,
+.contact-actions a,
+.contact-actions button,
+.contact-button,
+.contact-link {
+  background: linear-gradient(180deg, var(--karola-cream), var(--karola-cream-2)) !important;
+  color: var(--karola-brown) !important;
+}
+
+.service-card *,
+.team-card *,
+.gallery-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.before-after-card *,
+.mobile-service-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.light-card *,
+.social-card *,
+.mobile-service *,
+.products-section .card *,
+.brands-section .card *,
+.contact-actions a *,
+.contact-actions button * {
+  color: inherit !important;
+}
+
+.service-card h1,
+.service-card h2,
+.service-card h3,
+.team-card h1,
+.team-card h2,
+.team-card h3,
+.gallery-card h1,
+.gallery-card h2,
+.gallery-card h3,
+.product-card h1,
+.product-card h2,
+.product-card h3,
+.brand-card h1,
+.brand-card h2,
+.brand-card h3,
+.review-card h1,
+.review-card h2,
+.review-card h3,
+.contact-card h1,
+.contact-card h2,
+.contact-card h3,
+.info-card h1,
+.info-card h2,
+.info-card h3,
+.trust-card h1,
+.trust-card h2,
+.trust-card h3,
+.before-after-card h1,
+.before-after-card h2,
+.before-after-card h3,
+.mobile-service-card h1,
+.mobile-service-card h2,
+.mobile-service-card h3,
+.lotto-card h1,
+.lotto-card h2,
+.lotto-card h3,
+.welcome-card h1,
+.welcome-card h2,
+.welcome-card h3,
+.opening-card h1,
+.opening-card h2,
+.opening-card h3,
+.hours-card h1,
+.hours-card h2,
+.hours-card h3,
+.highlight-card h1,
+.highlight-card h2,
+.highlight-card h3,
+.feature-card h1,
+.feature-card h2,
+.feature-card h3,
+.light-card h1,
+.light-card h2,
+.light-card h3,
+.mobile-service h1,
+.mobile-service h2,
+.mobile-service h3 {
+  color: var(--karola-brown) !important;
+}
+
+.service-card p,
+.service-card li,
+.team-card p,
+.team-card li,
+.gallery-card p,
+.gallery-card li,
+.product-card p,
+.product-card li,
+.brand-card p,
+.brand-card li,
+.review-card p,
+.review-card li,
+.contact-card p,
+.contact-card li,
+.info-card p,
+.info-card li,
+.trust-card p,
+.trust-card li,
+.before-after-card p,
+.before-after-card li,
+.mobile-service-card p,
+.mobile-service-card li,
+.lotto-card p,
+.lotto-card li,
+.welcome-card p,
+.welcome-card li,
+.opening-card p,
+.opening-card li,
+.hours-card p,
+.hours-card li,
+.highlight-card p,
+.highlight-card li,
+.feature-card p,
+.feature-card li,
+.light-card p,
+.light-card li,
+.mobile-service p,
+.mobile-service li {
+  color: var(--karola-brown-soft) !important;
+}
+
+.eyebrow,
+.section-eyebrow,
+.card-eyebrow,
+.gold-label,
+.label {
+  color: var(--karola-gold-dark) !important;
+}
+
+.contact-actions a,
+.contact-actions button,
+.contact-button,
+.contact-link {
+  background: var(--karola-cream) !important;
+  color: var(--karola-brown) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+.contact-actions a *,
+.contact-actions button *,
+.contact-button *,
+.contact-link * {
+  color: var(--karola-brown) !important;
+}
+
+.contact-actions a:hover,
+.contact-actions button:hover,
+.contact-button:hover,
+.contact-link:hover {
+  background: var(--karola-gold-light) !important;
+  color: var(--karola-brown) !important;
+  border-color: var(--karola-gold) !important;
+}
+
+.whatsapp-button.is-green,
+a[href*="wa.me"].is-green {
+  background: #25d366 !important;
+  color: #ffffff !important;
+}
+
+.whatsapp-button.is-green *,
+a[href*="wa.me"].is-green * {
+  color: #ffffff !important;
+}
+
+.products-section,
+.brands-section {
+  background: linear-gradient(180deg, var(--karola-cream), var(--karola-cream-2)) !important;
+  color: var(--karola-brown) !important;
+}
+
+.products-section h1,
+.products-section h2,
+.products-section h3,
+.brands-section h1,
+.brands-section h2,
+.brands-section h3 {
+  color: var(--karola-brown) !important;
+}
+
+.products-section p,
+.products-section span,
+.products-section li,
+.brands-section p,
+.brands-section span,
+.brands-section li {
+  color: var(--karola-brown-soft) !important;
+}
+
+.products-section .eyebrow,
+.brands-section .eyebrow {
+  color: var(--karola-gold-dark) !important;
+}
+
+.products-section .btn,
+.products-section .button,
+.products-section .cta-button,
+.brands-section .btn,
+.brands-section .button,
+.brands-section .cta-button {
+  background: linear-gradient(135deg, var(--karola-brown), var(--karola-dark)) !important;
+  color: var(--karola-cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+}
+
+.products-section .btn *,
+.products-section .button *,
+.products-section .cta-button *,
+.brands-section .btn *,
+.brands-section .button *,
+.brands-section .cta-button * {
+  color: var(--karola-cream) !important;
+}
+
+.mobile-service,
+.mobile-service-card,
+.home-service-card {
+  background: linear-gradient(180deg, var(--karola-cream), var(--karola-cream-2)) !important;
+  color: var(--karola-brown) !important;
+}
+
+.mobile-service h1,
+.mobile-service h2,
+.mobile-service h3,
+.mobile-service-card h1,
+.mobile-service-card h2,
+.mobile-service-card h3,
+.home-service-card h1,
+.home-service-card h2,
+.home-service-card h3 {
+  color: var(--karola-brown) !important;
+}
+
+.mobile-service p,
+.mobile-service-card p,
+.home-service-card p {
+  color: var(--karola-brown-soft) !important;
+}
+
+.gallery-card,
+.gallery-item,
+.before-after-image,
+.gallery-image-frame {
+  overflow: hidden !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+.gallery-image-frame {
+  height: 220px;
+}
+
+@media (max-width: 700px) {
+  .gallery-image-frame {
+    height: 190px;
+  }
+}
+
+.before-after-card .before-after-image,
+.before-after-card .comparison-image {
+  overflow: hidden !important;
+  background: var(--karola-cream-2) !important;
+}
+
+.before-after-card .before-after-image,
+.before-after-card .comparison-image,
+.before-after-card .before-after-item img,
+.before-after-card .comparison-image img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+.social-logo-list,
+.social-links,
+.social-grid {
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.social-logo-link {
+  width: 78px;
+  height: 78px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--karola-cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.75) !important;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28), 0 0 18px rgba(212, 175, 55, 0.16);
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 180ms ease, box-shadow 180ms ease, border-color 180ms ease;
+}
+
+.social-logo-link img {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+  display: block;
+}
+
+.social-logo-link:hover {
+  transform: translateY(-3px) scale(1.04);
+  border-color: var(--karola-gold) !important;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.34), 0 0 24px rgba(212, 175, 55, 0.24);
+}
+
+@media (max-width: 700px) {
+  .social-logo-link {
+    width: 64px;
+    height: 64px;
+  }
+
+  .social-logo-link img {
+    width: 34px;
+    height: 34px;
+  }
+}
+
+.gold-dust-layer {
+  pointer-events: none !important;
+  z-index: 1 !important;
+}
+
+.site-header,
+main,
+footer,
+.whatsapp-float,
+.back-to-top {
+  position: relative;
+  z-index: 2;
+}
+
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.mobile-service-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.light-card {
+  position: relative;
+  z-index: 3;
+}
