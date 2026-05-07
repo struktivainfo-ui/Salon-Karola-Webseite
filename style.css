@@ -1304,6 +1304,32 @@ ul {
   gap: 0.8rem;
 }
 
+.contact-line,
+.footer-contact-line,
+.social-line,
+.review-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.contact-label,
+.social-label,
+.review-label {
+  font-weight: 700;
+}
+
+.contact-value,
+.social-name,
+.review-value {
+  color: inherit;
+}
+
+.contact-line a {
+  word-break: break-word;
+}
+
 .contact-panel {
   padding: var(--card-padding);
   display: grid;
