@@ -2095,14 +2095,15 @@ p {
 /* Salon-Einblicke: runde, kompakte Bilder */
 .salon-insights-grid {
   display: grid !important;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 210px)) !important;
-  gap: clamp(18px, 2.5vw, 30px) !important;
+  grid-template-columns: repeat(3, minmax(160px, 220px)) !important;
+  gap: clamp(18px, 2.2vw, 30px) !important;
   justify-content: center !important;
-  align-items: center !important;
+  align-items: start !important;
+  margin-top: 24px;
 }
 
 .salon-insight-circle {
-  width: clamp(150px, 18vw, 210px) !important;
+  width: clamp(145px, 16vw, 220px) !important;
   aspect-ratio: 1 / 1;
   border-radius: 50% !important;
   overflow: hidden !important;
@@ -2160,25 +2161,91 @@ p {
   pointer-events: none;
 }
 
-.salon-insight-circle:hover {
-  transform: translateY(-4px) scale(1.02);
+  .salon-insight-circle:hover {
+    transform: translateY(-4px) scale(1.02);
   box-shadow:
     0 0 0 1px rgba(247, 215, 116, 0.55),
     0 0 34px rgba(212, 175, 55, 0.28),
     0 22px 48px rgba(0, 0, 0, 0.62) !important;
 }
 
-.salon-insight-circle .gallery-chip {
-  top: 8px;
-  left: 10px;
-  font-size: 11px;
-  padding: 4px 8px;
+.salon-insight-circle img,
+.salon-insights-grid .gallery-card img,
+.salon-insights-grid .image-card img {
+  width: 100% !important;
+  height: 100% !important;
+  display: block !important;
+  border-radius: 50% !important;
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+/* gezielte Motivkorrektur: Schnitt-Bild */
+.salon-insights-grid .gallery-photo--schnitt,
+.salon-insights-grid img[alt*="Schnitt"],
+.salon-insights-grid img[src*="styling-1"] {
+  object-position: center 70% !important;
+}
+
+.salon-insights-grid .gallery-photo--farbe,
+.salon-insights-grid .gallery-photo--styling-1,
+.salon-insights-grid .gallery-photo--styling-2,
+.salon-insights-grid .gallery-photo--styling-3,
+.salon-insights-grid .gallery-photo--styling-4,
+.salon-insights-grid .gallery-photo--styling-5,
+.salon-insights-grid .gallery-photo--beratung {
+  object-position: center center !important;
+}
+
+/* Labels nur in diesem Bereich entfernen */
+.salon-insights-grid .gallery-chip,
+.salon-insights-grid .gallery-label,
+.salon-insights-grid .image-label,
+.salon-insights-grid .salon-label,
+.salon-insights-grid .insight-label,
+.salon-insights-grid .card-label,
+.salon-insights-grid .badge,
+.salon-insights-grid .tag {
+  display: none !important;
+}
+
+/* Kartenregeln für Kreisbereich neutralisieren */
+.salon-insights-grid .gallery-card,
+.salon-insights-grid .image-card {
+  padding: 0 !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+.salon-insights-grid .gallery-card img,
+.salon-insights-grid .image-card img {
+  max-height: none !important;
+}
+
+/* dezenter Diamant */
+.salon-insight-circle::after,
+.salon-insights-grid .gallery-card::after,
+.salon-insights-grid .image-card::after {
+  content: "✦";
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  color: rgba(247, 215, 116, 0.85);
+  font-size: 13px;
+  text-shadow: 0 0 10px rgba(247, 215, 116, 0.75);
+  pointer-events: none;
+}
+
+@media (max-width: 1000px) {
+  .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(150px, 210px)) !important;
+  }
 }
 
 @media (max-width: 700px) {
   .salon-insights-grid {
     grid-template-columns: repeat(2, minmax(130px, 1fr)) !important;
-    gap: 18px !important;
+    gap: 16px !important;
   }
 
   .salon-insight-circle {
@@ -2199,6 +2266,25 @@ p {
 
   .salon-insight-circle:hover {
     transform: none !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(130px, 1fr)) !important;
+    gap: 16px !important;
+  }
+
+  .salon-insight-circle,
+  .salon-insights-grid .gallery-card,
+  .salon-insights-grid .image-card {
+    width: min(42vw, 170px) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .salon-insights-grid {
+    grid-template-columns: 1fr !important;
   }
 }
 
