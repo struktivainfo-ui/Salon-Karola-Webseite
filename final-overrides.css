@@ -356,3 +356,300 @@ footer {
   color: #d9cdb8;
   line-height: 1.6;
 }
+
+/* ===== Final professional contrast + hero icons + photo presentation ===== */
+:root {
+  --karola-dark: #070402;
+  --karola-brown: #1b120d;
+  --karola-brown-soft: #2a1a11;
+  --karola-cream: #fffaf0;
+  --karola-cream-soft: #f4ead8;
+  --karola-gold: #d4af37;
+  --karola-gold-light: #f7d774;
+  --karola-gold-dark: #8a6116;
+  --karola-muted-light: #d9cdb8;
+}
+
+.card,
+.panel,
+.box,
+.light-card,
+.service-card,
+.team-card,
+.gallery-card,
+.product-card,
+.brand-card,
+.review-card,
+.contact-card,
+.info-card,
+.trust-card,
+.before-after-card,
+.lotto-card,
+.welcome-card,
+.opening-card,
+.hours-card,
+.highlight-card,
+.feature-card,
+.social-card,
+button,
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  color: var(--karola-brown) !important;
+}
+
+.card *,
+.panel *,
+.box *,
+.light-card *,
+.service-card *,
+.team-card *,
+.gallery-card *,
+.product-card *,
+.brand-card *,
+.review-card *,
+.contact-card *,
+.info-card *,
+.trust-card *,
+.before-after-card *,
+.lotto-card *,
+.welcome-card *,
+.opening-card *,
+.hours-card *,
+.highlight-card *,
+.feature-card *,
+.social-card *,
+button *,
+.btn *,
+.button *,
+.cta-button *,
+.contact-button *,
+.contact-link *,
+.contact-actions a *,
+.contact-actions button * {
+  color: inherit !important;
+}
+
+.card p,
+.panel p,
+.box p,
+.light-card p,
+.service-card p,
+.team-card p,
+.gallery-card p,
+.product-card p,
+.brand-card p,
+.review-card p,
+.contact-card p,
+.info-card p,
+.trust-card p,
+.before-after-card p,
+.lotto-card p,
+.welcome-card p,
+.opening-card p,
+.hours-card p,
+.highlight-card p,
+.feature-card p,
+.social-card p {
+  color: var(--karola-brown-soft) !important;
+}
+
+.card .eyebrow,
+.panel .eyebrow,
+.box .eyebrow,
+.light-card .eyebrow,
+.card .label,
+.panel .label,
+.box .label,
+.light-card .label,
+.card .badge,
+.panel .badge,
+.box .badge,
+.light-card .badge {
+  color: var(--karola-gold-dark) !important;
+}
+
+.btn,
+.button,
+.cta-button,
+.contact-button,
+.contact-link,
+.contact-actions a,
+.contact-actions button {
+  background: var(--karola-cream) !important;
+  color: var(--karola-brown) !important;
+  border: 1px solid rgba(212, 175, 55, 0.7) !important;
+  font-weight: 800 !important;
+  text-decoration: none !important;
+}
+
+.btn *,
+.button *,
+.cta-button *,
+.contact-button *,
+.contact-link *,
+.contact-actions a *,
+.contact-actions button * {
+  color: var(--karola-brown) !important;
+}
+
+.btn-primary,
+.button-primary,
+.cta-primary,
+.hero .btn-primary,
+.hero-section .btn-primary {
+  background: linear-gradient(135deg, var(--karola-brown), var(--karola-dark)) !important;
+  color: var(--karola-cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+}
+
+.btn-primary *,
+.button-primary *,
+.cta-primary *,
+.hero .btn-primary *,
+.hero-section .btn-primary * {
+  color: var(--karola-cream) !important;
+}
+
+.hero-contact-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.hero-contact-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 999px;
+  background: rgba(255, 250, 240, 0.1);
+  border: 1px solid rgba(212, 175, 55, 0.45);
+  color: var(--karola-cream) !important;
+  text-decoration: none !important;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.hero-contact-pill span {
+  color: var(--karola-cream) !important;
+}
+
+.hero-contact-icon {
+  width: 24px;
+  height: 24px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--karola-gold);
+  color: var(--karola-dark) !important;
+  font-size: 0.9rem;
+  flex: 0 0 auto;
+}
+
+.hero-contact-icon img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain !important;
+  display: block;
+}
+
+.hero-contact-pill--whatsapp .hero-contact-icon,
+.hero-contact-icon--whatsapp {
+  background: #25d366;
+}
+
+@media (max-width: 700px) {
+  .hero-contact-list {
+    gap: 0.55rem;
+  }
+
+  .hero-contact-pill {
+    padding: 0.42rem 0.65rem;
+    font-size: 0.95rem;
+  }
+}
+
+.gallery-card img,
+.gallery-item img,
+.gallery-image-frame img,
+.before-after-card img,
+.before-after-image img,
+.comparison-image img,
+.team-card img,
+.team-photo,
+.team-photo img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  display: block !important;
+}
+
+.gallery-card,
+.gallery-item,
+.gallery-image-frame,
+.before-after-image,
+.comparison-image,
+.team-photo,
+.team-image-frame {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+  overflow: hidden !important;
+}
+
+.gallery-card,
+.gallery-item,
+.before-after-card {
+  border-radius: 22px !important;
+  background: transparent !important;
+  border: none !important;
+}
+
+.gallery-card img,
+.gallery-item img,
+.before-after-card img {
+  border-radius: 18px !important;
+}
+
+.gallery-image-frame,
+.before-after-image,
+.comparison-image {
+  background: transparent !important;
+}
+
+.gallery-card .label,
+.gallery-card .badge,
+.gallery-card .chip,
+.gallery-card .gallery-label,
+.gallery-card .gallery-chip,
+.gallery-item .label,
+.gallery-item .badge,
+.gallery-item .chip,
+.gallery-item .gallery-label,
+.gallery-item .gallery-chip {
+  background: rgba(7, 4, 2, 0.82) !important;
+  color: var(--karola-cream) !important;
+  border: 1px solid rgba(212, 175, 55, 0.85) !important;
+  font-weight: 800 !important;
+}
+
+.gallery-card .label *,
+.gallery-card .badge *,
+.gallery-card .chip *,
+.gallery-card .gallery-label *,
+.gallery-card .gallery-chip *,
+.gallery-item .label *,
+.gallery-item .badge *,
+.gallery-item .chip *,
+.gallery-item .gallery-label *,
+.gallery-item .gallery-chip * {
+  color: var(--karola-cream) !important;
+}
