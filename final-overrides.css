@@ -333,3 +333,26 @@ footer {
   color: #fffaf0 !important;
   border: 1px solid rgba(212, 175, 55, 0.85) !important;
 }
+
+.home-visit-note {
+  max-width: 900px;
+  margin: 2rem auto 0;
+  padding: 1.1rem 1.25rem;
+  border-radius: 18px;
+  background: rgba(255, 250, 240, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.35);
+  color: #fffaf0;
+}
+
+.home-visit-note strong {
+  display: block;
+  margin-bottom: 0.35rem;
+  color: #f7d774;
+  font-weight: 800;
+}
+
+.home-visit-note p {
+  margin: 0;
+  color: #d9cdb8;
+  line-height: 1.6;
+}
