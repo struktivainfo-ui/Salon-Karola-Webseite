@@ -2608,6 +2608,12 @@ p {
   }
 }
 
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
 /* Final hard fix: salon circles + single mobile menu */
 #galerie .salon-insights-grid img,
 #galerie .round-gallery img,
