@@ -2897,6 +2897,171 @@ body {
   }
 }
 
+/* Release polish: premium clarity without structural rebuild */
+:root {
+  --release-black: #030201;
+  --release-black-soft: #080604;
+  --release-gold: #d4af37;
+  --release-gold-light: #f7d774;
+  --release-white: #ffffff;
+  --release-text: #f3ebdd;
+  --release-dark-on-gold: #0b0703;
+  --font-head: "Playfair Display", Georgia, "Times New Roman", serif;
+  --font-body: "Inter", "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  background: var(--release-black);
+  color: var(--release-text);
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+.section-title {
+  font-family: var(--font-head);
+  color: var(--release-white);
+}
+
+h1 {
+  font-size: clamp(2.4rem, 7vw, 5.4rem);
+  line-height: 0.95;
+}
+
+h2 {
+  font-size: clamp(2rem, 4vw, 3.6rem);
+  line-height: 1.05;
+}
+
+p {
+  font-size: clamp(1rem, 1.4vw, 1.15rem);
+  line-height: 1.65;
+}
+
+section,
+.section {
+  padding-top: clamp(28px, 4vw, 56px) !important;
+  padding-bottom: clamp(28px, 4vw, 56px) !important;
+}
+
+.section-heading {
+  margin-bottom: clamp(16px, 2.4vw, 28px) !important;
+}
+
+.section-heading h2 {
+  margin-bottom: 8px !important;
+}
+
+.hero-section {
+  min-height: auto !important;
+  padding-top: clamp(42px, 5vw, 72px) !important;
+  padding-bottom: clamp(36px, 5vw, 68px) !important;
+}
+
+.hero-content p {
+  margin-bottom: 10px;
+}
+
+.hero-actions {
+  margin-top: 18px !important;
+  gap: 12px !important;
+}
+
+.btn,
+.button {
+  font-weight: 800;
+}
+
+.btn-gold,
+.button-primary,
+.hero-actions .btn {
+  color: var(--release-dark-on-gold) !important;
+}
+
+.btn-dark,
+.button-ghost {
+  color: var(--release-white) !important;
+}
+
+.services-grid,
+.products-grid,
+.team-grid,
+.gallery-grid,
+.reviews-grid,
+.contact-grid {
+  gap: clamp(14px, 2vw, 24px) !important;
+}
+
+.service-card,
+.product-card,
+.team-card,
+.review-card,
+.contact-card,
+.welcome-card,
+.lotto-card,
+.before-after-card {
+  padding: clamp(16px, 2.3vw, 26px) !important;
+}
+
+.team-card img {
+  max-height: 330px !important;
+}
+
+.gallery-card img {
+  max-height: 280px !important;
+}
+
+.lotto-media img,
+.lotto-card img {
+  max-height: 150px !important;
+}
+
+.before-after-item img,
+.before-after-media img {
+  max-height: 190px !important;
+}
+
+/* Menu reliability: one desktop nav, one mobile nav */
+@media (min-width: 821px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .site-nav.mobile-nav {
+    position: static !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.95rem !important;
+    background: transparent !important;
+    border: 0 !important;
+    padding: 0 !important;
+    inset: auto !important;
+    box-shadow: none !important;
+  }
+
+  .site-nav.mobile-nav a {
+    border: 0 !important;
+    padding: 0.25rem 0.45rem !important;
+    color: var(--release-white) !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .mobile-menu-toggle {
+    display: inline-flex !important;
+  }
+
+  .site-nav.mobile-nav {
+    display: none !important;
+  }
+
+  .site-nav.mobile-nav.is-open {
+    display: flex !important;
+  }
+}
+
 .premium-splash {
   position: fixed;
   inset: 0;
