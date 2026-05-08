@@ -378,27 +378,30 @@
             <h2 id="gallery-title">Einblicke in unseren Salon und unsere Arbeit</h2>
             <p>Einblicke in unseren Salon, unsere Arbeit und kleine Veränderungen.</p>
           </div>
-          <div class="gallery-grid salon-insights-grid">
-            <article class="gallery-card salon-insight-circle reveal">
-              <span class="gallery-chip">Beratung</span>
-              <img class="gallery-photo gallery-photo--beratung" src="assets/images/beratung.jpg" alt="Beratung im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-2" data-image-key="beratung" />
-            </article>
-            <article class="gallery-card salon-insight-circle reveal">
-              <span class="gallery-chip">Farbe</span>
-              <img class="gallery-photo gallery-photo--farbe gallery-photo--styling-2" src="assets/images/styling-2.jpg" alt="Farbbehandlung im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-4" data-image-key="styling-2" />
-            </article>
-            <article class="gallery-card salon-insight-circle reveal">
-              <span class="gallery-chip">Styling</span>
-              <img class="gallery-photo gallery-photo--styling-3" src="assets/images/styling-3.jpg" alt="Styling im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-5" data-image-key="styling-3" />
-            </article>
-            <article class="gallery-card salon-insight-circle reveal">
-              <span class="gallery-chip">Styling</span>
-              <img class="gallery-photo gallery-photo--styling-4" src="assets/images/styling-4.jpg" alt="Styling-Beispiel aus dem Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-6" data-image-key="styling-4" />
-            </article>
-            <article class="gallery-card salon-insight-circle reveal">
-              <span class="gallery-chip">Hochsteckfrisur</span>
-              <img class="gallery-photo gallery-photo--styling-5 gallery-photo--frisur" src="assets/images/styling-5.jpg" alt="Frisur-Beispiel aus dem Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-7" data-image-key="styling-5" />
-            </article>
+          <div class="salon-insights-wrap">
+            <div class="salon-insights-bolt" aria-hidden="true"></div>
+            <div class="gallery-grid salon-insights-grid">
+              <article class="gallery-card salon-insight-circle reveal">
+                <span class="gallery-chip">Beratung</span>
+                <img class="gallery-photo gallery-photo--beratung" src="assets/images/beratung.jpg" alt="Beratung im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-2" data-image-key="beratung" onerror="this.closest('.salon-insight-circle').style.display='none';" />
+              </article>
+              <article class="gallery-card salon-insight-circle reveal">
+                <span class="gallery-chip">Farbe</span>
+                <img class="gallery-photo gallery-photo--farbe gallery-photo--styling-2" src="assets/images/styling-2.jpg" alt="Farbbehandlung im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-4" data-image-key="styling-2" onerror="this.closest('.salon-insight-circle').style.display='none';" />
+              </article>
+              <article class="gallery-card salon-insight-circle reveal">
+                <span class="gallery-chip">Styling</span>
+                <img class="gallery-photo gallery-photo--styling-3" src="assets/images/styling-3.jpg" alt="Styling im Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-5" data-image-key="styling-3" onerror="this.closest('.salon-insight-circle').style.display='none';" />
+              </article>
+              <article class="gallery-card salon-insight-circle reveal">
+                <span class="gallery-chip">Styling</span>
+                <img class="gallery-photo gallery-photo--styling-4" src="assets/images/styling-4.jpg" alt="Styling-Beispiel aus dem Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-6" data-image-key="styling-4" onerror="this.closest('.salon-insight-circle').style.display='none';" />
+              </article>
+              <article class="gallery-card salon-insight-circle reveal">
+                <span class="gallery-chip">Hochsteckfrisur</span>
+                <img class="gallery-photo gallery-photo--styling-5 gallery-photo--frisur" src="assets/images/styling-5.jpg" alt="Frisur-Beispiel aus dem Salon Karola" width="800" height="600" loading="lazy" decoding="async" data-fallback-target="gallery-7" data-image-key="styling-5" onerror="this.closest('.salon-insight-circle').style.display='none';" />
+              </article>
+            </div>
           </div>
         </div>
       </section>

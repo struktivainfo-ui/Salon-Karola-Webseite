@@ -3974,3 +3974,180 @@ section,
     transition: none !important;
   }
 }
+
+/* ==================================================
+   FINAL PREMIUM OVERRIDE: SALON INSIGHTS GALLERY
+================================================== */
+#galerie .salon-insights-wrap {
+  position: relative !important;
+  width: min(1160px, calc(100% - 28px)) !important;
+  margin: 0 auto !important;
+  padding: 18px 0 !important;
+}
+
+#galerie .salon-insights-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(170px, 220px)) !important;
+  justify-content: center !important;
+  align-items: start !important;
+  gap: clamp(18px, 2.2vw, 30px) !important;
+}
+
+#galerie .salon-insights-grid > .salon-insight-circle {
+  width: clamp(165px, 16vw, 220px) !important;
+  aspect-ratio: 1 / 1 !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  position: relative !important;
+  border: 1px solid rgba(212, 175, 55, 0.56) !important;
+  background: #050302 !important;
+  box-shadow:
+    0 0 0 1px rgba(247, 215, 116, 0.12),
+    0 0 24px rgba(212, 175, 55, 0.22),
+    0 16px 42px rgba(0, 0, 0, 0.58) !important;
+  transition: transform 280ms ease, box-shadow 280ms ease !important;
+}
+
+#galerie .salon-insights-grid > .salon-insight-circle:hover {
+  transform: translateY(-4px) scale(1.02) !important;
+  box-shadow:
+    0 0 0 1px rgba(247, 215, 116, 0.25),
+    0 0 34px rgba(212, 175, 55, 0.3),
+    0 20px 48px rgba(0, 0, 0, 0.62) !important;
+}
+
+#galerie .salon-insights-grid > .salon-insight-circle img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  display: block !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  border-radius: 50% !important;
+  transform: none !important;
+}
+
+#galerie .salon-insights-grid .gallery-chip,
+#galerie .salon-insights-grid .gallery-label,
+#galerie .salon-insights-grid .image-label,
+#galerie .salon-insights-grid .badge,
+#galerie .salon-insights-grid .tag,
+#galerie .salon-insights-grid figcaption {
+  display: none !important;
+}
+
+#galerie .salon-insights-bolt {
+  position: absolute !important;
+  left: 50% !important;
+  top: 50% !important;
+  width: clamp(42px, 3.7vw, 62px) !important;
+  height: clamp(110px, 10vw, 160px) !important;
+  transform: translate(-50%, -50%) !important;
+  z-index: 3 !important;
+  pointer-events: none !important;
+  clip-path: polygon(66% 0, 36% 40%, 62% 40%, 29% 100%, 46% 58%, 22% 58%) !important;
+  background: linear-gradient(160deg, #fff2ba 0%, #f7d774 16%, #d4af37 44%, #9a6815 73%, #f5ce65 100%) !important;
+  filter: drop-shadow(0 0 12px rgba(247, 215, 116, 0.72)) drop-shadow(0 0 26px rgba(212, 175, 55, 0.36)) !important;
+  animation: salonBoltPulse 4.8s ease-in-out infinite !important;
+}
+
+#galerie .salon-insights-bolt::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 8% 22% !important;
+  clip-path: polygon(68% 0, 44% 34%, 65% 34%, 35% 100%, 48% 62%, 29% 62%) !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.42), rgba(255, 255, 255, 0.02)) !important;
+}
+
+#galerie .salon-insights-bolt::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: -26px -22px !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 50% 50%, rgba(247, 215, 116, 0.32), transparent 48%),
+    radial-gradient(circle at 38% 65%, rgba(212, 175, 55, 0.22), transparent 50%) !important;
+  z-index: -1 !important;
+}
+
+#galerie .salon-insights-grid img[src*="styling-2"],
+#galerie .salon-insights-grid img[src*="schnitt"],
+#galerie .salon-insights-grid img[src*="haircut"] {
+  object-position: center 78% !important;
+}
+
+#galerie .salon-insights-grid img[src*="beratung"] {
+  object-position: center 44% !important;
+}
+
+#galerie .salon-insights-grid img[src*="styling-3"],
+#galerie .salon-insights-grid img[src*="styling-4"],
+#galerie .salon-insights-grid img[src*="styling-5"] {
+  object-position: center 42% !important;
+}
+
+@keyframes salonBoltPulse {
+  0%, 100% {
+    transform: translate(-50%, -50%) scale(1);
+    filter: drop-shadow(0 0 10px rgba(247, 215, 116, 0.6)) drop-shadow(0 0 22px rgba(212, 175, 55, 0.3));
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.03);
+    filter: drop-shadow(0 0 16px rgba(247, 215, 116, 0.84)) drop-shadow(0 0 28px rgba(212, 175, 55, 0.48));
+  }
+}
+
+@media (max-width: 1024px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(145px, 200px)) !important;
+  }
+
+  #galerie .salon-insights-bolt {
+    width: clamp(34px, 5vw, 46px) !important;
+    height: clamp(88px, 13vw, 120px) !important;
+  }
+}
+
+@media (max-width: 680px) {
+  #galerie .salon-insights-wrap {
+    width: min(100%, calc(100% - 22px)) !important;
+  }
+
+  #galerie .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(126px, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  #galerie .salon-insights-grid > .salon-insight-circle {
+    width: min(42vw, 172px) !important;
+  }
+
+  #galerie .salon-insights-bolt {
+    position: static !important;
+    margin: 2px auto 14px !important;
+    transform: none !important;
+    width: 34px !important;
+    height: 86px !important;
+    display: block !important;
+  }
+}
+
+@media (max-width: 390px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #galerie .salon-insights-bolt {
+    animation: none !important;
+  }
+  #galerie .salon-insights-grid > .salon-insight-circle {
+    transition: none !important;
+  }
+  #galerie .salon-insights-grid > .salon-insight-circle:hover {
+    transform: none !important;
+  }
+}
