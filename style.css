@@ -3591,6 +3591,130 @@ section,
   font-size: 27px !important;
 }
 
+/* single premium emblem (comb + bolt + scissors) */
+#team .team-center-emblem {
+  width: clamp(68px, 5.6vw, 98px) !important;
+  height: clamp(280px, 28vw, 420px) !important;
+  position: relative !important;
+  display: grid !important;
+  grid-template-rows: auto 1fr auto !important;
+  align-items: center !important;
+  justify-items: center !important;
+  border-radius: 999px !important;
+  background:
+    radial-gradient(circle at 50% 12%, rgba(247, 215, 116, 0.16), transparent 44%),
+    radial-gradient(circle at 50% 90%, rgba(247, 215, 116, 0.12), transparent 42%) !important;
+  filter: drop-shadow(0 0 16px rgba(247, 215, 116, 0.44)) drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45)) !important;
+  animation: teamEmblemPulse 4.8s ease-in-out infinite !important;
+}
+
+#team .team-center-emblem::before {
+  content: "" !important;
+  position: absolute !important;
+  inset: 8% calc(50% - 1px) 8% !important;
+  background: linear-gradient(180deg, rgba(247, 215, 116, 0.2), rgba(212, 175, 55, 0.95), rgba(247, 215, 116, 0.2)) !important;
+  box-shadow: 0 0 18px rgba(247, 215, 116, 0.52), 0 0 42px rgba(212, 175, 55, 0.24) !important;
+  border-radius: 999px !important;
+}
+
+#team .emblem-comb {
+  position: relative !important;
+  width: clamp(62px, 5vw, 86px) !important;
+  height: clamp(28px, 2.4vw, 38px) !important;
+  border-radius: 999px !important;
+  border: 1px solid rgba(247, 215, 116, 0.72) !important;
+  background: linear-gradient(145deg, #f8df8e 0%, #d4af37 38%, #b88925 70%, #f7d774 100%) !important;
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -2px 4px rgba(90, 58, 10, 0.25),
+    0 0 12px rgba(247, 215, 116, 0.55) !important;
+  z-index: 2 !important;
+}
+
+#team .emblem-comb::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 10%;
+  right: 10%;
+  bottom: -7px;
+  height: 8px;
+  background: repeating-linear-gradient(
+    90deg,
+    rgba(133, 95, 24, 0.95) 0 2px,
+    rgba(247, 215, 116, 0.92) 2px 4px
+  ) !important;
+  border-radius: 0 0 8px 8px !important;
+  box-shadow: 0 0 8px rgba(247, 215, 116, 0.35) !important;
+}
+
+#team .emblem-bolt {
+  width: clamp(42px, 3.8vw, 58px) !important;
+  height: clamp(150px, 16vw, 230px) !important;
+  z-index: 2 !important;
+  background: linear-gradient(160deg, #fef2b6 0%, #f7d774 16%, #e1b64a 42%, #b07a17 72%, #f7d774 100%) !important;
+  clip-path: polygon(66% 0, 36% 40%, 61% 40%, 27% 100%, 45% 58%, 21% 58%) !important;
+  filter: drop-shadow(0 0 12px rgba(247, 215, 116, 0.72)) drop-shadow(0 0 24px rgba(212, 175, 55, 0.32)) !important;
+  position: relative !important;
+}
+
+#team .emblem-bolt::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 8% 22% !important;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0)) !important;
+  clip-path: polygon(68% 0, 44% 34%, 64% 34%, 34% 100%, 47% 62%, 28% 62%) !important;
+  opacity: 0.7 !important;
+}
+
+#team .emblem-scissors {
+  width: clamp(62px, 5vw, 86px) !important;
+  height: clamp(38px, 3vw, 50px) !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+#team .emblem-scissors i {
+  position: absolute !important;
+  top: 6px;
+  width: 30px;
+  height: 16px;
+  border: 2px solid rgba(247, 215, 116, 0.9) !important;
+  border-radius: 999px !important;
+  box-shadow: inset 0 0 8px rgba(247, 215, 116, 0.2), 0 0 10px rgba(247, 215, 116, 0.4) !important;
+}
+
+#team .emblem-scissors i:first-child {
+  left: 2px;
+  transform: rotate(-18deg);
+}
+
+#team .emblem-scissors i:last-child {
+  right: 2px;
+  transform: rotate(18deg);
+}
+
+#team .emblem-scissors b {
+  position: absolute !important;
+  left: 50%;
+  top: 17px;
+  width: 42px;
+  height: 2px;
+  transform: translateX(-50%) rotate(-26deg);
+  background: linear-gradient(90deg, #f7d774, #b88925) !important;
+  box-shadow: 0 0 10px rgba(247, 215, 116, 0.45) !important;
+}
+
+@keyframes teamEmblemPulse {
+  0%, 100% {
+    transform: translateY(0);
+    filter: drop-shadow(0 0 14px rgba(247, 215, 116, 0.42)) drop-shadow(0 14px 24px rgba(0, 0, 0, 0.45));
+  }
+  50% {
+    transform: translateY(-3px);
+    filter: drop-shadow(0 0 22px rgba(247, 215, 116, 0.6)) drop-shadow(0 16px 26px rgba(0, 0, 0, 0.5));
+  }
+}
+
 @media (max-width: 900px) {
   #team .team-grid {
     grid-template-columns: 1fr !important;
@@ -3623,6 +3747,42 @@ section,
     font-size: 22px !important;
   }
 
+  #team .team-center-emblem {
+    width: clamp(56px, 18vw, 72px) !important;
+    height: clamp(110px, 30vw, 150px) !important;
+    grid-template-rows: auto 1fr auto !important;
+  }
+
+  #team .team-center-emblem::before {
+    inset: 16% calc(50% - 1px) 16% !important;
+  }
+
+  #team .emblem-comb {
+    width: clamp(44px, 14vw, 62px) !important;
+    height: clamp(18px, 5.5vw, 26px) !important;
+  }
+
+  #team .emblem-bolt {
+    width: clamp(28px, 8vw, 38px) !important;
+    height: clamp(58px, 16vw, 84px) !important;
+  }
+
+  #team .emblem-scissors {
+    width: clamp(44px, 14vw, 60px) !important;
+    height: clamp(24px, 7vw, 32px) !important;
+  }
+
+  #team .emblem-scissors i {
+    width: 20px;
+    height: 10px;
+    top: 5px;
+  }
+
+  #team .emblem-scissors b {
+    width: 30px;
+    top: 13px;
+  }
+
   #team .team-photo-wrap {
     min-height: clamp(240px, 52vw, 330px) !important;
   }
@@ -3631,6 +3791,12 @@ section,
   #team .team-media img,
   #team .team-photo {
     max-height: clamp(230px, 48vw, 320px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #team .team-center-emblem {
+    animation: none !important;
   }
 }
 @media (min-width: 821px) {
