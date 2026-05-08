@@ -1432,6 +1432,108 @@ button:hover,
   transform: translateY(0);
 }
 
+/* Final live polish */
+.image-fallback {
+  display: none !important;
+}
+
+.hero-tagline {
+  display: none;
+}
+
+.hero-family {
+  color: #f3ebdd !important;
+  font-weight: 700;
+}
+
+.hero-actions .btn {
+  min-height: 52px;
+  padding-inline: 22px;
+}
+
+.gallery-grid.salon-insights-grid {
+  width: min(1180px, calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(220px, 1fr)) !important;
+  gap: clamp(16px, 2.2vw, 26px) !important;
+  align-items: start !important;
+}
+
+.gallery-grid.salon-insights-grid .gallery-card {
+  width: 100% !important;
+  max-width: none !important;
+  border-radius: 22px !important;
+  overflow: hidden !important;
+  background: linear-gradient(145deg, rgba(10, 7, 3, 0.92), rgba(3, 2, 1, 0.98)) !important;
+  border: 1px solid rgba(212, 175, 55, 0.25) !important;
+  padding: 0 !important;
+  min-height: 0 !important;
+  aspect-ratio: 4 / 3;
+}
+
+.gallery-grid.salon-insights-grid .gallery-card img {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: none !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 0 !important;
+  background: #050302 !important;
+}
+
+.gallery-grid.salon-insights-grid .gallery-card::after,
+.gallery-grid.salon-insights-grid .gallery-chip,
+.gallery-grid.salon-insights-grid figcaption {
+  display: none !important;
+}
+
+/* keep haircut framing readable */
+.gallery-grid.salon-insights-grid img[src*="styling-1"],
+.gallery-grid.salon-insights-grid .gallery-photo--schnitt {
+  object-position: center 70% !important;
+}
+
+.review-cta {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.review-cta p {
+  color: #f3ebdd !important;
+}
+
+/* consistent premium cards/buttons */
+.service-card,
+.product-card,
+.team-card,
+.review-card,
+.contact-card,
+.welcome-card,
+.lotto-card,
+.before-after-card,
+.hours-card {
+  border-radius: 24px !important;
+}
+
+.btn,
+.button,
+.contact-actions a {
+  border-radius: 999px !important;
+}
+
+@media (max-width: 900px) {
+  .gallery-grid.salon-insights-grid {
+    grid-template-columns: 1fr !important;
+    width: min(100%, calc(100% - 24px)) !important;
+  }
+
+  .gallery-grid.salon-insights-grid .gallery-card {
+    aspect-ratio: 16 / 10;
+  }
+}
+
 /* Responsive final fix: compact mobile + laptop */
 section,
 .section {
