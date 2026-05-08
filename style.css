@@ -2897,6 +2897,61 @@ body {
   }
 }
 
+/* Final one-fix: opening hours formatting */
+.hours-list {
+  display: grid;
+  gap: 0;
+  width: 100%;
+}
+
+.hours-row {
+  display: grid;
+  grid-template-columns: minmax(160px, 1fr) auto;
+  align-items: start;
+  gap: 24px;
+  padding: 18px 0;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28);
+}
+
+.hours-row:last-child {
+  border-bottom: 0;
+}
+
+.hours-day {
+  color: #f3ebdd;
+  font-weight: 700;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+}
+
+.hours-times {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  color: #f7d774;
+  font-weight: 900;
+  font-size: clamp(1.05rem, 1.7vw, 1.35rem);
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.hours-times span {
+  display: block;
+}
+
+@media (max-width: 520px) {
+  .hours-row {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 16px 0;
+  }
+
+  .hours-times {
+    align-items: flex-start;
+    white-space: normal;
+  }
+}
+
 /* FINAL one-fix: salon insights must be side-by-side on laptop/desktop */
 .salon-insights-grid {
   width: min(1180px, calc(100% - 32px)) !important;
