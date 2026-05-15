@@ -4552,6 +4552,54 @@ section {
 }
 
 /* ==================================================
+   ORNAMENT CLEANUP: REMOVE VERTICAL GOLD TOTEM
+================================================== */
+#team .team-center-symbol,
+#team .team-center-emblem,
+#team .emblem-comb,
+#team .emblem-bolt,
+#team .emblem-scissors {
+  display: none !important;
+}
+
+/* subtle professional replacement */
+#team .team-grid {
+  position: relative;
+}
+
+#team .team-grid::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: -12px;
+  width: min(520px, 80%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(226, 184, 72, 0.75),
+    rgba(255, 238, 170, 0.85),
+    rgba(226, 184, 72, 0.75),
+    transparent
+  );
+  opacity: 0.75;
+  pointer-events: none;
+}
+
+/* normalize team grid after removing center column ornament */
+#team .team-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+}
+
+@media (max-width: 900px) {
+  #team .team-grid::before {
+    width: min(320px, 72%);
+    top: -6px;
+  }
+}
+
+/* ==================================================
    SERVICE ICON QUALITY UPGRADE (NO EMOJIS)
 ================================================== */
 .service-title {
