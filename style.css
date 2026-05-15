@@ -4552,6 +4552,59 @@ section {
 }
 
 /* ==================================================
+   SERVICE ICON QUALITY UPGRADE (NO EMOJIS)
+================================================== */
+.service-title {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+}
+
+.service-title > span:last-child {
+  display: inline-block;
+}
+
+.service-icon {
+  width: 42px !important;
+  height: 42px !important;
+  flex: 0 0 42px !important;
+  display: grid !important;
+  place-items: center !important;
+  border-radius: 999px !important;
+  color: #f5d36b !important;
+  background:
+    radial-gradient(circle at 35% 25%, rgba(245, 211, 107, 0.22), transparent 45%),
+    rgba(8, 6, 3, 0.92) !important;
+  border: 1px solid rgba(245, 211, 107, 0.55) !important;
+  box-shadow:
+    0 0 18px rgba(245, 211, 107, 0.18),
+    0 10px 22px rgba(0, 0, 0, 0.45) !important;
+}
+
+.service-icon svg {
+  width: 22px !important;
+  height: 22px !important;
+  stroke: currentColor !important;
+}
+
+@media (max-width: 700px) {
+  .service-icon {
+    width: 36px !important;
+    height: 36px !important;
+    flex-basis: 36px !important;
+  }
+
+  .service-icon svg {
+    width: 19px !important;
+    height: 19px !important;
+  }
+
+  .service-title {
+    gap: 10px !important;
+  }
+}
+
+/* ==================================================
    PREMIUM HIGHLIGHT: IHR MOMENT IM SALON KAROLA
 ================================================== */
 .salon-moment-section {
