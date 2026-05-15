@@ -4554,3 +4554,17 @@ section {
 .hair-divider {
   margin: clamp(18px, 3vw, 32px) auto !important;
 }
+
+/* hard stop after salon insights to avoid empty black stretch */
+#galerie .gallery-split {
+  gap: 0 !important;
+}
+
+#galerie .gallery-group {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#galerie + section {
+  margin-top: 0 !important;
+}
