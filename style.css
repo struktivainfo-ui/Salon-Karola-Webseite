@@ -4221,3 +4221,121 @@ section,
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==================================================
+   FINAL PREMIUM GALLERY REWORK
+================================================== */
+#galerie .gallery-split {
+  display: grid !important;
+  gap: clamp(30px, 4vw, 52px) !important;
+}
+
+#galerie .gallery-group-head h3 {
+  margin: 0 0 8px !important;
+  color: #fff !important;
+}
+
+#galerie .gallery-group-head p {
+  margin: 0 0 18px !important;
+  color: #e8ddc8 !important;
+}
+
+#galerie .gallery-premium-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(16px, 2vw, 28px) !important;
+  width: min(1180px, calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+}
+
+#galerie .gallery-premium-grid .gallery-card {
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  background: #050403 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.45) !important;
+  padding: 0 !important;
+  width: auto !important;
+  max-width: none !important;
+  aspect-ratio: 4 / 5 !important;
+}
+
+#galerie .gallery-premium-grid .gallery-card--lg {
+  grid-column: span 2 !important;
+  aspect-ratio: 16 / 10 !important;
+}
+
+#galerie .gallery-premium-grid .gallery-card--tall {
+  aspect-ratio: 3 / 4 !important;
+}
+
+#galerie .gallery-premium-grid .gallery-card img {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 240px !important;
+  max-height: 420px !important;
+  object-fit: cover !important;
+  object-position: center 46% !important;
+  display: block !important;
+  border-radius: 0 !important;
+  transition: transform 0.6s ease, filter 0.6s ease !important;
+}
+
+#galerie .gallery-premium-grid .gallery-card:hover img {
+  transform: scale(1.045) !important;
+  filter: brightness(1.08) !important;
+}
+
+#galerie .gallery-premium-grid .gallery-card::after {
+  content: "" !important;
+  position: absolute !important;
+  inset: 0 !important;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.05)) !important;
+  pointer-events: none !important;
+}
+
+#galerie .gallery-premium-grid .gallery-caption {
+  position: absolute !important;
+  left: 20px !important;
+  bottom: 18px !important;
+  z-index: 2 !important;
+  color: #ffffff !important;
+  font-weight: 800 !important;
+  text-shadow: 0 3px 12px rgba(0, 0, 0, 0.75) !important;
+}
+
+#galerie .gallery-premium-grid .gallery-chip {
+  display: none !important;
+}
+
+#galerie .gallery-premium-grid--salon img[src*="team-jessi-neu"] {
+  object-position: center 28% !important;
+}
+
+#galerie .gallery-premium-grid--inspiration img[src*="styling-2"] {
+  object-position: center 58% !important;
+}
+
+@media (max-width: 1100px) {
+  #galerie .gallery-premium-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  #galerie .gallery-premium-grid .gallery-card--lg {
+    grid-column: auto !important;
+    aspect-ratio: 4 / 5 !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #galerie .gallery-premium-grid {
+    grid-template-columns: 1fr !important;
+    width: min(100%, calc(100% - 24px)) !important;
+  }
+
+  #galerie .gallery-premium-grid .gallery-card img {
+    min-height: 220px !important;
+    max-height: 320px !important;
+  }
+}
