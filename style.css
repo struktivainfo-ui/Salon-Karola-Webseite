@@ -4437,3 +4437,56 @@ section {
     max-height: 320px !important;
   }
 }
+
+/* ==================================================
+   HARD BUGFIX: SALON INSIGHTS IMAGES VISIBLE
+================================================== */
+#galerie .salon-insights-grid {
+  width: min(1180px, calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(180px, 1fr)) !important;
+  gap: clamp(18px, 2.5vw, 32px) !important;
+}
+
+#galerie .salon-insight-card {
+  margin: 0 !important;
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 28px !important;
+  min-height: 240px !important;
+  background: #080604 !important;
+  border: 1px solid rgba(212, 175, 55, 0.35) !important;
+  display: block !important;
+}
+
+#galerie .salon-insight-card img {
+  display: block !important;
+  width: 100% !important;
+  height: 260px !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  filter: none !important;
+}
+
+@media (max-width: 900px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(140px, 1fr)) !important;
+  }
+
+  #galerie .salon-insight-card img {
+    height: 220px !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #galerie .salon-insight-card img {
+    height: 210px !important;
+  }
+}
