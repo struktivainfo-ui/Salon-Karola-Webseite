@@ -4223,6 +4223,104 @@ section,
 }
 
 /* ==================================================
+   FINAL STATIC GOLD PARTICLE FIX (NO ANIMATION)
+================================================== */
+
+/* 1) Remove animated gold dust layers */
+.gold-dust-layer,
+.gold-dust-layer--near,
+.gold-dust-layer--far,
+.luxury-diamonds {
+  animation: none !important;
+  transform: none !important;
+}
+
+.gold-dust-layer::before,
+.gold-dust-layer--near::before,
+.gold-dust-layer--far::before,
+.luxury-diamonds::before,
+.luxury-diamonds::after {
+  animation: none !important;
+}
+
+/* keep old animated overlays from dominating visuals */
+.gold-dust-layer,
+.gold-dust-layer--near,
+.gold-dust-layer--far,
+.luxury-diamonds {
+  display: none !important;
+}
+
+/* 2) Static subtle global particles */
+body {
+  background-color: #030201 !important;
+  color: #ffffff;
+  position: relative;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    radial-gradient(circle, rgba(212, 175, 55, 0.34) 0 1px, transparent 1.6px),
+    radial-gradient(circle, rgba(247, 215, 116, 0.22) 0 1px, transparent 1.8px),
+    radial-gradient(circle, rgba(255, 255, 255, 0.12) 0 0.8px, transparent 1.4px);
+  background-size:
+    180px 180px,
+    260px 260px,
+    340px 340px;
+  background-position:
+    20px 30px,
+    90px 120px,
+    140px 60px;
+  opacity: 0.55;
+  animation: none !important;
+}
+
+/* 3) Keep content above particle layer */
+main,
+header,
+footer,
+section {
+  position: relative;
+  z-index: 1;
+}
+
+/* 4) Calm down "Einblicke in unseren Salon" area */
+#galerie,
+.gallery-section,
+.salon-insights,
+.insights-section {
+  background: transparent !important;
+}
+
+#galerie::before,
+#galerie::after,
+.gallery-section::before,
+.gallery-section::after,
+.salon-insights::before,
+.salon-insights::after,
+.insights-section::before,
+.insights-section::after,
+#galerie .salon-insights-wrap::before,
+#galerie .salon-insights-wrap::after {
+  animation: none !important;
+}
+
+@media (max-width: 520px) {
+  body::before {
+    opacity: 0.38;
+    background-size:
+      150px 150px,
+      220px 220px,
+      300px 300px;
+  }
+}
+
+/* ==================================================
    FINAL PREMIUM GALLERY REWORK
 ================================================== */
 #galerie .gallery-split {
