@@ -5136,6 +5136,71 @@ section,
   }
 }
 
+/* Service-card salon atmosphere backgrounds (local assets, premium dark overlay) */
+#leistungen .service-card {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: center !important;
+  border: 1px solid rgba(212, 175, 55, 0.34) !important;
+  box-shadow:
+    0 24px 56px rgba(0, 0, 0, 0.58),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.03),
+    0 0 24px rgba(212, 175, 55, 0.12) !important;
+}
+
+#leistungen .service-card--damen {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.88)),
+    url("assets/images/styling-5.jpg") !important;
+  background-position: center 38% !important;
+}
+
+#leistungen .service-card--herren {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.9)),
+    url("assets/images/styling-2.jpg") !important;
+  background-position: center 62% !important;
+}
+
+#leistungen .service-card--kinder {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.74), rgba(0, 0, 0, 0.9)),
+    url("assets/images/beratung.jpg") !important;
+  background-position: center 44% !important;
+}
+
+#leistungen .service-card--farbe {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.88)),
+    url("assets/images/styling-3.jpg") !important;
+  background-position: center 48% !important;
+}
+
+#leistungen .service-card--festlich {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.88)),
+    url("assets/images/styling-4.jpg") !important;
+  background-position: center 36% !important;
+}
+
+#leistungen .service-card h3,
+#leistungen .service-card .service-desc,
+#leistungen .service-card li {
+  color: #ffffff !important;
+}
+
+#leistungen .service-card .service-kicker {
+  color: #f7d774 !important;
+}
+
+#leistungen .service-card li::marker {
+  color: #d4af37 !important;
+}
+
+#leistungen .service-card::after {
+  opacity: 0.14 !important;
+}
+
 /* subtle professional replacement */
 #team .team-grid {
   position: relative;
