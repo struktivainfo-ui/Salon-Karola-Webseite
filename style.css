@@ -4669,6 +4669,289 @@ section,
   display: none !important;
 }
 
+/* ==================================================
+   FINAL RELEASE STABILITY OVERRIDES
+================================================== */
+
+/* Global compact flow and readability */
+html,
+body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+section,
+.section {
+  padding-top: clamp(30px, 4vw, 56px) !important;
+  padding-bottom: clamp(30px, 4vw, 56px) !important;
+}
+
+.section + .section {
+  margin-top: 0 !important;
+}
+
+.section-heading p,
+.section-heading li,
+.contact-card p,
+.product-card p,
+.review-cta p,
+.hours-card p,
+.why-card p {
+  color: rgba(243, 235, 221, 0.9) !important;
+}
+
+.btn-gold,
+.button-primary,
+.button-secondary {
+  color: #0b0703 !important;
+}
+
+/* Gallery: desktop side by side, no empty trailing space */
+#galerie,
+#galerie .salon-insights-section,
+#galerie .salon-insights-grid {
+  height: auto !important;
+  min-height: 0 !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+#galerie .salon-insights-grid {
+  width: min(1180px, calc(100% - 32px)) !important;
+  margin: 0 auto !important;
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(170px, 1fr)) !important;
+  gap: clamp(16px, 2.3vw, 26px) !important;
+  align-items: start !important;
+  justify-items: center !important;
+}
+
+#galerie .salon-insight-card {
+  width: min(100%, 230px) !important;
+  max-width: 230px !important;
+  aspect-ratio: 1 / 1 !important;
+  border-radius: 50% !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(212, 175, 55, 0.45) !important;
+  background: #050302 !important;
+  box-shadow:
+    0 0 0 1px rgba(247, 215, 116, 0.1),
+    0 12px 30px rgba(0, 0, 0, 0.55),
+    0 0 22px rgba(212, 175, 55, 0.18) !important;
+}
+
+#galerie .salon-insight-card img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center 54% !important;
+  border-radius: 50% !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+#galerie .salon-insight-card img[src*="styling-2"],
+#galerie .salon-insight-card img[src*="schnitt"],
+#galerie .salon-insight-card img[src*="haircut"] {
+  object-position: center 88% !important;
+}
+
+#galerie .salon-insight-card .gallery-chip,
+#galerie .salon-insight-card .gallery-label,
+#galerie .salon-insight-card .image-label,
+#galerie .salon-insight-card .badge,
+#galerie .salon-insight-card .tag,
+#galerie .salon-insight-card figcaption {
+  display: none !important;
+}
+
+@media (max-width: 1024px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: repeat(2, minmax(145px, 1fr)) !important;
+  }
+}
+
+@media (max-width: 520px) {
+  #galerie .salon-insights-grid {
+    width: min(100%, calc(100% - 24px)) !important;
+    grid-template-columns: repeat(2, minmax(120px, 1fr)) !important;
+    gap: 14px !important;
+  }
+
+  #galerie .salon-insight-card {
+    width: min(42vw, 170px) !important;
+  }
+}
+
+@media (max-width: 360px) {
+  #galerie .salon-insights-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Before/after compact premium comparison */
+#vorher-nachher .before-after-grid {
+  max-width: 860px !important;
+  margin: 0 auto !important;
+}
+
+#vorher-nachher .before-after-card {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  padding: clamp(16px, 2.2vw, 24px) !important;
+}
+
+#vorher-nachher .before-after-images {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+}
+
+#vorher-nachher .before-after-item,
+#vorher-nachher .before-after-media {
+  background: #050402 !important;
+  border-radius: 20px !important;
+  overflow: hidden !important;
+}
+
+#vorher-nachher .before-after-item img,
+#vorher-nachher .before-after-media img {
+  width: 100% !important;
+  height: clamp(165px, 20vw, 230px) !important;
+  object-fit: contain !important;
+  object-position: center !important;
+  background: #050402 !important;
+}
+
+@media (max-width: 620px) {
+  #vorher-nachher .before-after-images {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Hours final formatting */
+.hours-list {
+  display: grid !important;
+  gap: 0 !important;
+  width: 100%;
+}
+
+.hours-row {
+  display: grid !important;
+  grid-template-columns: minmax(160px, 1fr) auto !important;
+  align-items: start !important;
+  gap: 24px !important;
+  padding: 16px 0 !important;
+  border-bottom: 1px solid rgba(212, 175, 55, 0.28) !important;
+}
+
+.hours-row:last-child {
+  border-bottom: 0 !important;
+}
+
+.hours-day {
+  color: #f3ebdd !important;
+}
+
+.hours-times {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-end !important;
+  gap: 6px !important;
+  color: #f7d774 !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 520px) {
+  .hours-row {
+    grid-template-columns: 1fr !important;
+    gap: 8px !important;
+  }
+
+  .hours-times {
+    align-items: flex-start !important;
+    white-space: normal !important;
+  }
+}
+
+/* Mobile/desktop nav clarity */
+@media (min-width: 821px) {
+  .mobile-menu-toggle {
+    display: none !important;
+  }
+
+  .site-nav.mobile-nav {
+    display: flex !important;
+    position: static !important;
+    inset: auto !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 0.9rem !important;
+    background: transparent !important;
+    border: 0 !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+}
+
+@media (max-width: 820px) {
+  .site-nav.mobile-nav {
+    z-index: 1000 !important;
+  }
+
+  .mobile-menu-toggle {
+    z-index: 1001 !important;
+  }
+}
+
+/* Contact actions and lotto compact layout */
+.contact-actions {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 12px !important;
+  align-items: stretch !important;
+}
+
+.contact-actions a,
+.contact-actions .btn {
+  min-height: 52px !important;
+  width: 100% !important;
+  display: inline-flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+@media (max-width: 900px) {
+  .contact-actions {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+.lotto-card,
+.lotto-compact-card {
+  max-width: 760px !important;
+  margin: 0 auto !important;
+  gap: 16px !important;
+}
+
+.lotto-card img,
+.lotto-media img {
+  max-height: 150px !important;
+  object-fit: contain !important;
+  object-position: center 48% !important;
+}
+
+/* Remove floating fixed action widgets if any */
+.scroll-top,
+.back-to-top,
+.floating-whatsapp,
+.whatsapp-float,
+.fixed-whatsapp,
+.floating-action,
+.floating-buttons {
+  display: none !important;
+}
+
 /* subtle professional replacement */
 #team .team-grid {
   position: relative;
