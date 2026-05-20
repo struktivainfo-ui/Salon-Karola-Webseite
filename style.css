@@ -5726,6 +5726,54 @@ li,
   font-weight: 700;
 }
 
+/* ==================================================
+   HOTFIX: KEEP SERVICE BACKGROUND MOTIFS VISIBLE
+================================================== */
+#leistungen .service-card.service-card--damen,
+#leistungen .service-card.service-card--herren,
+#leistungen .service-card.service-card--kinder,
+#leistungen .service-card.service-card--farbe,
+#leistungen .service-card.service-card--festlich {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-blend-mode: normal !important;
+}
+
+#leistungen .service-card.service-card--damen {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.74)),
+    url("assets/images/styling-5.jpg") !important;
+  background-position: center 36% !important;
+}
+
+#leistungen .service-card.service-card--herren {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.54), rgba(0, 0, 0, 0.76)),
+    url("assets/images/styling-2.jpg") !important;
+  background-position: center 62% !important;
+}
+
+#leistungen .service-card.service-card--kinder {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.76)),
+    url("assets/images/beratung.jpg") !important;
+  background-position: center 45% !important;
+}
+
+#leistungen .service-card.service-card--farbe {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.74)),
+    url("assets/images/styling-3.jpg") !important;
+  background-position: center 48% !important;
+}
+
+#leistungen .service-card.service-card--festlich {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.74)),
+    url("assets/images/styling-4.jpg") !important;
+  background-position: center 34% !important;
+}
+
 @media (max-width: 820px) {
   .moment-steps {
     grid-template-columns: 1fr;
