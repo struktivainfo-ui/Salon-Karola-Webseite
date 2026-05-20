@@ -4952,6 +4952,190 @@ section,
   display: none !important;
 }
 
+/* ==================================================
+   FINAL DETAIL: WHATSAPP FLOAT + SALON MOTION
+================================================== */
+
+.whatsapp-floating {
+  position: fixed;
+  right: clamp(16px, 2vw, 28px);
+  bottom: clamp(16px, 2vw, 28px);
+  width: 62px;
+  height: 62px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: #25d366;
+  box-shadow:
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.18);
+  z-index: 9999;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.whatsapp-floating:hover {
+  transform: translateY(-4px) scale(1.04);
+  box-shadow:
+    0 24px 52px rgba(0, 0, 0, 0.58),
+    0 0 26px rgba(37, 211, 102, 0.45);
+}
+
+.whatsapp-floating img,
+.whatsapp-floating svg {
+  width: 34px;
+  height: 34px;
+  display: block;
+}
+
+/* premium friseur hairline atmosphere */
+.hero-section,
+#leistungen,
+#kontakt {
+  position: relative;
+  overflow: hidden;
+}
+
+.hairline-bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.hairline-bg::before {
+  content: "";
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  right: -180px;
+  top: 8%;
+  border: 1px solid rgba(212, 175, 55, 0.16);
+  border-radius: 45% 55% 60% 40%;
+  transform: rotate(-18deg);
+  box-shadow: 0 0 40px rgba(212, 175, 55, 0.06);
+}
+
+.hairline-bg::after {
+  content: "";
+  position: absolute;
+  width: 360px;
+  height: 360px;
+  left: -140px;
+  bottom: 4%;
+  border: 1px solid rgba(247, 215, 116, 0.12);
+  border-radius: 60% 40% 45% 55%;
+  transform: rotate(22deg);
+}
+
+.hero-content,
+.services .container,
+.contact .container {
+  position: relative;
+  z-index: 1;
+}
+
+/* tiny salon silhouettes (line style, non-emoji) */
+.salon-silhouette {
+  display: inline-block;
+  width: 44px;
+  height: 16px;
+  margin-left: 12px;
+  vertical-align: middle;
+  opacity: 0.24;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+
+.salon-silhouette--services {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40' fill='none'%3E%3Cpath d='M8 30 C26 5 42 5 58 22 C74 39 90 34 112 10' stroke='%23d4af37' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+.salon-silhouette--contact {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 40' fill='none'%3E%3Cpath d='M10 20 H108 M28 8 L48 32 M48 8 L28 32' stroke='%23f7d774' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+}
+
+/* more living yet subtle motion polish */
+.btn,
+.button {
+  transition:
+    transform 0.26s ease,
+    box-shadow 0.26s ease,
+    filter 0.26s ease;
+}
+
+.btn:hover,
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+}
+
+.image-luxury,
+.gallery-card img,
+.salon-insight-card img,
+.team-card img,
+.before-after-card img {
+  transition:
+    transform 0.55s ease,
+    filter 0.55s ease;
+}
+
+.gallery-card:hover img,
+.salon-insight-card:hover img,
+.team-card:hover img,
+.before-after-card:hover img {
+  transform: scale(1.035);
+  filter: brightness(1.06) contrast(1.04);
+}
+
+@media (max-width: 600px) {
+  .whatsapp-floating {
+    width: 54px;
+    height: 54px;
+    right: 14px;
+    bottom: calc(74px + env(safe-area-inset-bottom, 0px));
+  }
+
+  .whatsapp-floating img,
+  .whatsapp-floating svg {
+    width: 30px;
+    height: 30px;
+  }
+
+  .salon-silhouette {
+    width: 36px;
+    height: 14px;
+    margin-left: 8px;
+    opacity: 0.2;
+  }
+
+  .hairline-bg::before {
+    width: 360px;
+    height: 360px;
+  }
+
+  .hairline-bg::after {
+    width: 260px;
+    height: 260px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .whatsapp-floating,
+  .btn,
+  .button,
+  .gallery-card img,
+  .salon-insight-card img,
+  .team-card img,
+  .before-after-card img {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
 /* subtle professional replacement */
 #team .team-grid {
   position: relative;
