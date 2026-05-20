@@ -4552,6 +4552,177 @@ section {
 }
 
 /* ==================================================
+   PREMIUM FLOW REFRESH (final lively polish)
+================================================== */
+#content > section {
+  position: relative;
+}
+
+#content > section::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  width: min(560px, 82%);
+  height: 1px;
+  transform: translateX(-50%);
+  background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.18), rgba(245, 215, 110, 0.34), rgba(212, 175, 55, 0.18), transparent);
+  pointer-events: none;
+}
+
+.hero-section {
+  background:
+    radial-gradient(circle at 82% 20%, rgba(230, 199, 90, 0.18), transparent 38%),
+    radial-gradient(circle at 14% 78%, rgba(212, 175, 55, 0.11), transparent 34%),
+    linear-gradient(145deg, rgba(10, 7, 3, 0.98), rgba(5, 5, 5, 0.99)) !important;
+}
+
+.hero-image-wrap {
+  position: relative;
+}
+
+.hero-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: -8px;
+  border-radius: 34px;
+  background: linear-gradient(140deg, rgba(245, 215, 110, 0.48), rgba(212, 175, 55, 0.08) 40%, rgba(212, 175, 55, 0.5));
+  filter: blur(18px);
+  opacity: 0.45;
+  z-index: 0;
+}
+
+.hero-image-wrap img {
+  position: relative;
+  z-index: 1;
+  border-radius: 30px !important;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.58), 0 0 34px rgba(212, 175, 55, 0.14) !important;
+}
+
+#leistungen .services-grid .service-card:nth-child(2),
+#leistungen .services-grid .service-card:nth-child(5) {
+  transform: translateY(18px);
+}
+
+#leistungen .services-grid .service-card:nth-child(3) {
+  transform: translateY(-10px);
+}
+
+#leistungen .services-grid .service-card:hover {
+  transform: translateY(-6px) scale(1.01) !important;
+}
+
+#galerie .salon-insights-grid {
+  gap: clamp(18px, 2.8vw, 34px) !important;
+}
+
+#galerie .salon-insight-card {
+  transition: transform 0.45s ease, box-shadow 0.45s ease, border-color 0.45s ease !important;
+}
+
+#galerie .salon-insight-card:nth-child(1) { border-radius: 48% 52% 50% 50% / 52% 48% 52% 48% !important; }
+#galerie .salon-insight-card:nth-child(2) { border-radius: 50% !important; }
+#galerie .salon-insight-card:nth-child(3) { border-radius: 54% 46% 50% 50% / 50% 52% 48% 50% !important; }
+#galerie .salon-insight-card:nth-child(4) { border-radius: 47% 53% 49% 51% / 54% 46% 54% 46% !important; }
+#galerie .salon-insight-card:nth-child(5) { border-radius: 51% 49% 53% 47% / 46% 54% 48% 52% !important; }
+
+#galerie .salon-insight-card img {
+  border-radius: inherit !important;
+}
+
+#galerie .salon-insight-card::after {
+  content: "✦";
+  position: absolute;
+  right: 16px;
+  top: 12px;
+  color: rgba(245, 215, 110, 0.84);
+  font-size: 12px;
+  text-shadow: 0 0 10px rgba(245, 215, 110, 0.55);
+  pointer-events: none;
+}
+
+#galerie .salon-insight-card:hover {
+  transform: translateY(-6px) scale(1.015);
+  border-color: rgba(245, 215, 110, 0.72) !important;
+  box-shadow: 0 20px 48px rgba(0, 0, 0, 0.62), 0 0 28px rgba(212, 175, 55, 0.22) !important;
+}
+
+#vorher-nachher .before-after-images {
+  position: relative;
+}
+
+#vorher-nachher .before-after-images::before {
+  content: "↔";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 999px;
+  display: grid;
+  place-items: center;
+  background: rgba(10, 7, 3, 0.84);
+  border: 1px solid rgba(245, 215, 110, 0.6);
+  color: #f5d76e;
+  font-size: 15px;
+  z-index: 3;
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.22);
+  pointer-events: none;
+}
+
+.btn-gold,
+.button-primary,
+.button-secondary {
+  background: linear-gradient(160deg, #f5d76e 0%, #e6c75a 30%, #d4af37 58%, #f5d76e 100%) !important;
+  border-color: rgba(230, 199, 90, 0.88) !important;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.38), inset 0 1px 0 rgba(255, 255, 255, 0.42) !important;
+}
+
+.btn-gold:hover,
+.button-primary:hover,
+.button-secondary:hover {
+  filter: brightness(1.05);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.5), 0 0 24px rgba(245, 215, 110, 0.3), inset 0 1px 0 rgba(255, 255, 255, 0.5) !important;
+}
+
+@media (max-width: 900px) {
+  #leistungen .services-grid .service-card:nth-child(2),
+  #leistungen .services-grid .service-card:nth-child(3),
+  #leistungen .services-grid .service-card:nth-child(5) {
+    transform: none !important;
+  }
+
+  #vorher-nachher .before-after-images::before {
+    display: none;
+  }
+}
+
+@media (max-width: 560px) {
+  #galerie .salon-insight-card,
+  #galerie .salon-insight-card img {
+    border-radius: 26px !important;
+  }
+
+  #galerie .salon-insight-card::after {
+    font-size: 10px;
+    right: 12px;
+    top: 9px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #leistungen .services-grid .service-card,
+  #galerie .salon-insight-card,
+  .btn-gold,
+  .button-primary,
+  .button-secondary {
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* ==================================================
    FINAL RELEASE STABILIZATION
 ================================================== */
 html,
