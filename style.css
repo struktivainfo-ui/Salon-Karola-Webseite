@@ -4933,6 +4933,55 @@ section,
 }
 
 /* ==================================================
+   HOTFIX: STRONGER NEON VISIBILITY (from user screenshot)
+================================================== */
+.welcome-section,
+.salon-moment-section,
+.services.section,
+.team.section,
+.gallery.section {
+  position: relative;
+  isolation: isolate;
+}
+
+.welcome-section::before,
+.salon-moment-section::before,
+.services.section::before,
+.team.section::before,
+.gallery.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 18% 22%, rgba(217, 70, 239, 0.16), transparent 34%),
+    radial-gradient(circle at 86% 18%, rgba(34, 211, 238, 0.13), transparent 32%),
+    radial-gradient(circle at 52% 100%, rgba(168, 85, 247, 0.12), transparent 44%);
+}
+
+/* Make glass cards less black-heavy */
+.welcome-card,
+.moment-step,
+.service-card,
+.team-card,
+.salon-insight-card,
+.before-after-card,
+.product-card,
+.review-cta,
+.contact-card {
+  background-color: rgba(15, 23, 42, 0.38) !important;
+}
+
+/* Decorative scissors in background should be subtle */
+.hair-ornament,
+.hair-ornament--welcome,
+.hair-ornament--services {
+  opacity: 0.12 !important;
+  filter: saturate(0.9) brightness(0.95);
+}
+
+/* ==================================================
    FINAL RELEASE STABILIZATION
 ================================================== */
 html,
