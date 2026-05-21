@@ -1,0 +1,18 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/leistungen", "destination": "/leistungen.html" },
+    { "source": "/damen", "destination": "/damen.html" },
+    { "source": "/herren", "destination": "/herren.html" },
+    { "source": "/kinder", "destination": "/kinder.html" },
+    { "source": "/farbe-styling", "destination": "/farbe-styling.html" },
+    { "source": "/festliche-anlaesse", "destination": "/festliche-anlaesse.html" },
+    { "source": "/team", "destination": "/team.html" },
+    { "source": "/galerie", "destination": "/galerie.html" },
+    { "source": "/bewertungen", "destination": "/bewertungen.html" },
+    { "source": "/kontakt", "destination": "/kontakt.html" },
+    { "source": "/impressum", "destination": "/impressum.html" },
+    { "source": "/datenschutz", "destination": "/datenschutz.html" }
+  ]
+}
