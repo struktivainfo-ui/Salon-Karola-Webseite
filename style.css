@@ -4551,6 +4551,159 @@ section {
   margin-top: 0 !important;
 }
 
+/* =========================================================
+   FINAL COLOR OVERRIDE (structure unchanged, colors only)
+   ========================================================= */
+:root {
+  --theme-bg-main: #070812;
+  --theme-bg-surface: #0f172a;
+  --theme-text: #ffffff;
+  --theme-muted: #cbd5e1;
+  --theme-magenta: #d946ef;
+  --theme-neon-pink: #e879f9;
+  --theme-soft-pink: #f0abfc;
+  --theme-violet: #a855f7;
+  --theme-cyan: #22d3ee;
+  --theme-soft-cyan: #67e8f9;
+  --theme-glass: rgba(255, 255, 255, 0.07);
+  --theme-glass-strong: rgba(15, 23, 42, 0.76);
+  --theme-border: rgba(255, 255, 255, 0.16);
+  --theme-border-hover: rgba(240, 171, 252, 0.46);
+}
+
+body {
+  background:
+    radial-gradient(1100px 760px at 8% 10%, rgba(217, 70, 239, 0.28), transparent 56%),
+    radial-gradient(980px 700px at 88% 15%, rgba(34, 211, 238, 0.24), transparent 54%),
+    radial-gradient(860px 640px at 50% 84%, rgba(168, 85, 247, 0.22), transparent 58%),
+    linear-gradient(160deg, #070812 0%, #0b1022 46%, #101a34 100%) !important;
+  color: var(--theme-text) !important;
+}
+
+body::before {
+  opacity: 0.34 !important;
+}
+
+section,
+.section {
+  background: transparent !important;
+}
+
+.section-heading p,
+.section-heading li,
+.hero-lead,
+.hero-subline,
+.team-card p,
+.product-card p,
+.review-card p,
+.contact-card p,
+.hours-card p,
+.why-card p,
+.service-desc,
+.welcome-card p {
+  color: var(--theme-muted) !important;
+}
+
+.section-heading h2,
+.section-title,
+.hero-content h1,
+.service-card h3,
+.team-card h3,
+.product-card h3,
+.review-card h3,
+.contact-card h3,
+.hours-card h3,
+.why-card h3,
+.before-after-card h3 {
+  color: var(--theme-text) !important;
+}
+
+.hero-content h1,
+#hero-title {
+  background: linear-gradient(90deg, #f0abfc 0%, #ffffff 52%, #67e8f9 100%) !important;
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+.card,
+.dark-card,
+.service-card,
+.product-card,
+.team-card,
+.review-card,
+.contact-card,
+.welcome-card,
+.lotto-card,
+.before-after-card,
+.hours-card,
+.why-card,
+.salon-insight-card,
+.gallery-card {
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.06), rgba(15, 23, 42, 0.74)) !important;
+  border: 1px solid var(--theme-border) !important;
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.38),
+    0 0 28px rgba(217, 70, 239, 0.12),
+    0 0 22px rgba(34, 211, 238, 0.1) !important;
+}
+
+.card:hover,
+.dark-card:hover,
+.service-card:hover,
+.product-card:hover,
+.team-card:hover,
+.review-card:hover,
+.contact-card:hover,
+.welcome-card:hover,
+.lotto-card:hover,
+.before-after-card:hover,
+.hours-card:hover,
+.why-card:hover,
+.salon-insight-card:hover,
+.gallery-card:hover {
+  border-color: var(--theme-border-hover) !important;
+}
+
+.button-primary,
+.button-secondary,
+.hero-actions .btn,
+button,
+.button {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(103, 232, 249, 0.86)) !important;
+  color: #0b1020 !important;
+  border: 1px solid rgba(255, 255, 255, 0.46) !important;
+}
+
+.button-primary:hover,
+.button-secondary:hover,
+.hero-actions .btn:hover,
+button:hover,
+.button:hover {
+  background: linear-gradient(135deg, rgba(240, 171, 252, 0.94), rgba(103, 232, 249, 0.9)) !important;
+  color: #050811 !important;
+}
+
+.button-ghost,
+.hero-actions .btn.button-ghost {
+  background: rgba(15, 23, 42, 0.68) !important;
+  color: var(--theme-text) !important;
+  border: 1px solid rgba(103, 232, 249, 0.42) !important;
+}
+
+.products-note,
+.products-note p {
+  color: #e5edf9 !important;
+}
+
+.products-cta,
+a.products-cta,
+.products .products-cta {
+  color: #ffffff !important;
+  background: rgba(15, 23, 42, 0.84) !important;
+  border: 1px solid rgba(103, 232, 249, 0.5) !important;
+}
+
 /* ==================================================
    PREMIUM FLOW REFRESH (final lively polish)
 ================================================== */
