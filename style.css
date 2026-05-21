@@ -4932,6 +4932,14 @@ section,
   background-color: transparent !important;
 }
 
+/* Hard disable splash overlay to prevent black-screen blocking */
+.premium-splash {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
 /* ==================================================
    HOTFIX: STRONGER NEON VISIBILITY (from user screenshot)
 ================================================== */

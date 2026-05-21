@@ -8,6 +8,11 @@ const logoImages = document.querySelectorAll(".brand-logo, .splash-logo, .hero-l
 const externalLogoImages = document.querySelectorAll(".social-logo, .brand-product-logo");
 const premiumSplash = document.getElementById("premiumSplash");
 
+// Hard safety: never allow a stuck fullscreen splash overlay
+if (premiumSplash) {
+  premiumSplash.remove();
+}
+
 if (premiumSplash) {
   window.addEventListener("load", () => {
     if (sessionStorage.getItem("salonKarolaSplashSeen") === "true") {
