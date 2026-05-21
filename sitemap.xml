@@ -1,18 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://salon-karola-webseite.vercel.app/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://salon-karola-webseite.vercel.app/impressum.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://salon-karola-webseite.vercel.app/datenschutz.html</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
+  <url><loc>https://salon-karola-webseite.vercel.app/</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/leistungen</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/damen</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/herren</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/kinder</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/farbe-styling</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/festliche-anlaesse</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/team</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/galerie</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/bewertungen</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/kontakt</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/impressum</loc></url>
+  <url><loc>https://salon-karola-webseite.vercel.app/datenschutz</loc></url>
 </urlset>
