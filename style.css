@@ -4723,6 +4723,191 @@ section {
 }
 
 /* ==================================================
+   DARK-LUXURY / NEON-TECH BEAUTY THEME LAYER
+================================================== */
+:root {
+  --lux-main-bg: #070812;
+  --lux-surface: #0f172a;
+  --lux-text: #ffffff;
+  --lux-muted: #cbd5e1;
+  --lux-magenta: #d946ef;
+  --lux-neon-pink: #e879f9;
+  --lux-soft-pink: #f0abfc;
+  --lux-violet: #a855f7;
+  --lux-cyan: #22d3ee;
+  --lux-soft-cyan: #67e8f9;
+  --lux-glow-surface: linear-gradient(135deg, rgba(217, 70, 239, 0.4), rgba(255, 255, 255, 0.1), rgba(34, 211, 238, 0.3));
+  --lux-card-bg: rgba(255, 255, 255, 0.055);
+  --lux-card-border: rgba(255, 255, 255, 0.1);
+  --lux-card-hover-border: rgba(240, 171, 252, 0.35);
+}
+
+html,
+body {
+  background:
+    radial-gradient(circle at 12% 8%, rgba(168, 85, 247, 0.2), transparent 36%),
+    radial-gradient(circle at 88% 14%, rgba(34, 211, 238, 0.2), transparent 34%),
+    radial-gradient(circle at 50% 100%, rgba(217, 70, 239, 0.12), transparent 48%),
+    var(--lux-main-bg) !important;
+  color: var(--lux-text) !important;
+}
+
+p,
+li,
+.section-heading p,
+.service-desc,
+.hero-lead,
+.team-card p,
+.product-card p,
+.review-cta p,
+.contact-card p,
+.hours-day {
+  color: var(--lux-muted) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--lux-text) !important;
+}
+
+.hero-content h1,
+#hero-title {
+  background: linear-gradient(90deg, #f0abfc, #ffffff, #67e8f9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent !important;
+  text-shadow: 0 0 30px rgba(232, 121, 249, 0.25);
+}
+
+.site-header {
+  background: rgba(7, 8, 18, 0.66) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.11) !important;
+  backdrop-filter: blur(14px) saturate(135%);
+}
+
+.service-card,
+.product-card,
+.team-card,
+.review-cta,
+.contact-card,
+.hours-card,
+.why-card,
+.before-after-card,
+.lotto-card,
+.welcome-card,
+.moment-step {
+  background: var(--lux-card-bg) !important;
+  border: 1px solid var(--lux-card-border) !important;
+  backdrop-filter: blur(14px) saturate(135%);
+  -webkit-backdrop-filter: blur(14px) saturate(135%);
+  box-shadow:
+    0 18px 46px rgba(0, 0, 0, 0.48),
+    0 0 28px rgba(217, 70, 239, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+}
+
+.service-card:hover,
+.product-card:hover,
+.team-card:hover,
+.review-cta:hover,
+.contact-card:hover,
+.why-card:hover,
+.moment-step:hover,
+.salon-insight-card:hover,
+.gallery-card:hover {
+  border-color: var(--lux-card-hover-border) !important;
+  box-shadow:
+    0 22px 52px rgba(0, 0, 0, 0.55),
+    0 0 34px rgba(232, 121, 249, 0.2),
+    0 0 24px rgba(34, 211, 238, 0.16) !important;
+}
+
+.service-kicker,
+.eyebrow,
+.hero-tagline,
+.hero-services {
+  color: var(--lux-soft-pink) !important;
+}
+
+.service-card li::marker {
+  color: var(--lux-cyan) !important;
+}
+
+.btn-gold,
+.button-primary,
+.button-secondary,
+.hero-actions .btn {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.92), rgba(103, 232, 249, 0.82)) !important;
+  color: #0b1020 !important;
+  border: 1px solid rgba(255, 255, 255, 0.5) !important;
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 28px rgba(217, 70, 239, 0.24),
+    0 0 20px rgba(34, 211, 238, 0.24) !important;
+}
+
+.btn-gold:hover,
+.button-primary:hover,
+.button-secondary:hover,
+.hero-actions .btn:hover {
+  filter: brightness(1.04);
+  transform: translateY(-2px);
+  box-shadow:
+    0 16px 36px rgba(0, 0, 0, 0.45),
+    0 0 34px rgba(232, 121, 249, 0.35),
+    0 0 26px rgba(34, 211, 238, 0.3) !important;
+}
+
+.btn-dark,
+.button-ghost,
+.contact-actions .btn-dark {
+  background: rgba(255, 255, 255, 0.04) !important;
+  color: var(--lux-text) !important;
+  border: 1px solid rgba(103, 232, 249, 0.36) !important;
+  backdrop-filter: blur(10px);
+}
+
+.hero-image-wrap::before,
+.hairline-bg::before,
+.hairline-bg::after {
+  border-color: rgba(103, 232, 249, 0.24) !important;
+  box-shadow: 0 0 42px rgba(217, 70, 239, 0.16) !important;
+}
+
+.salon-silhouette {
+  opacity: 0.44 !important;
+}
+
+.contact-actions a,
+.contact-actions .btn,
+.hero-actions .btn {
+  min-height: 50px;
+}
+
+@media (max-width: 820px) {
+  .mobile-menu-toggle {
+    background: rgba(15, 23, 42, 0.9) !important;
+    border: 1px solid rgba(240, 171, 252, 0.65) !important;
+    color: var(--lux-soft-pink) !important;
+    box-shadow:
+      0 0 20px rgba(217, 70, 239, 0.28),
+      0 8px 20px rgba(0, 0, 0, 0.42) !important;
+  }
+
+  .site-nav.mobile-nav {
+    background: rgba(7, 8, 18, 0.95) !important;
+    border-bottom: 1px solid rgba(103, 232, 249, 0.28) !important;
+    box-shadow:
+      0 16px 36px rgba(0, 0, 0, 0.52),
+      0 0 20px rgba(217, 70, 239, 0.12) !important;
+  }
+}
+
+/* ==================================================
    FINAL RELEASE STABILIZATION
 ================================================== */
 html,
