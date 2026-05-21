@@ -4914,9 +4914,9 @@ html,
 body {
   background-color: #070812 !important;
   background-image:
-    radial-gradient(circle at 10% 8%, rgba(168, 85, 247, 0.26), transparent 34%),
-    radial-gradient(circle at 86% 14%, rgba(34, 211, 238, 0.22), transparent 32%),
-    radial-gradient(circle at 52% 100%, rgba(217, 70, 239, 0.14), transparent 48%),
+    radial-gradient(circle at 10% 8%, rgba(168, 85, 247, 0.34), transparent 36%),
+    radial-gradient(circle at 86% 14%, rgba(34, 211, 238, 0.3), transparent 34%),
+    radial-gradient(circle at 52% 100%, rgba(217, 70, 239, 0.2), transparent 50%),
     linear-gradient(165deg, #070812 0%, #0f172a 48%, #0a1020 100%) !important;
   color: #ffffff !important;
 }
@@ -4987,6 +4987,29 @@ section,
 .hair-ornament--services {
   opacity: 0.12 !important;
   filter: saturate(0.9) brightness(0.95);
+}
+
+/* readability hotfix for products note + CTA */
+.products-note,
+.products-note p {
+  color: #f5f1e8 !important;
+}
+
+.products-cta,
+a.products-cta,
+.products .products-cta {
+  color: #ffffff !important;
+  background: rgba(15, 23, 42, 0.75) !important;
+  border: 1px solid rgba(103, 232, 249, 0.55) !important;
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, 0.46),
+    0 0 16px rgba(34, 211, 238, 0.24) !important;
+}
+
+.products-cta:hover {
+  color: #ffffff !important;
+  background: rgba(15, 23, 42, 0.88) !important;
+  border-color: rgba(240, 171, 252, 0.6) !important;
 }
 
 /* ==================================================
