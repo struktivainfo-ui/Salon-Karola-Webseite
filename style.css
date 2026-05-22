@@ -682,6 +682,18 @@ a.btn {
   gap: 6px;
 }
 
+.footer-hours {
+  margin-top: 6px;
+  display: grid;
+  gap: 2px;
+}
+
+.footer-hours p {
+  margin: 0;
+  color: #e8edf7 !important;
+  line-height: 1.35;
+}
+
 @media (min-width: 900px) {
   .menu-toggle {
     display: none;
