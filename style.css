@@ -694,6 +694,83 @@ a.btn {
   line-height: 1.35;
 }
 
+/* Final premium polish: trust, faq, seo-copy, compact lotto */
+.trust-strip-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.trust-point {
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(15, 23, 42, 0.56));
+  border-radius: 16px;
+  padding: 10px 12px;
+}
+
+.trust-point p {
+  margin: 0;
+  color: #e8edf7;
+}
+
+.lotto-compact-card {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: clamp(14px, 2vw, 20px);
+}
+
+.lotto-compact-card .lotto-image {
+  max-height: 220px;
+  object-fit: cover;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.faq-card {
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: 18px;
+  padding: 16px 18px;
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.04), rgba(15, 23, 42, 0.6));
+}
+
+.faq-card h3 {
+  margin: 0 0 8px;
+  font-size: clamp(1.02rem, 1.5vw, 1.18rem);
+  color: #ffffff;
+}
+
+.faq-card p {
+  margin: 0;
+  color: #d8e0ee;
+  line-height: 1.5;
+}
+
+.seo-copy-card {
+  border: 1px solid rgba(212, 175, 55, 0.24);
+  border-radius: 20px;
+  padding: clamp(16px, 2.1vw, 24px);
+  background: linear-gradient(150deg, rgba(255, 255, 255, 0.04), rgba(15, 23, 42, 0.58));
+}
+
+.seo-copy-card h2 {
+  margin-top: 0;
+}
+
+.seo-copy-card p {
+  margin-bottom: 0;
+  color: #dbe4f3;
+}
+
+@media (max-width: 900px) {
+  .trust-strip-grid,
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 @media (min-width: 900px) {
   .menu-toggle {
     display: none;
