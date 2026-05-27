@@ -6745,6 +6745,15 @@ li {
   padding-bottom: 0 !important;
 }
 
+/* New real salon photos: keep important subjects visible */
+#galerie .salon-insight-card img[src*="beratung.jpg"] {
+  object-position: center 34% !important;
+}
+
+#galerie .salon-insight-card img[src*="salon-innen.jpg"] {
+  object-position: center 48% !important;
+}
+
 #galerie + section {
   margin-top: 0 !important;
 }
