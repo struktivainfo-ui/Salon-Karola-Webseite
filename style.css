@@ -5670,11 +5670,11 @@ section,
   display: flex;
   align-items: center;
   justify-content: center;
-  background: transparent;
+  background: rgba(9, 14, 28, 0.88);
   border: none;
   box-shadow:
     0 8px 24px rgba(0, 0, 0, 0.35),
-    0 0 0 1px rgba(255, 255, 255, 0.08);
+    0 0 0 1px rgba(255, 255, 255, 0.12);
   z-index: 80;
   transition:
     transform 0.25s ease,
@@ -5695,6 +5695,11 @@ section,
   height: 46px;
   display: block;
   object-fit: contain;
+}
+
+.whatsapp-floating svg path,
+.whatsapp-float svg path {
+  filter: drop-shadow(0 0 3px rgba(37, 211, 102, 0.35));
 }
 
 /* premium friseur hairline atmosphere */
@@ -5972,6 +5977,12 @@ section,
 .whatsapp-floating,
 .whatsapp-float {
   z-index: 80 !important;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid rgba(103, 232, 249, 0.9);
+  outline-offset: 2px;
 }
 
 /* Single mobile nav behavior */
