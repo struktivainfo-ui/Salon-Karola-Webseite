@@ -6745,13 +6745,88 @@ li {
   padding-bottom: 0 !important;
 }
 
-/* New real salon photos: keep important subjects visible */
-#galerie .salon-insight-card img[src*="beratung.jpg"] {
-  object-position: center 34% !important;
+/* Gallery rebuild: real salon insights + compact inspiration circles */
+#galerie .salon-real-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(14px, 2vw, 22px) !important;
 }
 
-#galerie .salon-insight-card img[src*="salon-innen.jpg"] {
-  object-position: center 48% !important;
+#galerie .salon-real-grid .salon-insight-card {
+  border-radius: 18px !important;
+  overflow: hidden !important;
+  border: 1px solid rgba(212, 175, 55, 0.28) !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.42), 0 0 14px rgba(212, 175, 55, 0.1) !important;
+  background: rgba(9, 14, 28, 0.4) !important;
+}
+
+#galerie .salon-real-grid .salon-insight-card img {
+  width: 100% !important;
+  height: clamp(210px, 24vw, 290px) !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+#galerie .salon-real-grid .salon-insight-card img[src*="salon-innen.jpg"] {
+  object-position: center 45% !important;
+}
+
+#galerie .salon-real-grid .salon-insight-card img[src*="beratung.jpg"] {
+  object-position: center 40% !important;
+}
+
+#galerie .salon-real-grid .salon-insight-card img[src*="salon-aussen.jpg"] {
+  object-position: center 42% !important;
+}
+
+#galerie .salon-real-grid .salon-insight-card img[src*="lotto.jpg"] {
+  object-position: center 46% !important;
+}
+
+#galerie .frisuren-inspo-circles {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+  justify-items: center;
+}
+
+#galerie .inspo-circle {
+  margin: 0;
+  width: clamp(92px, 9vw, 128px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 1px solid rgba(212, 175, 55, 0.34);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.38);
+}
+
+#galerie .inspo-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 48%;
+  display: block;
+}
+
+@media (max-width: 960px) {
+  #galerie .frisuren-inspo-circles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  #galerie .salon-real-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  #galerie .salon-real-grid .salon-insight-card img {
+    height: 220px !important;
+  }
+
+  #galerie .frisuren-inspo-circles {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
 }
 
 #galerie + section {
