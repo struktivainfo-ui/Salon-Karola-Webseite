@@ -6816,11 +6816,11 @@ li {
 
 @media (max-width: 640px) {
   #galerie .salon-real-grid {
-    grid-template-columns: 1fr !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
   }
 
   #galerie .salon-real-grid .salon-insight-card img {
-    height: 220px !important;
+    height: 170px !important;
   }
 
   #galerie .frisuren-inspo-circles {
