@@ -5917,6 +5917,13 @@ section,
   background-position: center 36% !important;
 }
 
+#leistungen .service-card--makeup {
+  background-image:
+    linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.88)),
+    url("assets/images/styling-1.jpg") !important;
+  background-position: center 42% !important;
+}
+
 #leistungen .service-card h3,
 #leistungen .service-card .service-desc,
 #leistungen .service-card li {
@@ -6465,7 +6472,8 @@ li,
 #leistungen .service-card.service-card--herren,
 #leistungen .service-card.service-card--kinder,
 #leistungen .service-card.service-card--farbe,
-#leistungen .service-card.service-card--festlich {
+#leistungen .service-card.service-card--festlich,
+#leistungen .service-card.service-card--makeup {
   background-repeat: no-repeat !important;
   background-size: cover !important;
   background-blend-mode: normal !important;
@@ -6504,6 +6512,13 @@ li,
     linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.74)),
     url("assets/images/styling-4.jpg") !important;
   background-position: center 34% !important;
+}
+
+#leistungen .service-card.service-card--makeup {
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.74)),
+    url("assets/images/styling-1.jpg") !important;
+  background-position: center 40% !important;
 }
 
 @media (max-width: 820px) {
