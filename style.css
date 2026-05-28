@@ -313,6 +313,14 @@ section {
   color: var(--muted) !important;
 }
 
+.hero-trust {
+  margin: 0.55rem 0 0.2rem;
+  color: #f7d774 !important;
+  font-size: clamp(0.94rem, 1.2vw, 1.02rem);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
 .hero-content h1 {
   margin: 24px 0 18px;
   color: #ffffff;
@@ -622,21 +630,32 @@ a.btn {
 }
 
 .social-logo-link {
-  width: 72px;
-  height: 72px;
-  border-radius: 999px;
+  min-width: 92px;
+  min-height: 98px;
+  border-radius: 16px;
+  padding: 10px 10px 8px;
   display: inline-flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 7px;
   border: 1px solid var(--gold-border);
-  background: radial-gradient(circle at 50% 35%, rgba(212, 175, 55, 0.24), rgba(3, 2, 1, 0.95));
+  background: radial-gradient(circle at 50% 26%, rgba(212, 175, 55, 0.2), rgba(3, 2, 1, 0.95));
   box-shadow: 0 10px 28px rgba(0, 0, 0, 0.45), 0 0 18px rgba(212, 175, 55, 0.18);
 }
 
 .social-logo-link img {
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   object-fit: contain;
+}
+
+.social-label {
+  color: #f3ebdd;
+  font-size: 0.83rem;
+  font-weight: 700;
+  line-height: 1.1;
+  text-align: center;
 }
 
 .home-visit-note {
@@ -877,6 +896,16 @@ a.btn {
 
   .hero-actions .btn {
     width: 100%;
+  }
+
+  .hero-trust {
+    max-width: 32ch;
+  }
+
+  .social-logo-link {
+    min-width: 84px;
+    min-height: 92px;
+    padding: 8px 8px 7px;
   }
 }
 
