@@ -349,6 +349,10 @@ section {
   font-weight: 800;
 }
 
+.contact-pill--phone {
+  letter-spacing: 0.01em;
+}
+
 .pill-icon {
   width: 24px;
   height: 24px;
@@ -365,6 +369,25 @@ section {
   width: 18px;
   height: 18px;
   object-fit: contain;
+}
+
+.contact-pill--whatsapp {
+  background: rgba(16, 88, 53, 0.32);
+  border-color: rgba(37, 211, 102, 0.62);
+}
+
+.contact-pill--whatsapp span {
+  white-space: nowrap;
+}
+
+@media (max-width: 640px) {
+  .hero-contact-pills {
+    gap: 0.62rem;
+  }
+
+  .hero-contact-pills .contact-pill {
+    min-height: 42px;
+  }
 }
 
 .hero-actions {
