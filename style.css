@@ -6088,7 +6088,7 @@ section,
 #leistungen .service-card--makeup {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.72), rgba(0, 0, 0, 0.88)),
-    url("https://images.pexels.com/photos/2693644/pexels-photo-2693644.jpeg?auto=compress&cs=tinysrgb&w=1600") !important;
+    url("assets/images/services/makeup-card-bg.jpg") !important;
   background-position: center 38% !important;
 }
 
@@ -6685,7 +6685,7 @@ li,
 #leistungen .service-card.service-card--makeup {
   background:
     linear-gradient(rgba(0, 0, 0, 0.52), rgba(0, 0, 0, 0.74)),
-    url("https://images.pexels.com/photos/2693644/pexels-photo-2693644.jpeg?auto=compress&cs=tinysrgb&w=1600") !important;
+    url("assets/images/services/makeup-card-bg.jpg") !important;
   background-position: center 38% !important;
 }
 
