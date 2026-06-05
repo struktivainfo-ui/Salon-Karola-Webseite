@@ -1,6 +1,18 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/leistungen", "destination": "/#leistungen", "permanent": true },
+    { "source": "/damen", "destination": "/#damen", "permanent": true },
+    { "source": "/herren", "destination": "/#herren", "permanent": true },
+    { "source": "/kinder", "destination": "/#kinder", "permanent": true },
+    { "source": "/farbe-styling", "destination": "/#farbe-styling", "permanent": true },
+    { "source": "/festliche-anlaesse", "destination": "/#festliche-anlaesse", "permanent": true },
+    { "source": "/galerie", "destination": "/#galerie", "permanent": true },
+    { "source": "/bewertungen", "destination": "/#bewertungen", "permanent": true },
+    { "source": "/kontakt", "destination": "/#kontakt", "permanent": true },
+    { "source": "/team", "destination": "/#team", "permanent": true }
+  ],
   "rewrites": [
     { "source": "/leistungen", "destination": "/leistungen.html" },
     { "source": "/damen", "destination": "/damen.html" },
