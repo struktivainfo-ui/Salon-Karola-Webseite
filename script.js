@@ -368,11 +368,11 @@ const updateInquiryVisibility = () => {
   }
 
   if (inquiryFamilyDetailsField) {
-    inquiryFamilyDetailsField.hidden = !(isFamilyRequest && hasMultiplePeople);
+    inquiryFamilyDetailsField.hidden = !(isFamilyRequest || hasMultiplePeople);
   }
 
   if (peopleDetailsInput) {
-    peopleDetailsInput.required = Boolean(isFamilyRequest && hasMultiplePeople);
+    peopleDetailsInput.required = Boolean(isFamilyRequest);
   }
 };
 
@@ -392,7 +392,7 @@ const collectInquiryData = () => {
     preferredTime: (formData.get("preferredTime") || "").toString().trim(),
     message: (formData.get("message") || "").toString().trim(),
     privacyConsent: formData.get("privacyConsent") === "on",
-    honeypot: (formData.get("honeypot") || "").toString()
+    website: (formData.get("website") || "").toString().trim()
   };
 };
 
@@ -449,6 +449,10 @@ if (inquiryForm) {
   inquiryTypeSelect?.addEventListener("change", () => {
     if (inquiryTypeSelect.value !== "Familienanfrage / mehrere Personen" && inquiryPeopleCount) {
       inquiryPeopleCount.value = "1 Person";
+      const peopleDetailsInput = inquiryFamilyDetailsField?.querySelector("textarea");
+      if (peopleDetailsInput) {
+        peopleDetailsInput.value = "";
+      }
     }
     updateInquiryVisibility();
   });
@@ -475,6 +479,9 @@ if (inquiryForm) {
 
   inquiryWhatsappLink?.addEventListener("click", () => {
     const data = collectInquiryData();
+    if (data.website) {
+      return;
+    }
     inquiryWhatsappLink.href = buildInquiryWhatsapp(data);
   });
 
@@ -490,6 +497,14 @@ if (inquiryForm) {
     const data = collectInquiryData();
     const originalButtonText = inquirySubmitButton?.textContent || "Anfrage senden";
     const nachrichtParts = [];
+
+    if (data.website) {
+      setInquiryFeedback("Vielen Dank für Ihre Anfrage. Wir melden uns persönlich bei Ihnen zurück.", "success");
+      inquiryForm.reset();
+      updateInquiryVisibility();
+      if (inquiryServiceSelect) inquiryServiceSelect.value = "";
+      return;
+    }
 
     if (data.requestType === "Familienanfrage / mehrere Personen") {
       if (data.peopleCount) nachrichtParts.push(`Anzahl Personen: ${data.peopleCount}`);
@@ -509,7 +524,7 @@ if (inquiryForm) {
       wunschtermin: data.preferredTime,
       nachricht: nachrichtParts.join("\n"),
       datenschutz: data.privacyConsent,
-      honeypot: data.honeypot
+      website: data.website
     };
 
     if (inquirySubmitButton) {

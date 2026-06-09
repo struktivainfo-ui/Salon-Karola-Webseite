@@ -7953,6 +7953,7 @@ body.cookie-banner-visible .whatsapp-floating {
   display: grid;
   grid-template-columns: minmax(240px, 0.82fr) minmax(0, 1.18fr);
   gap: clamp(20px, 3vw, 34px);
+  margin-top: clamp(12px, 2vw, 24px);
   padding: clamp(22px, 3vw, 34px);
   border-radius: 30px;
   border: 1px solid rgba(212, 175, 55, 0.34);
@@ -8005,6 +8006,11 @@ body.cookie-banner-visible .whatsapp-floating {
 .request-field {
   display: grid;
   gap: 8px;
+}
+
+[data-family-count-field][hidden],
+[data-family-details-field][hidden] {
+  display: none !important;
 }
 
 .request-field--full {
@@ -8076,6 +8082,16 @@ body.cookie-banner-visible .whatsapp-floating {
   color: #f5d76e !important;
   text-decoration: underline;
   text-underline-offset: 3px;
+}
+
+.honeypot-field {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0 !important;
+  height: 0 !important;
+  width: 0 !important;
+  overflow: hidden !important;
+  pointer-events: none !important;
 }
 
 .request-actions {

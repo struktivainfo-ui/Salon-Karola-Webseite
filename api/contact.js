@@ -16,10 +16,11 @@ module.exports = async function handler(req, res) {
     wunschtermin,
     nachricht,
     datenschutz,
+    website,
     honeypot
   } = body;
 
-  if (honeypot) {
+  if (website || honeypot) {
     res.status(200).json({ success: true });
     return;
   }
