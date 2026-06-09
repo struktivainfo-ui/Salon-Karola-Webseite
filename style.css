@@ -7596,3 +7596,313 @@ li {
     aspect-ratio: 1 / 1;
   }
 }
+
+.footer-link-button {
+  appearance: none;
+  border: 0;
+  padding: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  text-align: left;
+}
+
+.cookie-banner {
+  position: fixed;
+  left: 50%;
+  bottom: 18px;
+  z-index: 80;
+  width: min(1120px, calc(100% - 28px));
+  transform: translateX(-50%);
+}
+
+.cookie-banner__inner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 18px;
+  align-items: center;
+  padding: 18px 20px;
+  border: 1px solid rgba(212, 175, 55, 0.72);
+  border-radius: 22px;
+  background: linear-gradient(180deg, rgba(254, 252, 246, 0.98), rgba(247, 240, 228, 0.98));
+  box-shadow:
+    0 18px 44px rgba(0, 0, 0, 0.18),
+    0 0 0 1px rgba(255, 244, 216, 0.75) inset;
+  color: #13110d;
+}
+
+.cookie-banner__text {
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.65;
+}
+
+.cookie-banner__actions,
+.cookie-modal__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cookie-action {
+  appearance: none;
+  border: 1px solid rgba(18, 16, 11, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #13110d;
+  font: inherit;
+  font-weight: 600;
+  padding: 0.78rem 1.15rem;
+  cursor: pointer;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background-color 180ms ease;
+}
+
+.cookie-action:hover,
+.cookie-action:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(212, 175, 55, 0.9);
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
+  outline: none;
+}
+
+.cookie-action--primary {
+  background: #111;
+  border-color: #111;
+  color: #f8f1df;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.16);
+}
+
+.cookie-action--ghost {
+  background: transparent;
+}
+
+.cookie-modal[hidden],
+.cookie-banner[hidden] {
+  display: none;
+}
+
+.cookie-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 90;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.cookie-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 7, 6, 0.54);
+  backdrop-filter: blur(4px);
+}
+
+.cookie-modal__dialog {
+  position: relative;
+  width: min(720px, 100%);
+  max-height: min(88vh, 760px);
+  overflow: auto;
+  padding: 28px;
+  border-radius: 28px;
+  border: 1px solid rgba(212, 175, 55, 0.68);
+  background:
+    radial-gradient(circle at top right, rgba(212, 175, 55, 0.1), transparent 28%),
+    linear-gradient(180deg, rgba(255, 252, 245, 0.99), rgba(246, 238, 224, 0.99));
+  box-shadow:
+    0 24px 68px rgba(0, 0, 0, 0.26),
+    0 0 0 1px rgba(255, 248, 231, 0.72) inset;
+  color: #15120d;
+}
+
+.cookie-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 42px;
+  height: 42px;
+  border: 1px solid rgba(18, 16, 11, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #111;
+  font-size: 1.5rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.cookie-modal__eyebrow {
+  margin: 0 0 10px;
+  color: #7f6120;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.cookie-modal h2 {
+  margin: 0 0 12px;
+  color: #111;
+}
+
+.cookie-modal__intro {
+  margin: 0 0 22px;
+  line-height: 1.7;
+}
+
+.cookie-groups {
+  display: grid;
+  gap: 14px;
+  margin-bottom: 22px;
+}
+
+.cookie-group {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 18px 16px;
+  border-radius: 22px;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+  background: rgba(255, 255, 255, 0.58);
+}
+
+.cookie-group__content h3 {
+  margin: 0 0 6px;
+  font-size: 1.05rem;
+  color: #15120d;
+}
+
+.cookie-group__content p {
+  margin: 0;
+  color: rgba(21, 18, 13, 0.82);
+  line-height: 1.6;
+}
+
+.cookie-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: #16120c;
+  font-weight: 600;
+}
+
+.cookie-toggle input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cookie-toggle__track {
+  position: relative;
+  width: 54px;
+  height: 31px;
+  border-radius: 999px;
+  background: rgba(24, 22, 17, 0.15);
+  box-shadow: inset 0 0 0 1px rgba(18, 16, 11, 0.08);
+  transition: background-color 180ms ease;
+}
+
+.cookie-toggle__track::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+  background: #fffdfa;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+  transition: transform 180ms ease;
+}
+
+.cookie-toggle.is-active .cookie-toggle__track,
+.cookie-toggle input:checked + .cookie-toggle__track {
+  background: linear-gradient(135deg, #8f6b22, #d4af37);
+}
+
+.cookie-toggle.is-active .cookie-toggle__track::after,
+.cookie-toggle input:checked + .cookie-toggle__track::after {
+  transform: translateX(23px);
+}
+
+.cookie-toggle--locked .cookie-toggle__track {
+  background: linear-gradient(135deg, #8f6b22, #d4af37);
+}
+
+.cookie-toggle--locked .cookie-toggle__track::after {
+  transform: translateX(23px);
+}
+
+.cookie-toggle__label {
+  font-size: 0.92rem;
+}
+
+body.cookie-modal-open {
+  overflow: hidden;
+}
+
+body.cookie-banner-visible .whatsapp-floating {
+  bottom: 132px;
+}
+
+@media (max-width: 960px) {
+  .cookie-banner__inner {
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-group {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
+
+@media (max-width: 640px) {
+  .cookie-banner {
+    width: calc(100% - 18px);
+    bottom: 10px;
+  }
+
+  .cookie-banner__inner {
+    padding: 16px 14px;
+    border-radius: 20px;
+    gap: 14px;
+  }
+
+  .cookie-banner__text {
+    font-size: 0.94rem;
+    line-height: 1.55;
+  }
+
+  .cookie-banner__actions,
+  .cookie-modal__actions {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .cookie-action {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .cookie-modal {
+    padding: 14px;
+  }
+
+  .cookie-modal__dialog {
+    padding: 22px 18px;
+    border-radius: 22px;
+  }
+
+  .cookie-modal__close {
+    top: 12px;
+    right: 12px;
+  }
+
+  body.cookie-banner-visible .whatsapp-floating {
+    bottom: 168px;
+  }
+}

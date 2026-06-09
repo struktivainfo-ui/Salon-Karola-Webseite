@@ -192,3 +192,154 @@ if (externalLogoImages.length > 0) {
   });
 }
 
+const cookieStorageKey = "salonKarolaCookieSettings";
+const cookieBanner = document.querySelector("[data-cookie-banner]");
+const cookieModal = document.querySelector("[data-cookie-modal]");
+const cookieModalDialog = cookieModal?.querySelector(".cookie-modal__dialog");
+const cookieOpenButtons = document.querySelectorAll("[data-cookie-open-settings], [data-open-cookie-settings]");
+const cookieCloseButtons = document.querySelectorAll("[data-cookie-close-modal]");
+const cookieAcceptAllButtons = document.querySelectorAll("[data-cookie-accept-all]");
+const cookieNecessaryButtons = document.querySelectorAll("[data-cookie-accept-necessary]");
+const cookieSaveButtons = document.querySelectorAll("[data-cookie-save]");
+const cookieExternalToggle = document.querySelector('[data-cookie-toggle="external"]');
+const cookieAnalyticsToggle = document.querySelector('[data-cookie-toggle="analytics"]');
+
+const defaultCookieSettings = {
+  necessary: true,
+  external: false,
+  analytics: false,
+  decisionMade: false
+};
+
+const readCookieSettings = () => {
+  try {
+    const rawValue = window.localStorage.getItem(cookieStorageKey);
+    if (!rawValue) return { ...defaultCookieSettings };
+
+    const parsedValue = JSON.parse(rawValue);
+
+    return {
+      necessary: true,
+      external: Boolean(parsedValue.external),
+      analytics: Boolean(parsedValue.analytics),
+      decisionMade: Boolean(parsedValue.decisionMade)
+    };
+  } catch (error) {
+    return { ...defaultCookieSettings };
+  }
+};
+
+const syncCookieToggleLabels = () => {
+  document.querySelectorAll(".cookie-toggle input").forEach((input) => {
+    const toggle = input.closest(".cookie-toggle");
+    const label = toggle?.querySelector(".cookie-toggle__label");
+    if (!toggle || !label) return;
+    toggle.classList.toggle("is-active", input.checked);
+    label.textContent = input.checked ? "Aktiv" : "Deaktiviert";
+  });
+};
+
+const applyCookieSettings = (settings) => {
+  document.documentElement.dataset.cookieExternal = settings.external ? "granted" : "denied";
+  document.documentElement.dataset.cookieAnalytics = settings.analytics ? "granted" : "denied";
+  document.body.classList.toggle("cookie-banner-visible", !settings.decisionMade && Boolean(cookieBanner));
+
+  if (cookieExternalToggle) cookieExternalToggle.checked = settings.external;
+  if (cookieAnalyticsToggle) cookieAnalyticsToggle.checked = settings.analytics;
+  syncCookieToggleLabels();
+
+  if (cookieBanner) {
+    cookieBanner.hidden = settings.decisionMade;
+  }
+};
+
+const persistCookieSettings = (settings) => {
+  const normalizedSettings = {
+    necessary: true,
+    external: Boolean(settings.external),
+    analytics: Boolean(settings.analytics),
+    decisionMade: true
+  };
+
+  try {
+    window.localStorage.setItem(cookieStorageKey, JSON.stringify(normalizedSettings));
+  } catch (error) {
+    // Ignore storage write issues and still apply the selection for this visit.
+  }
+
+  applyCookieSettings(normalizedSettings);
+  closeCookieModal();
+};
+
+function openCookieModal() {
+  if (!cookieModal) return;
+  cookieModal.hidden = false;
+  document.body.classList.add("cookie-modal-open");
+  syncCookieToggleLabels();
+  const firstAction = cookieModalDialog?.querySelector(".cookie-action");
+  firstAction?.focus();
+}
+
+function closeCookieModal() {
+  if (!cookieModal) return;
+  cookieModal.hidden = true;
+  document.body.classList.remove("cookie-modal-open");
+}
+
+if (cookieBanner || cookieModal) {
+  const storedCookieSettings = readCookieSettings();
+  applyCookieSettings(storedCookieSettings);
+
+  cookieOpenButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      const currentSettings = readCookieSettings();
+      applyCookieSettings(currentSettings);
+      openCookieModal();
+    });
+  });
+
+  cookieCloseButtons.forEach((button) => {
+    button.addEventListener("click", closeCookieModal);
+  });
+
+  cookieAcceptAllButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      persistCookieSettings({
+        necessary: true,
+        external: true,
+        analytics: true
+      });
+    });
+  });
+
+  cookieNecessaryButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      persistCookieSettings({
+        necessary: true,
+        external: false,
+        analytics: false
+      });
+    });
+  });
+
+  cookieSaveButtons.forEach((button) => {
+    button.addEventListener("click", () => {
+      persistCookieSettings({
+        necessary: true,
+        external: Boolean(cookieExternalToggle?.checked),
+        analytics: Boolean(cookieAnalyticsToggle?.checked)
+      });
+    });
+  });
+
+  [cookieExternalToggle, cookieAnalyticsToggle].forEach((toggle) => {
+    toggle?.addEventListener("change", syncCookieToggleLabels);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") {
+      closeCookieModal();
+    }
+  });
+}
+

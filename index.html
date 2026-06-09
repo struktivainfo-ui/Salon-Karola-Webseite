@@ -701,6 +701,7 @@
         <div class="footer-links">
           <a href="impressum.html">Impressum</a>
           <a href="datenschutz.html">Datenschutz</a>
+          <button type="button" class="footer-link-button" data-open-cookie-settings>Cookie-Einstellungen</button>
           <a href="https://www.facebook.com/1JA6WLS31m/" target="_blank" rel="noopener noreferrer">Facebook</a>
           <a href="https://www.instagram.com/salonkarola/" target="_blank" rel="noopener noreferrer">Instagram</a>
           <a href="https://www.youtube.com/@SalonKarola" target="_blank" rel="noopener noreferrer">YouTube</a>
@@ -711,6 +712,70 @@
     <a class="whatsapp-floating" href="https://wa.me/4970516344" target="_blank" rel="noopener noreferrer" aria-label="Salon Karola per WhatsApp kontaktieren">
       <img src="assets/images/logos/whatsapp-original.png" alt="" aria-hidden="true" loading="lazy" decoding="async" />
     </a>
+
+    <div class="cookie-banner" data-cookie-banner hidden>
+      <div class="cookie-banner__inner">
+        <p class="cookie-banner__text">
+          Wir verwenden notwendige Cookies, um unsere Webseite zuverlässig bereitzustellen. Optionale Dienste wie Karten, Social-Media-Inhalte oder Analysefunktionen werden nur mit Ihrer Zustimmung aktiviert.
+        </p>
+        <div class="cookie-banner__actions">
+          <button type="button" class="cookie-action cookie-action--primary" data-cookie-accept-all>Alle akzeptieren</button>
+          <button type="button" class="cookie-action" data-cookie-accept-necessary>Nur notwendige Cookies</button>
+          <button type="button" class="cookie-action cookie-action--ghost" data-cookie-open-settings>Einstellungen</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="cookie-modal" data-cookie-modal hidden>
+      <div class="cookie-modal__backdrop" data-cookie-close-modal></div>
+      <div class="cookie-modal__dialog" role="dialog" aria-modal="true" aria-labelledby="cookie-settings-title">
+        <button type="button" class="cookie-modal__close" data-cookie-close-modal aria-label="Cookie-Einstellungen schließen">×</button>
+        <p class="cookie-modal__eyebrow">Datenschutz</p>
+        <h2 id="cookie-settings-title">Cookie-Einstellungen</h2>
+        <p class="cookie-modal__intro">
+          Hier können Sie auswählen, welche Dienste Sie zulassen möchten. Notwendige Cookies sind für den Betrieb der Webseite erforderlich.
+        </p>
+        <div class="cookie-groups">
+          <article class="cookie-group">
+            <div class="cookie-group__content">
+              <h3>Notwendige Cookies</h3>
+              <p>Diese Cookies sind erforderlich, damit die Webseite technisch funktioniert.</p>
+            </div>
+            <span class="cookie-toggle cookie-toggle--locked" aria-label="Notwendige Cookies immer aktiv">
+              <span class="cookie-toggle__track"></span>
+              <span class="cookie-toggle__label">Immer aktiv</span>
+            </span>
+          </article>
+          <article class="cookie-group">
+            <div class="cookie-group__content">
+              <h3>Externe Inhalte / Karten</h3>
+              <p>Damit können externe Inhalte wie Google Maps oder Routenfunktionen geladen werden.</p>
+            </div>
+            <label class="cookie-toggle" for="cookie-external">
+              <input id="cookie-external" type="checkbox" data-cookie-toggle="external" />
+              <span class="cookie-toggle__track"></span>
+              <span class="cookie-toggle__label">Aktivieren</span>
+            </label>
+          </article>
+          <article class="cookie-group">
+            <div class="cookie-group__content">
+              <h3>Analyse / Statistik</h3>
+              <p>Hilft uns zu verstehen, wie die Webseite genutzt wird.</p>
+            </div>
+            <label class="cookie-toggle" for="cookie-analytics">
+              <input id="cookie-analytics" type="checkbox" data-cookie-toggle="analytics" />
+              <span class="cookie-toggle__track"></span>
+              <span class="cookie-toggle__label">Aktivieren</span>
+            </label>
+          </article>
+        </div>
+        <div class="cookie-modal__actions">
+          <button type="button" class="cookie-action cookie-action--primary" data-cookie-save>Auswahl speichern</button>
+          <button type="button" class="cookie-action" data-cookie-accept-all>Alle akzeptieren</button>
+          <button type="button" class="cookie-action cookie-action--ghost" data-cookie-close-modal>Abbrechen</button>
+        </div>
+      </div>
+    </div>
 
     <script src="script.js"></script>
   </body>
