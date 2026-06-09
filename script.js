@@ -343,3 +343,158 @@ if (cookieBanner || cookieModal) {
   });
 }
 
+const inquiryForm = document.querySelector("[data-inquiry-form]");
+const inquiryTypeSelect = document.querySelector("[data-inquiry-type-select]");
+const inquiryServiceSelect = document.querySelector("[data-inquiry-service-select]");
+const inquiryPeopleCount = document.querySelector("[data-inquiry-people-count]");
+const inquiryFamilyCountField = document.querySelector("[data-family-count-field]");
+const inquiryFamilyDetailsField = document.querySelector("[data-family-details-field]");
+const inquiryFeedback = document.querySelector("[data-inquiry-feedback]");
+const inquiryWhatsappLink = document.querySelector("[data-inquiry-whatsapp]");
+const inquiryPrefillLinks = document.querySelectorAll("[data-inquiry-service]");
+
+const updateInquiryVisibility = () => {
+  const isFamilyRequest = inquiryTypeSelect?.value === "Familienanfrage / mehrere Personen";
+  const hasMultiplePeople = inquiryPeopleCount && inquiryPeopleCount.value !== "1 Person";
+  const peopleDetailsInput = inquiryFamilyDetailsField?.querySelector("textarea");
+
+  if (inquiryFamilyCountField) {
+    inquiryFamilyCountField.hidden = !isFamilyRequest;
+  }
+
+  if (inquiryPeopleCount) {
+    inquiryPeopleCount.required = Boolean(isFamilyRequest);
+  }
+
+  if (inquiryFamilyDetailsField) {
+    inquiryFamilyDetailsField.hidden = !(isFamilyRequest && hasMultiplePeople);
+  }
+
+  if (peopleDetailsInput) {
+    peopleDetailsInput.required = Boolean(isFamilyRequest && hasMultiplePeople);
+  }
+};
+
+const collectInquiryData = () => {
+  if (!inquiryForm) return {};
+
+  const formData = new FormData(inquiryForm);
+
+  return {
+    name: (formData.get("name") || "").toString().trim(),
+    phone: (formData.get("phone") || "").toString().trim(),
+    email: (formData.get("email") || "").toString().trim(),
+    requestType: (formData.get("requestType") || "").toString().trim(),
+    service: (formData.get("service") || "").toString().trim(),
+    peopleCount: (formData.get("peopleCount") || "").toString().trim(),
+    peopleDetails: (formData.get("peopleDetails") || "").toString().trim(),
+    preferredTime: (formData.get("preferredTime") || "").toString().trim(),
+    message: (formData.get("message") || "").toString().trim()
+  };
+};
+
+const buildInquiryMailto = (data) => {
+  const subject = "Neue Terminanfrage über die Salon-Karola-Webseite";
+  const lines = [
+    "Neue Anfrage über die Salon-Karola-Webseite",
+    "",
+    `Name: ${data.name || "-"}`,
+    `Telefonnummer: ${data.phone || "-"}`,
+    `E-Mail: ${data.email || "-"}`,
+    `Art der Anfrage: ${data.requestType || "-"}`,
+    `Gewünschte Leistung: ${data.service || "-"}`,
+    `Anzahl Personen: ${data.requestType === "Familienanfrage / mehrere Personen" ? (data.peopleCount || "-") : "-"}`,
+    `Personen-Details: ${data.requestType === "Familienanfrage / mehrere Personen" ? (data.peopleDetails || "-") : "-"}`,
+    `Wunschtermin / Zeitraum: ${data.preferredTime || "-"}`,
+    `Nachricht: ${data.message || "-"}`
+  ];
+
+  return `mailto:jwacker27@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(lines.join("\n"))}`;
+};
+
+const buildInquiryWhatsapp = (data) => {
+  const parts = [
+    "Hallo Salon Karola, ich möchte gerne einen Termin oder eine Beratung anfragen."
+  ];
+
+  if (data.name) parts.push(`Name: ${data.name}`);
+  if (data.phone) parts.push(`Telefonnummer: ${data.phone}`);
+  if (data.email) parts.push(`E-Mail: ${data.email}`);
+  if (data.requestType) parts.push(`Art der Anfrage: ${data.requestType}`);
+  if (data.service) parts.push(`Gewünschte Leistung: ${data.service}`);
+  if (data.requestType === "Familienanfrage / mehrere Personen" && data.peopleCount) parts.push(`Anzahl Personen: ${data.peopleCount}`);
+  if (data.requestType === "Familienanfrage / mehrere Personen" && data.peopleDetails) parts.push(`Personen-Details: ${data.peopleDetails}`);
+  if (data.preferredTime) parts.push(`Wunschtermin / Zeitraum: ${data.preferredTime}`);
+  if (data.message) parts.push(`Nachricht: ${data.message}`);
+
+  return `https://wa.me/4970516344?text=${encodeURIComponent(parts.join("\n"))}`;
+};
+
+const setInquiryFeedback = (text, tone = "neutral") => {
+  if (!inquiryFeedback) return;
+  inquiryFeedback.textContent = text;
+  if (text) {
+    inquiryFeedback.dataset.tone = tone;
+  } else {
+    delete inquiryFeedback.dataset.tone;
+  }
+};
+
+if (inquiryForm) {
+  updateInquiryVisibility();
+
+  inquiryTypeSelect?.addEventListener("change", () => {
+    if (inquiryTypeSelect.value !== "Familienanfrage / mehrere Personen" && inquiryPeopleCount) {
+      inquiryPeopleCount.value = "1 Person";
+    }
+    updateInquiryVisibility();
+  });
+
+  inquiryPeopleCount?.addEventListener("change", updateInquiryVisibility);
+
+  inquiryPrefillLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      const service = link.dataset.inquiryService;
+      const requestType = link.dataset.inquiryType;
+
+      if (service && inquiryServiceSelect) {
+        inquiryServiceSelect.value = service;
+      }
+
+      if (requestType && inquiryTypeSelect) {
+        inquiryTypeSelect.value = requestType;
+      }
+
+      updateInquiryVisibility();
+      setInquiryFeedback("");
+    });
+  });
+
+  inquiryWhatsappLink?.addEventListener("click", () => {
+    const data = collectInquiryData();
+    inquiryWhatsappLink.href = buildInquiryWhatsapp(data);
+  });
+
+  inquiryForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+    setInquiryFeedback("");
+
+    if (!inquiryForm.reportValidity()) {
+      setInquiryFeedback("Bitte füllen Sie die Pflichtfelder aus und bestätigen Sie den Datenschutz-Hinweis.", "error");
+      return;
+    }
+
+    const data = collectInquiryData();
+
+    try {
+      window.location.href = buildInquiryMailto(data);
+      setInquiryFeedback("Vielen Dank für Ihre Anfrage. Wir melden uns persönlich bei Ihnen zurück.", "success");
+      inquiryForm.reset();
+      updateInquiryVisibility();
+      if (inquiryServiceSelect) inquiryServiceSelect.value = "";
+    } catch (error) {
+      setInquiryFeedback("Ihre Anfrage konnte gerade nicht gesendet werden. Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp.", "error");
+    }
+  });
+}
+
