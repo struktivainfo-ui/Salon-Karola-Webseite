@@ -461,8 +461,8 @@ if (inquiryForm) {
         inquiryServiceSelect.value = service;
       }
 
-      if (requestType && inquiryTypeSelect) {
-        inquiryTypeSelect.value = requestType;
+      if (inquiryTypeSelect) {
+        inquiryTypeSelect.value = requestType || "";
       }
 
       updateInquiryVisibility();
