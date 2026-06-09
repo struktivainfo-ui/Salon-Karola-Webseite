@@ -1567,8 +1567,21 @@ html {
 }
 
 section[id],
-article[id] {
-  scroll-margin-top: 90px;
+[id="anfrage"],
+[id="leistungen"],
+[id="bewertungen"],
+[id="kontakt"] {
+  scroll-margin-top: 110px;
+}
+
+@media (max-width: 768px) {
+  section[id],
+  [id="anfrage"],
+  [id="leistungen"],
+  [id="bewertungen"],
+  [id="kontakt"] {
+    scroll-margin-top: 90px;
+  }
 }
 
 .reveal {
