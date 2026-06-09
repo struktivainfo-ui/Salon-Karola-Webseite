@@ -352,6 +352,7 @@ const inquiryFamilyDetailsField = document.querySelector("[data-family-details-f
 const inquiryFeedback = document.querySelector("[data-inquiry-feedback]");
 const inquiryWhatsappLink = document.querySelector("[data-inquiry-whatsapp]");
 const inquiryPrefillLinks = document.querySelectorAll("[data-inquiry-service]");
+const inquirySubmitButton = inquiryForm?.querySelector('.request-submit');
 
 const updateInquiryVisibility = () => {
   const isFamilyRequest = inquiryTypeSelect?.value === "Familienanfrage / mehrere Personen";
@@ -389,7 +390,9 @@ const collectInquiryData = () => {
     peopleCount: (formData.get("peopleCount") || "").toString().trim(),
     peopleDetails: (formData.get("peopleDetails") || "").toString().trim(),
     preferredTime: (formData.get("preferredTime") || "").toString().trim(),
-    message: (formData.get("message") || "").toString().trim()
+    message: (formData.get("message") || "").toString().trim(),
+    privacyConsent: formData.get("privacyConsent") === "on",
+    honeypot: (formData.get("honeypot") || "").toString()
   };
 };
 
@@ -485,16 +488,61 @@ if (inquiryForm) {
     }
 
     const data = collectInquiryData();
+    const originalButtonText = inquirySubmitButton?.textContent || "Anfrage senden";
+    const nachrichtParts = [];
 
-    try {
-      window.location.href = buildInquiryMailto(data);
-      setInquiryFeedback("Vielen Dank für Ihre Anfrage. Wir melden uns persönlich bei Ihnen zurück.", "success");
-      inquiryForm.reset();
-      updateInquiryVisibility();
-      if (inquiryServiceSelect) inquiryServiceSelect.value = "";
-    } catch (error) {
-      setInquiryFeedback("Ihre Anfrage konnte gerade nicht gesendet werden. Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp.", "error");
+    if (data.requestType === "Familienanfrage / mehrere Personen") {
+      if (data.peopleCount) nachrichtParts.push(`Anzahl Personen: ${data.peopleCount}`);
+      if (data.peopleDetails) nachrichtParts.push(`Personen-Details: ${data.peopleDetails}`);
     }
+
+    if (data.message) {
+      nachrichtParts.push(data.message);
+    }
+
+    const payload = {
+      name: data.name,
+      telefon: data.phone,
+      email: data.email,
+      anfrage: data.requestType,
+      leistung: data.service,
+      wunschtermin: data.preferredTime,
+      nachricht: nachrichtParts.join("\n"),
+      datenschutz: data.privacyConsent,
+      honeypot: data.honeypot
+    };
+
+    if (inquirySubmitButton) {
+      inquirySubmitButton.disabled = true;
+      inquirySubmitButton.textContent = "Wird gesendet…";
+    }
+
+    fetch("/api/contact", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify(payload)
+    })
+      .then(async (response) => {
+        if (!response.ok) {
+          throw new Error("send_failed");
+        }
+
+        setInquiryFeedback("Vielen Dank für Ihre Anfrage. Wir melden uns persönlich bei Ihnen zurück.", "success");
+        inquiryForm.reset();
+        updateInquiryVisibility();
+        if (inquiryServiceSelect) inquiryServiceSelect.value = "";
+      })
+      .catch(() => {
+        setInquiryFeedback("Ihre Anfrage konnte gerade nicht gesendet werden. Bitte rufen Sie uns an oder schreiben Sie uns per WhatsApp.", "error");
+      })
+      .finally(() => {
+        if (inquirySubmitButton) {
+          inquirySubmitButton.disabled = false;
+          inquirySubmitButton.textContent = originalButtonText;
+        }
+      });
   });
 }
 

@@ -34,6 +34,7 @@
     { "source": "/team/index.html", "destination": "/#team", "permanent": true }
   ],
   "rewrites": [
+    { "source": "/api/(.*)", "destination": "/api/$1" },
     { "source": "/impressum", "destination": "/impressum.html" },
     { "source": "/datenschutz", "destination": "/datenschutz.html" }
   ]
