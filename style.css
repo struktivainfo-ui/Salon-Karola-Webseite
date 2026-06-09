@@ -5017,6 +5017,58 @@ section {
   font-size: 0.94rem;
 }
 
+.press-note {
+  margin-top: 1.2rem;
+  padding: 1.15rem 1.2rem;
+  border-radius: 22px;
+  border: 1px solid rgba(209, 168, 87, 0.34);
+  background:
+    linear-gradient(180deg, rgba(255, 250, 242, 0.06), rgba(255, 255, 255, 0.02)),
+    rgba(10, 10, 10, 0.82);
+  box-shadow: 0 16px 34px rgba(0, 0, 0, 0.22);
+}
+
+.press-note-label {
+  margin: 0 0 0.35rem;
+  color: #d1a857;
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.press-note h3 {
+  margin: 0;
+  font-size: clamp(1.02rem, 1.8vw, 1.2rem);
+  color: #fff6e6;
+}
+
+.press-note p {
+  margin: 0.7rem 0 0;
+  color: rgba(255, 248, 236, 0.82);
+}
+
+.press-note-link {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 0.9rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  border: 1px solid rgba(209, 168, 87, 0.45);
+  background: rgba(209, 168, 87, 0.14);
+  color: #fff3d5;
+  font-weight: 700;
+  text-decoration: none;
+  transition: transform 180ms ease, border-color 180ms ease, background 180ms ease;
+}
+
+.press-note-link:hover,
+.press-note-link:focus-visible {
+  transform: translateY(-1px);
+  border-color: rgba(209, 168, 87, 0.68);
+  background: rgba(209, 168, 87, 0.22);
+}
+
 .salon-overview-media {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(220px, 0.8fr);
