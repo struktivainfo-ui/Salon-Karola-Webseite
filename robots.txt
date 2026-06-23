@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://salon-karola-webseite.vercel.app/sitemap.xml
+Sitemap: https://salonkarola.de/sitemap.xml
