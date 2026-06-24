@@ -9926,3 +9926,235 @@ body {
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.55) !important;
   }
 }
+
+/* Final compact balance 2026-06-24 */
+@keyframes salonMarquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.service-marquee-track {
+  animation: salonMarquee 58s linear infinite !important;
+}
+
+.multi-page .team-grid {
+  width: min(920px, 100%) !important;
+  grid-template-columns: repeat(2, minmax(0, 420px)) !important;
+  justify-content: center !important;
+  align-items: start !important;
+  gap: clamp(18px, 3vw, 32px) !important;
+}
+
+.multi-page .team-card {
+  width: 100% !important;
+  max-width: 420px !important;
+  border-radius: 28px !important;
+}
+
+.multi-page .team-photo-wrap {
+  width: 100% !important;
+  max-width: none !important;
+  height: clamp(250px, 24vw, 315px) !important;
+  max-height: 315px !important;
+  border-radius: 26px 26px 18px 18px !important;
+}
+
+.multi-page .team-card img,
+.multi-page .team-photo {
+  width: 100% !important;
+  height: 100% !important;
+  max-height: 315px !important;
+  object-fit: cover !important;
+  transform: none !important;
+}
+
+.multi-page .team-photo--jessi {
+  object-position: center 34% !important;
+}
+
+.multi-page .team-photo--ute {
+  object-position: center 28% !important;
+}
+
+.multi-page .team-card-content {
+  padding: 16px 18px 20px !important;
+}
+
+.multi-page .team-card h3 {
+  font-size: clamp(1.35rem, 2vw, 1.7rem) !important;
+  line-height: 1.08 !important;
+}
+
+.before-after-showcase {
+  padding-top: clamp(24px, 3.6vw, 46px) !important;
+}
+
+.multi-page .before-after-panel,
+.before-after-panel {
+  width: min(720px, 100%) !important;
+  max-width: 720px !important;
+  padding: clamp(16px, 2.4vw, 24px) !important;
+  border-radius: 28px !important;
+}
+
+.before-after-copy {
+  margin-bottom: 14px !important;
+}
+
+.multi-page .before-after-panel h2 {
+  font-size: clamp(1.95rem, 3.1vw, 2.65rem) !important;
+}
+
+.before-after-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(10px, 1.8vw, 14px) !important;
+}
+
+.before-after-pair figure {
+  border-radius: 22px !important;
+}
+
+.before-after-pair img {
+  height: clamp(175px, 18vw, 235px) !important;
+  object-fit: cover !important;
+  object-position: 62% 42% !important;
+}
+
+.before-after-pair span {
+  top: 10px !important;
+  left: 10px !important;
+  padding: 6px 11px !important;
+  font-size: 0.82rem !important;
+}
+
+.multi-page .multipage-gallery {
+  width: min(920px, 100%) !important;
+  margin-inline: auto !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+  gap: clamp(12px, 1.8vw, 16px) !important;
+}
+
+.multi-page .multipage-gallery .salon-gallery-card,
+.multi-page .salon-gallery-card {
+  aspect-ratio: 4 / 3 !important;
+  height: auto !important;
+  max-height: 215px !important;
+  border-radius: 24px !important;
+}
+
+.multi-page .multipage-gallery .salon-gallery-card img,
+.multi-page .salon-gallery-card img {
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+}
+
+.multi-page .mini-gallery {
+  width: min(920px, 100%) !important;
+  margin-inline: auto !important;
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+  gap: clamp(10px, 1.6vw, 14px) !important;
+}
+
+.multi-page .mini-gallery img {
+  height: clamp(130px, 14vw, 180px) !important;
+  border-radius: 22px !important;
+}
+
+.multi-page .hero-image-wrap img {
+  height: clamp(270px, 30vw, 400px) !important;
+}
+
+.multi-page .contact-band,
+.multi-page .review-cta {
+  max-width: 760px !important;
+}
+
+.multi-page .hours-card {
+  max-width: 380px !important;
+}
+
+@media (max-width: 980px) {
+  .multi-page .multipage-gallery,
+  .multi-page .mini-gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+
+  .multi-page .team-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .service-marquee-track {
+    animation-duration: 72s !important;
+  }
+
+  .multi-page .team-grid {
+    grid-template-columns: 1fr !important;
+    width: min(360px, 100%) !important;
+  }
+
+  .multi-page .team-card {
+    max-width: 360px !important;
+  }
+
+  .multi-page .team-photo-wrap,
+  .multi-page .team-card img,
+  .multi-page .team-photo {
+    height: clamp(220px, 62vw, 270px) !important;
+    max-height: 270px !important;
+  }
+
+  .multi-page .multipage-gallery,
+  .multi-page .mini-gallery {
+    grid-template-columns: 1fr !important;
+    width: min(360px, 100%) !important;
+  }
+
+  .multi-page .multipage-gallery .salon-gallery-card,
+  .multi-page .salon-gallery-card {
+    max-height: 205px !important;
+  }
+
+  .multi-page .mini-gallery img {
+    height: min(52vw, 190px) !important;
+  }
+
+  .multi-page .before-after-panel,
+  .before-after-panel {
+    width: min(360px, 100%) !important;
+    max-width: 360px !important;
+    padding: 16px !important;
+  }
+
+  .before-after-pair {
+    grid-template-columns: 1fr !important;
+  }
+
+  .before-after-pair img {
+    height: min(48vw, 190px) !important;
+    object-position: 62% 42% !important;
+  }
+
+  .before-after-pair span {
+    top: 9px !important;
+    left: 9px !important;
+  }
+
+  .multi-page .hero-image-wrap img {
+    height: clamp(200px, 54vw, 245px) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .service-marquee-track {
+    animation: none !important;
+    transform: translateX(0) !important;
+  }
+}
