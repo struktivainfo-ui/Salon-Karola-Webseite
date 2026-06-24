@@ -1,92 +1,61 @@
-﻿# Salon Karola – Website
+﻿# Salon Karola Website
 
-Moderne, mobile-first Website für den Friseursalon **Salon Karola** in Calw-Wimberg.  
-Die Website ist statisch (HTML, CSS, JavaScript) und direkt für GitHub + Vercel geeignet.
+Mehrseitige statische Website fuer **Salon Karola** in Calw-Wimberg.
 
-## Dateistruktur
+## Aktuelle Seiten
+
+- `/`
+- `/leistungen`
+- `/ueber-uns`
+- `/einblicke`
+- `/bewertungen`
+- `/kontakt`
+- `/impressum`
+- `/datenschutz`
+
+Alte Onepage- und Einzelservice-Routen werden nicht mehr verwendet.
+
+## Lokale Pruefung
+
+```powershell
+npm run build
+python -m http.server 4194 --bind 127.0.0.1
+```
+
+## Stammdaten
+
+- Adresse: Ostlandstrasse 3, 75365 Calw-Wimberg
+- Telefon: 07051-6344
+- Website: https://salonkarola.de
+
+Oeffnungszeiten:
+
+- Dienstag bis Freitag: 09:00-12:00 Uhr und 13:30-17:45 Uhr
+- Samstag: 08:30-12:15 Uhr
+- Sonntag und Montag: geschlossen
+
+## Wichtige Dateien
 
 - `index.html`
+- `leistungen/index.html`
+- `ueber-uns/index.html`
+- `einblicke/index.html`
+- `bewertungen/index.html`
+- `kontakt/index.html`
+- `impressum/index.html`
+- `datenschutz/index.html`
 - `style.css`
 - `script.js`
-- `impressum.html`
-- `datenschutz.html`
-- `README.md`
-- `assets/`
-- `assets/images/`
+- `sitemap.xml`
+- `robots.txt`
+- `vercel.json`
 
-## Lokal öffnen
+## Bilder
 
-`index.html` im Browser öffnen.
+Bilder liegen in `assets/images/`. Das aktuelle Design nutzt kompakte Bildflaechen mit `object-fit: cover`, runden Ecken und dezenter Goldkante.
 
-## Deployment (GitHub + Vercel)
+Fuer Vorher/Nachher-Bilder von Kundinnen und Kunden sollte vor Veroeffentlichung eine ausdrueckliche Einwilligung vorliegen.
 
-1. GitHub Repository erstellen.
-2. Dateien hochladen.
-3. Vercel mit GitHub verbinden.
-4. Framework Preset: `Other`.
-5. `Deploy` klicken.
+## Deployment
 
-## Bilder einfügen
-
-Bilder gehören in `assets/images/`.
-
-Empfohlene Dateinamen:
-
-- `salon-aussen.jpg`
-- `salon-innen.jpg`
-- `team-jessi.jpg`
-- `team-jessi-neu.jpg`
-- `team-ute.jpg`
-- `styling-1.jpg`
-- `styling-2.jpg`
-- `styling-3.jpg`
-- `styling-4.jpg`
-- `styling-5.jpg`
-- `beratung.jpg`
-- `lotto.jpg`
-- `before-after-before-clean.jpg`
-- `before-after-after-clean.jpg`
-
-Empfohlene Bildgrößen:
-
-- `1600px` Breite für große Bilder (Hero, Willkommen)
-- `800px` Breite für Team und Galerie
-
-Bilder vor dem Upload komprimieren, damit die Seite schnell bleibt.
-
-## Logo
-
-Logo-Dateien:
-- `assets/images/logos/logo-salon-karola-original.png`
-- `assets/images/logos/logo-facebook.svg` oder `.png`
-- `assets/images/logos/logo-instagram.svg` oder `.png`
-- `assets/images/logos/logo-youtube.svg` oder `.png`
-- `assets/images/logos/logo-revlon.png`
-- `assets/images/logos/logo-american-crew.png`
-
-Hinweis: Logos müssen lokal im Projekt liegen. Keine externen Logo-URLs verwenden.
-
-## WhatsApp-Floating-Button
-
-- Link: `https://wa.me/4970516344`
-- Icon-Datei: `assets/images/logos/whatsapp-original.svg` oder `assets/images/logos/whatsapp-original.png`
-- Falls keine Datei vorhanden ist, zeigt die Website automatisch einen runden `WA`-Fallback.
-
-## Hinweise
-
-- Die Website verwendet UTF-8 und deutsche Umlaute in sichtbaren Texten.
-- Aktuell vorhandene neue Bilder:
-  - `assets/images/before-after-before-clean.jpg`
-  - `assets/images/before-after-after-clean.jpg`
-  - `assets/images/styling-4.jpg`
-  - `assets/images/styling-5.jpg`
-- Aktuell ist ein kompaktes Vorher/Nachher-Beispiel eingebunden.
-- Für Vorher/Nachher-Bilder von Kundinnen und Kunden sollte vor Veröffentlichung eine ausdrückliche Einwilligung vorliegen.
-- Impressum rechtlich final prüfen.
-- Datenschutz rechtlich final prüfen.
-- Google-Bewertungslink später im Bewertungsbereich ersetzen.
-- Social-Media-Links:
-  - Facebook: https://www.facebook.com/1JA6WLS31m/
-  - Instagram: https://www.instagram.com/salonkarola
-  - YouTube: https://www.youtube.com/@SalonKarola
-
+Das Projekt ist fuer Vercel als statische Website konfiguriert. `npm run build` prueft, ob alle benoetigten Seiten und SEO-Dateien vorhanden sind.

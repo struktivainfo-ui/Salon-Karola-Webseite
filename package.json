@@ -4,7 +4,5 @@
   "scripts": {
     "build": "node -e \"const fs=require('fs'); ['index.html','leistungen/index.html','ueber-uns/index.html','einblicke/index.html','bewertungen/index.html','kontakt/index.html','impressum/index.html','datenschutz/index.html','sitemap.xml','robots.txt'].forEach(f=>fs.accessSync(f)); console.log('Static site build check passed')\""
   },
-  "dependencies": {
-    "nodemailer": "^6.9.9"
-  }
+  "dependencies": {}
 }
