@@ -5,46 +5,73 @@
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" },
-        { "key": "X-Content-Type-Options", "value": "nosniff" }
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        }
       ]
     }
   ],
   "redirects": [
-    { "source": "/leistungen", "destination": "/#leistungen", "permanent": true },
-    { "source": "/leistungen.html", "destination": "/#leistungen", "permanent": true },
-    { "source": "/leistungen/index.html", "destination": "/#leistungen", "permanent": true },
-    { "source": "/damen", "destination": "/#damen", "permanent": true },
-    { "source": "/damen.html", "destination": "/#damen", "permanent": true },
-    { "source": "/damen/index.html", "destination": "/#damen", "permanent": true },
-    { "source": "/herren", "destination": "/#herren", "permanent": true },
-    { "source": "/herren.html", "destination": "/#herren", "permanent": true },
-    { "source": "/herren/index.html", "destination": "/#herren", "permanent": true },
-    { "source": "/kinder", "destination": "/#kinder", "permanent": true },
-    { "source": "/kinder.html", "destination": "/#kinder", "permanent": true },
-    { "source": "/kinder/index.html", "destination": "/#kinder", "permanent": true },
-    { "source": "/farbe-styling", "destination": "/#farbe-styling", "permanent": true },
-    { "source": "/farbe-styling.html", "destination": "/#farbe-styling", "permanent": true },
-    { "source": "/farbe-styling/index.html", "destination": "/#farbe-styling", "permanent": true },
-    { "source": "/festliche-anlaesse", "destination": "/#festliche-anlaesse", "permanent": true },
-    { "source": "/festliche-anlaesse.html", "destination": "/#festliche-anlaesse", "permanent": true },
-    { "source": "/festliche-anlaesse/index.html", "destination": "/#festliche-anlaesse", "permanent": true },
-    { "source": "/galerie", "destination": "/#galerie", "permanent": true },
-    { "source": "/galerie.html", "destination": "/#galerie", "permanent": true },
-    { "source": "/galerie/index.html", "destination": "/#galerie", "permanent": true },
-    { "source": "/bewertungen", "destination": "/#bewertungen", "permanent": true },
-    { "source": "/bewertungen.html", "destination": "/#bewertungen", "permanent": true },
-    { "source": "/bewertungen/index.html", "destination": "/#bewertungen", "permanent": true },
-    { "source": "/kontakt", "destination": "/#kontakt", "permanent": true },
-    { "source": "/kontakt.html", "destination": "/#kontakt", "permanent": true },
-    { "source": "/kontakt/index.html", "destination": "/#kontakt", "permanent": true },
-    { "source": "/team", "destination": "/#team", "permanent": true },
-    { "source": "/team.html", "destination": "/#team", "permanent": true },
-    { "source": "/team/index.html", "destination": "/#team", "permanent": true }
+    {
+      "source": "/leistungen.html",
+      "destination": "/leistungen",
+      "permanent": true
+    },
+    {
+      "source": "/galerie",
+      "destination": "/einblicke",
+      "permanent": true
+    },
+    {
+      "source": "/galerie.html",
+      "destination": "/einblicke",
+      "permanent": true
+    },
+    {
+      "source": "/team",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/team.html",
+      "destination": "/ueber-uns",
+      "permanent": true
+    },
+    {
+      "source": "/damen",
+      "destination": "/leistungen#damen",
+      "permanent": true
+    },
+    {
+      "source": "/herren",
+      "destination": "/leistungen#herren",
+      "permanent": true
+    },
+    {
+      "source": "/kinder",
+      "destination": "/leistungen#kinder",
+      "permanent": true
+    },
+    {
+      "source": "/farbe-styling",
+      "destination": "/leistungen#farbe-styling",
+      "permanent": true
+    },
+    {
+      "source": "/festliche-anlaesse",
+      "destination": "/leistungen#eventfrisuren",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/api/(.*)", "destination": "/api/$1" },
-    { "source": "/impressum", "destination": "/impressum.html" },
-    { "source": "/datenschutz", "destination": "/datenschutz.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "/api/$1"
+    }
   ]
 }
