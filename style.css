@@ -8862,3 +8862,349 @@ body {
     aspect-ratio: 16 / 11 !important;
   }
 }
+
+/* Component rebalance 2026-06-24 */
+.multi-page {
+  --premium-card-bg: linear-gradient(145deg, rgba(15, 11, 7, 0.86), rgba(3, 2, 1, 0.96));
+  --premium-card-border: rgba(245, 215, 110, 0.28);
+  --premium-card-shadow: 0 24px 70px rgba(0, 0, 0, 0.42), 0 0 34px rgba(212, 175, 55, 0.1);
+}
+
+.multi-page .section {
+  isolation: isolate;
+}
+
+.multi-page .section::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  z-index: -1;
+  height: 120px;
+  pointer-events: none;
+  background:
+    linear-gradient(180deg, transparent, rgba(212, 175, 55, 0.07) 42%, rgba(3, 2, 1, 0.72)),
+    radial-gradient(90% 130% at 75% 100%, rgba(255, 236, 171, 0.08), transparent 58%);
+  filter: blur(0.2px);
+}
+
+.multi-page .hero-content h1,
+.multi-page .section-heading h2,
+.multi-page .section-intro h2,
+.multi-page .salon-overview-copy h2,
+.multi-page .contact-band h2,
+.multi-page .hours-card h2,
+.multi-page .review-cta h2,
+.multi-page .before-after-panel h2 {
+  color: #fff6dc !important;
+  font-size: clamp(2.25rem, 4.4vw, 4.85rem) !important;
+  line-height: 1.04 !important;
+  max-width: min(840px, 100%) !important;
+  text-shadow:
+    0 0 18px rgba(245, 215, 110, 0.16),
+    0 0 42px rgba(212, 175, 55, 0.1),
+    0 18px 50px rgba(0, 0, 0, 0.48) !important;
+}
+
+.multi-page .section-heading h2,
+.multi-page .section-intro h2,
+.multi-page .salon-overview-copy h2,
+.multi-page .contact-band h2,
+.multi-page .hours-card h2,
+.multi-page .review-cta h2,
+.multi-page .before-after-panel h2 {
+  font-size: clamp(2rem, 3.6vw, 3.55rem) !important;
+}
+
+.multi-page .salon-overview-grid {
+  grid-template-columns: minmax(0, 0.82fr) minmax(280px, 0.68fr) !important;
+  gap: clamp(24px, 4vw, 52px) !important;
+  align-items: center !important;
+}
+
+.multi-page .salon-overview-copy {
+  width: min(650px, 100%) !important;
+  max-width: 650px !important;
+  padding: clamp(20px, 3vw, 34px) !important;
+  border: 1px solid rgba(245, 215, 110, 0.18) !important;
+  border-radius: 34px !important;
+  background: linear-gradient(145deg, rgba(9, 6, 3, 0.62), rgba(3, 2, 1, 0.38)) !important;
+  box-shadow: 0 20px 52px rgba(0, 0, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  overflow: hidden !important;
+}
+
+.multi-page .salon-overview-copy p {
+  max-width: 58ch;
+}
+
+.multi-page .salon-overview-media,
+.multi-page .overview-main-image,
+.multi-page .overview-side-images figure {
+  border-radius: 30px !important;
+}
+
+.multi-page .button-ghost,
+.multi-page .btn-outline,
+.multi-page .reviews-summary-link {
+  color: #fff5d8 !important;
+  background: rgba(9, 6, 3, 0.74) !important;
+  border-color: rgba(245, 215, 110, 0.58) !important;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06) !important;
+}
+
+.multi-page .button-ghost:hover,
+.multi-page .btn-outline:hover,
+.multi-page .reviews-summary-link:hover {
+  color: #14100a !important;
+  background: linear-gradient(160deg, #fff1b3, #d4af37) !important;
+}
+
+.multi-page .contact-grid.contact-area {
+  grid-template-columns: minmax(0, 0.95fr) minmax(300px, 420px) !important;
+  gap: clamp(22px, 4vw, 44px) !important;
+  align-items: start !important;
+}
+
+.multi-page .contact-card,
+.multi-page .hours-card,
+.multi-page .review-card,
+.multi-page .review-cta,
+.multi-page .reviews-summary,
+.multi-page .service-card,
+.multi-page .team-card,
+.multi-page .contact-band,
+.multi-page .before-after-panel {
+  border-radius: 32px !important;
+  border: 1px solid var(--premium-card-border) !important;
+  background: var(--premium-card-bg) !important;
+  box-shadow: var(--premium-card-shadow) !important;
+}
+
+.multi-page .hours-card {
+  width: min(420px, 100%) !important;
+  max-width: 420px !important;
+  justify-self: end !important;
+  padding: clamp(20px, 3vw, 30px) !important;
+  overflow: hidden !important;
+}
+
+.multi-page .hours-card h2 {
+  margin: 0 0 18px !important;
+  font-size: clamp(2rem, 3.4vw, 3rem) !important;
+}
+
+.multi-page .hours-list {
+  display: grid !important;
+  gap: 0 !important;
+}
+
+.multi-page .hours-row {
+  display: grid !important;
+  grid-template-columns: minmax(130px, 0.8fr) minmax(0, 1fr) !important;
+  gap: 16px !important;
+  align-items: start !important;
+  padding: 16px 0 !important;
+  border-bottom: 1px solid rgba(245, 215, 110, 0.18) !important;
+}
+
+.multi-page .hours-row:first-child {
+  padding-top: 0 !important;
+}
+
+.multi-page .hours-row:last-child {
+  border-bottom: 0 !important;
+}
+
+.multi-page .hours-day,
+.multi-page .hours-times span {
+  color: #fff4dc !important;
+  font-size: clamp(1rem, 1.45vw, 1.15rem) !important;
+  line-height: 1.35 !important;
+}
+
+.multi-page .hours-times {
+  display: grid !important;
+  gap: 6px !important;
+  justify-items: end !important;
+  text-align: right !important;
+}
+
+.multi-page .hours-times span {
+  color: #f5d76e !important;
+  font-weight: 800 !important;
+}
+
+.multi-page .hours-card .section-note {
+  margin: 16px 0 0 !important;
+  padding-right: 58px !important;
+  font-size: 0.98rem !important;
+}
+
+.multi-page .review-cta {
+  position: relative !important;
+  width: min(760px, 100%) !important;
+  margin: clamp(26px, 4vw, 44px) auto 0 !important;
+  padding: clamp(22px, 4vw, 38px) !important;
+  overflow: hidden !important;
+}
+
+.multi-page .review-cta::before,
+.multi-page .before-after-panel::before,
+.multi-page .hours-card::before {
+  content: "";
+  position: absolute;
+  inset: -40% auto auto -14%;
+  width: 72%;
+  height: 88%;
+  pointer-events: none;
+  background: radial-gradient(closest-side, rgba(245, 215, 110, 0.16), transparent 72%);
+  filter: blur(10px);
+}
+
+.multi-page .review-cta h2 {
+  margin: 0 0 12px !important;
+  font-size: clamp(1.9rem, 3.1vw, 3rem) !important;
+}
+
+.multi-page .review-cta p {
+  max-width: 54ch;
+  margin-bottom: 18px !important;
+}
+
+.before-after-showcase {
+  padding-top: clamp(30px, 4vw, 56px) !important;
+}
+
+.before-after-panel {
+  position: relative;
+  width: min(940px, 100%);
+  margin: 0 auto;
+  padding: clamp(18px, 3vw, 30px);
+  overflow: hidden;
+}
+
+.before-after-copy {
+  display: grid;
+  gap: 8px;
+  margin-bottom: clamp(16px, 2.5vw, 24px);
+}
+
+.before-after-copy p:last-child {
+  max-width: 52ch;
+  margin: 0;
+}
+
+.before-after-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(12px, 2vw, 18px);
+}
+
+.before-after-pair figure {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  border-radius: 26px;
+  border: 1px solid rgba(245, 215, 110, 0.24);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.before-after-pair img {
+  display: block;
+  width: 100%;
+  height: clamp(220px, 27vw, 330px);
+  object-fit: cover;
+  object-position: center;
+}
+
+.before-after-pair span {
+  position: absolute;
+  z-index: 2;
+  top: 14px;
+  left: 14px;
+  padding: 7px 12px;
+  border-radius: 999px;
+  background: rgba(3, 2, 1, 0.78);
+  border: 1px solid rgba(245, 215, 110, 0.5);
+  color: #fff1bd;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+}
+
+.multi-page .multipage-gallery {
+  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
+}
+
+.multi-page .multipage-gallery .salon-gallery-card {
+  border-radius: 28px !important;
+}
+
+@media (max-width: 980px) {
+  .multi-page .salon-overview-grid,
+  .multi-page .contact-grid.contact-area {
+    grid-template-columns: 1fr !important;
+  }
+
+  .multi-page .hours-card {
+    justify-self: start !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .multi-page .hero-content h1 {
+    font-size: clamp(2.15rem, 9vw, 2.65rem) !important;
+  }
+
+  .multi-page .section-heading h2,
+  .multi-page .section-intro h2,
+  .multi-page .salon-overview-copy h2,
+  .multi-page .contact-band h2,
+  .multi-page .hours-card h2,
+  .multi-page .review-cta h2,
+  .multi-page .before-after-panel h2 {
+    font-size: clamp(1.85rem, 8vw, 2.35rem) !important;
+  }
+
+  .multi-page .salon-overview-copy,
+  .multi-page .contact-band,
+  .multi-page .review-cta,
+  .multi-page .before-after-panel,
+  .multi-page .hours-card {
+    border-radius: 26px !important;
+    padding: 18px !important;
+  }
+
+  .multi-page .hours-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 54px !important;
+  }
+
+  .multi-page .hours-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 14px 0 !important;
+  }
+
+  .multi-page .hours-times {
+    justify-items: start !important;
+    text-align: left !important;
+  }
+
+  .multi-page .hours-card .section-note {
+    padding-right: 0 !important;
+  }
+
+  .before-after-pair {
+    grid-template-columns: 1fr !important;
+  }
+
+  .before-after-pair img {
+    height: min(58vw, 230px) !important;
+  }
+
+  .multi-page .multipage-gallery {
+    grid-template-columns: 1fr !important;
+  }
+}
