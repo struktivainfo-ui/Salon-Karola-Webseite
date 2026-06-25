@@ -1019,6 +1019,133 @@ h3 {
   font-weight: 900;
 }
 
+.lead-form-panel {
+  position: relative;
+  width: min(860px, 100%);
+  margin-inline: auto;
+  padding: clamp(18px, 3vw, 32px);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(145deg, rgba(25, 18, 11, 0.86), rgba(5, 4, 3, 0.96)),
+    radial-gradient(120% 90% at 10% 0%, rgba(245, 215, 110, 0.08), transparent 58%);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+
+.lead-form-panel::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  inset: 10px auto auto 12px;
+  width: min(360px, 84%);
+  height: 130px;
+  pointer-events: none;
+  background:
+    radial-gradient(closest-side, rgba(255, 223, 124, 0.13), transparent 72%),
+    radial-gradient(closest-side, rgba(255, 121, 207, 0.035), transparent 78%);
+  filter: blur(14px);
+}
+
+.lead-form-panel > * {
+  position: relative;
+  z-index: 1;
+}
+
+.lead-form {
+  display: grid;
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.lead-form label {
+  display: grid;
+  gap: 7px;
+  color: var(--cream);
+  font-weight: 900;
+}
+
+.lead-form input,
+.lead-form select,
+.lead-form textarea {
+  width: 100%;
+  min-height: 48px;
+  border: 1px solid rgba(255, 226, 138, 0.32);
+  border-radius: 18px;
+  padding: 12px 14px;
+  background: rgba(8, 6, 4, 0.78);
+  color: var(--cream);
+  font: inherit;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.02);
+}
+
+.lead-form textarea {
+  resize: vertical;
+  min-height: 130px;
+}
+
+.lead-form input:focus,
+.lead-form select:focus,
+.lead-form textarea:focus {
+  outline: 2px solid rgba(255, 231, 163, 0.5);
+  outline-offset: 2px;
+  border-color: rgba(255, 226, 138, 0.68);
+}
+
+.privacy-check {
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  gap: 10px;
+  font-weight: 700;
+}
+
+.privacy-check input {
+  width: 20px;
+  height: 20px;
+  min-height: 20px;
+  margin-top: 4px;
+  accent-color: var(--gold);
+}
+
+.hp-field {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.form-note,
+.form-status {
+  margin: 0;
+  color: rgba(255, 247, 226, 0.78);
+}
+
+.form-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.form-status[data-tone="success"] {
+  color: #bff2a8;
+}
+
+.form-status[data-tone="error"] {
+  color: #f0b5a8;
+}
+
+.lead-form button[disabled] {
+  cursor: wait;
+  opacity: 0.7;
+}
+
 .legal-page-section .container {
   width: min(900px, calc(100% - 24px));
 }
@@ -1287,11 +1414,21 @@ h3 {
     text-align: left;
   }
 
+  .form-grid,
+  .form-actions {
+    grid-template-columns: 1fr;
+    display: grid;
+  }
+
   .whatsapp-floating {
     width: 56px;
     height: 56px;
     right: 14px;
     bottom: 14px;
+  }
+
+  .contact-page .whatsapp-floating {
+    display: none;
   }
 }
 

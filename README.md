@@ -22,10 +22,13 @@ npm run build
 python -m http.server 4194 --bind 127.0.0.1
 ```
 
+Das Kontaktformular sendet lokal nur dann E-Mails, wenn die API-Route in einer passenden Serverless/Vercel-Umgebung mit SMTP-Variablen laeuft.
+
 ## Stammdaten
 
 - Adresse: Ostlandstrasse 3, 75365 Calw-Wimberg
 - Telefon: 07051-6344
+- WhatsApp: https://wa.me/4970516344
 - Website: https://salonkarola.de
 
 Oeffnungszeiten:
@@ -42,6 +45,7 @@ Oeffnungszeiten:
 - `einblicke/index.html`
 - `bewertungen/index.html`
 - `kontakt/index.html`
+- `api/lead.js`
 - `impressum/index.html`
 - `datenschutz/index.html`
 - `style.css`
@@ -59,3 +63,18 @@ Fuer Vorher/Nachher-Bilder von Kundinnen und Kunden sollte vor Veroeffentlichung
 ## Deployment
 
 Das Projekt ist fuer Vercel als statische Website konfiguriert. `npm run build` prueft, ob alle benoetigten Seiten und SEO-Dateien vorhanden sind.
+
+## Kontaktformular / SMTP
+
+Terminanfragen werden ueber `/api/lead` per SMTP verschickt. Benoetigte Umgebungsvariablen:
+
+```env
+SMTP_HOST=
+SMTP_PORT=
+SMTP_USER=
+SMTP_PASS=
+LEAD_RECEIVER_EMAIL=
+LEAD_FROM_EMAIL=
+```
+
+Keine Zugangsdaten im Repository speichern. Die Anfrage ist keine verbindliche Terminbestaetigung; Salon Karola meldet sich telefonisch oder per WhatsApp zur Abstimmung zurueck.

@@ -4,6 +4,7 @@ const navLinks = document.querySelectorAll(".site-nav a");
 const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const logoImages = document.querySelectorAll(".brand-logo, .footer-logo");
+const leadForm = document.querySelector("[data-lead-form]");
 
 if (menuToggle && siteNav) {
   const closeMenu = () => {
@@ -107,3 +108,67 @@ logoImages.forEach((img) => {
   img.addEventListener("load", clearError);
   if (img.complete && img.naturalWidth === 0) markError();
 });
+
+if (leadForm) {
+  const status = leadForm.querySelector("[data-form-status]");
+  const submitButton = leadForm.querySelector('button[type="submit"]');
+  const submittedAt = leadForm.querySelector('input[name="submittedAt"]');
+
+  const setStatus = (message, tone = "neutral") => {
+    if (!status) return;
+    status.textContent = message;
+    status.dataset.tone = tone;
+  };
+
+  const setLoading = (isLoading) => {
+    if (!submitButton) return;
+    submitButton.disabled = isLoading;
+    submitButton.textContent = isLoading ? "Anfrage wird gesendet..." : "Terminanfrage senden";
+  };
+
+  leadForm.addEventListener("submit", async (event) => {
+    event.preventDefault();
+    setStatus("");
+
+    if (!leadForm.checkValidity()) {
+      leadForm.reportValidity();
+      return;
+    }
+
+    if (submittedAt) {
+      submittedAt.value = new Date().toISOString();
+    }
+
+    const formData = new FormData(leadForm);
+    const payload = Object.fromEntries(formData.entries());
+    payload.privacy = formData.get("privacy") === "on";
+
+    setLoading(true);
+
+    try {
+      const response = await fetch("/api/lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      const result = await response.json().catch(() => ({}));
+      if (!response.ok || result.ok === false) {
+        throw new Error(result.message || "send-failed");
+      }
+
+      leadForm.reset();
+      setStatus(
+        "Vielen Dank für Ihre Anfrage. Salon Karola meldet sich zur Terminabstimmung telefonisch oder per WhatsApp zurück.",
+        "success"
+      );
+    } catch (error) {
+      setStatus(
+        "Leider konnte die Anfrage nicht gesendet werden. Bitte rufen Sie uns direkt unter 07051-6344 an oder schreiben Sie uns per WhatsApp.",
+        "error"
+      );
+    } finally {
+      setLoading(false);
+    }
+  });
+}
