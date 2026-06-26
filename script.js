@@ -123,7 +123,7 @@ if (leadForm) {
   const setLoading = (isLoading) => {
     if (!submitButton) return;
     submitButton.disabled = isLoading;
-    submitButton.textContent = isLoading ? "Anfrage wird gesendet..." : "Terminanfrage senden";
+    submitButton.textContent = isLoading ? "Anfrage wird gesendet..." : "Terminwunsch senden";
   };
 
   leadForm.addEventListener("submit", async (event) => {
