@@ -1,6 +1,11 @@
 const nodemailer = require("nodemailer");
 
 const REQUIRED_FIELDS = ["name", "phone"];
+
+function envValue(primary, aliases = []) {
+  return [primary, ...aliases].map((key) => process.env[key]).find(Boolean);
+}
+
 function clean(value, maxLength = 1000) {
   return String(value || "")
     .replace(/\r/g, "")
@@ -18,15 +23,19 @@ function escapeHtml(value) {
 }
 
 function envConfig() {
-  const required = [
-    "SMTP_HOST",
-    "SMTP_PORT",
-    "SMTP_USER",
-    "SMTP_PASS",
-    "LEAD_RECEIVER_EMAIL",
-    "LEAD_FROM_EMAIL",
-  ];
-  const missing = required.filter((key) => !process.env[key]);
+  const receiver = envValue("LEAD_RECEIVER_EMAIL", ["RECEIVER_EMAIL"]);
+  const from = envValue("LEAD_FROM_EMAIL", ["SMTP_FROM"]);
+  const required = {
+    SMTP_HOST: process.env.SMTP_HOST,
+    SMTP_PORT: process.env.SMTP_PORT,
+    SMTP_USER: process.env.SMTP_USER,
+    SMTP_PASS: process.env.SMTP_PASS,
+    "LEAD_RECEIVER_EMAIL or RECEIVER_EMAIL": receiver,
+    "LEAD_FROM_EMAIL or SMTP_FROM": from,
+  };
+  const missing = Object.entries(required)
+    .filter(([, value]) => !value)
+    .map(([key]) => key);
   if (missing.length > 0) {
     return { missing };
   }
@@ -41,8 +50,8 @@ function envConfig() {
     port,
     user: process.env.SMTP_USER,
     pass: process.env.SMTP_PASS,
-    receiver: process.env.LEAD_RECEIVER_EMAIL,
-    from: process.env.LEAD_FROM_EMAIL,
+    receiver,
+    from,
   };
 }
 

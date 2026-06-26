@@ -77,4 +77,6 @@ LEAD_RECEIVER_EMAIL=
 LEAD_FROM_EMAIL=
 ```
 
+Auf Vercel werden auch die vorhandenen Alias-Namen `RECEIVER_EMAIL` statt `LEAD_RECEIVER_EMAIL` und `SMTP_FROM` statt `LEAD_FROM_EMAIL` unterstuetzt.
+
 Keine Zugangsdaten im Repository speichern. Die Anfrage ist keine verbindliche Terminbestaetigung; Salon Karola meldet sich telefonisch oder per WhatsApp zur Abstimmung zurueck.
