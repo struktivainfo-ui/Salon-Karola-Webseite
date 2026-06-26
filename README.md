@@ -79,4 +79,6 @@ LEAD_FROM_EMAIL=
 
 Auf Vercel werden auch die vorhandenen Alias-Namen `RECEIVER_EMAIL` statt `LEAD_RECEIVER_EMAIL` und `SMTP_FROM` statt `LEAD_FROM_EMAIL` unterstuetzt.
 
+Bei Gmail/Google SMTP muss `SMTP_USER` die vollstaendige Gmail-Adresse sein und `SMTP_PASS` ein Google-App-Passwort. Das normale Google-Konto-Passwort wird von Gmail mit `535 5.7.8 Username and Password not accepted` abgelehnt.
+
 Keine Zugangsdaten im Repository speichern. Die Anfrage ist keine verbindliche Terminbestaetigung; Salon Karola meldet sich telefonisch oder per WhatsApp zur Abstimmung zurueck.

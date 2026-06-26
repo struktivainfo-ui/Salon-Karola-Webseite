@@ -6,6 +6,15 @@ function envValue(primary, aliases = []) {
   return [primary, ...aliases].map((key) => process.env[key]).find(Boolean);
 }
 
+function cleanEnvValue(value) {
+  return String(value || "").trim();
+}
+
+function cleanSmtpPass(value, host) {
+  const pass = cleanEnvValue(value);
+  return /(^|\.)gmail\.com$/i.test(host) || /googlemail/i.test(host) ? pass.replace(/\s+/g, "") : pass;
+}
+
 function clean(value, maxLength = 1000) {
   return String(value || "")
     .replace(/\r/g, "")
@@ -23,13 +32,17 @@ function escapeHtml(value) {
 }
 
 function envConfig() {
-  const receiver = envValue("LEAD_RECEIVER_EMAIL", ["RECEIVER_EMAIL"]);
-  const from = envValue("LEAD_FROM_EMAIL", ["SMTP_FROM"]);
+  const host = cleanEnvValue(process.env.SMTP_HOST);
+  const portValue = cleanEnvValue(process.env.SMTP_PORT);
+  const user = cleanEnvValue(process.env.SMTP_USER);
+  const pass = cleanSmtpPass(process.env.SMTP_PASS, host);
+  const receiver = cleanEnvValue(envValue("LEAD_RECEIVER_EMAIL", ["RECEIVER_EMAIL"]));
+  const from = cleanEnvValue(envValue("LEAD_FROM_EMAIL", ["SMTP_FROM"]));
   const required = {
-    SMTP_HOST: process.env.SMTP_HOST,
-    SMTP_PORT: process.env.SMTP_PORT,
-    SMTP_USER: process.env.SMTP_USER,
-    SMTP_PASS: process.env.SMTP_PASS,
+    SMTP_HOST: host,
+    SMTP_PORT: portValue,
+    SMTP_USER: user,
+    SMTP_PASS: pass,
     "LEAD_RECEIVER_EMAIL or RECEIVER_EMAIL": receiver,
     "LEAD_FROM_EMAIL or SMTP_FROM": from,
   };
@@ -40,16 +53,16 @@ function envConfig() {
     return { missing };
   }
 
-  const port = Number(process.env.SMTP_PORT);
+  const port = Number(portValue);
   if (!Number.isInteger(port) || port <= 0) {
     return { invalid: ["SMTP_PORT"] };
   }
 
   return {
-    host: process.env.SMTP_HOST,
+    host,
     port,
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user,
+    pass,
     receiver,
     from,
   };
@@ -227,6 +240,9 @@ module.exports = async function handler(request, response) {
 
     return json(response, 200, { ok: true });
   } catch (error) {
+    if (error.code === "EAUTH" && /gmail|gsmtp/i.test(`${config.host} ${error.message || ""}`)) {
+      console.error("Gmail SMTP authentication failed. Check SMTP_USER and use a Google app password for SMTP_PASS.");
+    }
     console.error("Lead mail failed:", {
       message: error.message,
       code: error.code,
