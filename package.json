@@ -5,6 +5,6 @@
     "build": "node -e \"const fs=require('fs'); ['index.html','leistungen/index.html','ueber-uns/index.html','einblicke/index.html','bewertungen/index.html','kontakt/index.html','impressum/index.html','datenschutz/index.html','api/lead.js','.env.example','sitemap.xml','robots.txt'].forEach(f=>fs.accessSync(f)); console.log('Static site build check passed')\""
   },
   "dependencies": {
-    "nodemailer": "^9.0.1"
+    "nodemailer": "^6.9.0"
   }
 }
