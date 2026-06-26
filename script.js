@@ -154,7 +154,7 @@ if (leadForm) {
 
       const result = await response.json().catch(() => ({}));
       if (!response.ok || result.ok === false) {
-        throw new Error(result.message || "send-failed");
+        throw new Error(result.message || `send-failed-${response.status}`);
       }
 
       leadForm.reset();
@@ -163,6 +163,7 @@ if (leadForm) {
         "success"
       );
     } catch (error) {
+      console.error("Lead form submission failed:", error);
       setStatus(
         "Leider konnte die Anfrage nicht gesendet werden. Bitte rufen Sie uns direkt unter 07051-6344 an oder schreiben Sie uns per WhatsApp.",
         "error"
