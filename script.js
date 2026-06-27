@@ -112,6 +112,7 @@ logoImages.forEach((img) => {
 if (leadForm) {
   const status = leadForm.querySelector("[data-form-status]");
   const submitButton = leadForm.querySelector('button[type="submit"]');
+  const whatsappButton = leadForm.querySelector("[data-whatsapp-submit]");
   const submittedAt = leadForm.querySelector('input[name="submittedAt"]');
 
   const setStatus = (message, tone = "neutral") => {
@@ -125,6 +126,74 @@ if (leadForm) {
     submitButton.disabled = isLoading;
     submitButton.textContent = isLoading ? "Anfrage wird gesendet..." : "Terminwunsch senden";
   };
+
+  const getFormValue = (formData, name) => String(formData.get(name) || "").trim();
+
+  const getLeadFormValues = () => {
+    const formData = new FormData(leadForm);
+
+    return {
+      name: getFormValue(formData, "name"),
+      phone: getFormValue(formData, "phone"),
+      service: getFormValue(formData, "service"),
+      time: getFormValue(formData, "preferredTime"),
+      message: getFormValue(formData, "message"),
+      privacy: formData.get("privacy") === "on",
+      website: getFormValue(formData, "website"),
+    };
+  };
+
+  const buildWhatsAppText = ({ name, phone, service, time, message }) =>
+    `Hallo Salon Karola,
+ich möchte gerne einen Termin anfragen.
+
+Name:
+${name}
+
+Telefon / WhatsApp:
+${phone}
+
+Gewünschte Leistung:
+${service || "Nicht angegeben"}
+
+Wunschzeit / Zeitraum:
+${time || "Nicht angegeben"}
+
+Nachricht:
+${message || "Keine Nachricht"}
+
+Vielen Dank.`;
+
+  if (whatsappButton) {
+    whatsappButton.addEventListener("click", () => {
+      setStatus("");
+
+      const values = getLeadFormValues();
+
+      if (values.website) return;
+
+      if (!values.name || !values.phone) {
+        setStatus(
+          "Bitte geben Sie mindestens Ihren Namen und Ihre Telefonnummer oder WhatsApp-Nummer ein.",
+          "error"
+        );
+        const firstMissingField = leadForm.querySelector(values.name ? '[name="phone"]' : '[name="name"]');
+        if (firstMissingField) firstMissingField.focus();
+        return;
+      }
+
+      if (!values.privacy) {
+        setStatus("Bitte bestätigen Sie den Datenschutzhinweis, bevor Sie Ihre Anfrage senden.", "error");
+        const privacyField = leadForm.querySelector('[name="privacy"]');
+        if (privacyField) privacyField.focus();
+        return;
+      }
+
+      const whatsappText = buildWhatsAppText(values);
+      const whatsappUrl = `https://wa.me/4970516344?text=${encodeURIComponent(whatsappText)}`;
+      window.open(whatsappUrl, "_blank", "noopener,noreferrer");
+    });
+  }
 
   leadForm.addEventListener("submit", async (event) => {
     event.preventDefault();
