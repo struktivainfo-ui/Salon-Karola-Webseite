@@ -64,6 +64,12 @@ Fuer Vorher/Nachher-Bilder von Kundinnen und Kunden sollte vor Veroeffentlichung
 
 Das Projekt ist fuer Vercel als statische Website konfiguriert. `npm run build` prueft, ob alle benoetigten Seiten und SEO-Dateien vorhanden sind.
 
+## Google Tag
+
+Alle Inhaltsseiten enthalten im `<head>` einen Google-Tag-Block. Ohne gesetzte Variable wird der Platzhalter `GOOGLE_TAG_ID` verwendet. Fuer den Live-Betrieb in Vercel `VITE_GOOGLE_TAG_ID` setzen, z. B. mit einer echten `G-`, `AW-` oder `GTM-` ID. Alternativ wird auch `NEXT_PUBLIC_GOOGLE_TAG_ID` gelesen.
+
+Der Build fuehrt `scripts/apply-google-tag.js` aus und schreibt die konfigurierte ID in alle statischen HTML-Seiten.
+
 ## Kontaktformular / SMTP
 
 Terminanfragen werden ueber `/api/lead` per SMTP verschickt. Benoetigte Umgebungsvariablen:
