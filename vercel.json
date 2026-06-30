@@ -2,6 +2,18 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "outputDirectory": ".",
+  "redirects": [
+    {
+      "source": "/kundenkarte",
+      "destination": "https://salon-karola-crm.onrender.com/qr-kundenkarte",
+      "permanent": false
+    },
+    {
+      "source": "/kundenkarte/",
+      "destination": "https://salon-karola-crm.onrender.com/qr-kundenkarte",
+      "permanent": false
+    }
+  ],
   "headers": [
 {
       "source": "/sitemap.xml",
