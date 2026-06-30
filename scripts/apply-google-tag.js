@@ -11,20 +11,78 @@ const htmlFiles = [
   "datenschutz/index.html",
 ];
 
-const tagId = (process.env.VITE_GOOGLE_TAG_ID || process.env.NEXT_PUBLIC_GOOGLE_TAG_ID || "GOOGLE_TAG_ID").trim();
+const DEFAULT_GOOGLE_TAG_ID = "AW-18122361756";
+const consentRegions = [
+  "AT",
+  "BE",
+  "BG",
+  "HR",
+  "CY",
+  "CZ",
+  "DK",
+  "EE",
+  "FI",
+  "FR",
+  "DE",
+  "GR",
+  "HU",
+  "IS",
+  "IE",
+  "IT",
+  "LV",
+  "LI",
+  "LT",
+  "LU",
+  "MT",
+  "NL",
+  "NO",
+  "PL",
+  "PT",
+  "RO",
+  "SK",
+  "SI",
+  "ES",
+  "SE",
+  "CH",
+  "GB",
+];
+
+const tagId = (process.env.VITE_GOOGLE_TAG_ID || process.env.NEXT_PUBLIC_GOOGLE_TAG_ID || DEFAULT_GOOGLE_TAG_ID).trim();
+const consentRegionList = consentRegions.map((region) => `"${region}"`).join(",");
 
 function gtagBlock(id) {
   return `<!-- GOOGLE_TAG_START -->
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.salonKarolaConsentGranted = {
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        analytics_storage: "granted"
+      };
+      window.salonKarolaConsentDenied = {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied"
+      };
       gtag("consent", "default", {
         ad_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
         analytics_storage: "denied",
-        wait_for_update: 500
+        wait_for_update: 500,
+        region: [${consentRegionList}]
       });
+      try {
+        var savedConsent = localStorage.getItem("salonKarolaCookieConsent");
+        if (savedConsent === "granted") {
+          gtag("consent", "update", window.salonKarolaConsentGranted);
+        } else if (savedConsent === "denied") {
+          gtag("consent", "update", window.salonKarolaConsentDenied);
+        }
+      } catch (error) {}
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=${id}"></script>
     <script>
@@ -39,13 +97,34 @@ function gtmBlock(id) {
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
+      window.salonKarolaConsentGranted = {
+        ad_storage: "granted",
+        ad_user_data: "granted",
+        ad_personalization: "granted",
+        analytics_storage: "granted"
+      };
+      window.salonKarolaConsentDenied = {
+        ad_storage: "denied",
+        ad_user_data: "denied",
+        ad_personalization: "denied",
+        analytics_storage: "denied"
+      };
       gtag("consent", "default", {
         ad_storage: "denied",
         ad_user_data: "denied",
         ad_personalization: "denied",
         analytics_storage: "denied",
-        wait_for_update: 500
+        wait_for_update: 500,
+        region: [${consentRegionList}]
       });
+      try {
+        var savedConsent = localStorage.getItem("salonKarolaCookieConsent");
+        if (savedConsent === "granted") {
+          gtag("consent", "update", window.salonKarolaConsentGranted);
+        } else if (savedConsent === "denied") {
+          gtag("consent", "update", window.salonKarolaConsentDenied);
+        }
+      } catch (error) {}
     </script>
     <script>
       (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
@@ -71,4 +150,4 @@ for (const file of htmlFiles) {
   }
 }
 
-console.log(`Google tag prepared with ${tagId === "GOOGLE_TAG_ID" ? "placeholder GOOGLE_TAG_ID" : "configured id"}`);
+console.log(`Google tag prepared with ${tagId === DEFAULT_GOOGLE_TAG_ID ? DEFAULT_GOOGLE_TAG_ID : "configured id"}`);

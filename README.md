@@ -66,9 +66,11 @@ Das Projekt ist fuer Vercel als statische Website konfiguriert. `npm run build` 
 
 ## Google Tag
 
-Alle Inhaltsseiten enthalten im `<head>` einen Google-Tag-Block. Ohne gesetzte Variable wird der Platzhalter `GOOGLE_TAG_ID` verwendet. Fuer den Live-Betrieb in Vercel `VITE_GOOGLE_TAG_ID` setzen, z. B. mit einer echten `G-`, `AW-` oder `GTM-` ID. Alternativ wird auch `NEXT_PUBLIC_GOOGLE_TAG_ID` gelesen.
+Alle Inhaltsseiten enthalten im `<head>` einen Google-Tag-Block. Standard-ID ist `AW-18122361756`. Fuer einen spaeteren Wechsel kann in Vercel `VITE_GOOGLE_TAG_ID` gesetzt werden, z. B. mit einer echten `G-`, `AW-` oder `GTM-` ID. Alternativ wird auch `NEXT_PUBLIC_GOOGLE_TAG_ID` gelesen.
 
 Der Build fuehrt `scripts/apply-google-tag.js` aus und schreibt die konfigurierte ID in alle statischen HTML-Seiten.
+
+Consent Mode v2 setzt `denied` nur region-basiert fuer EU/EWR/UK/Schweiz. Das Cookie-Banner speichert `salonKarolaCookieConsent` in `localStorage` und sendet bei Akzeptieren ein `gtag("consent", "update", ...)` mit `granted`.
 
 ## Kontaktformular / SMTP
 

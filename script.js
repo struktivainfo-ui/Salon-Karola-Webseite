@@ -5,6 +5,81 @@ const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const logoImages = document.querySelectorAll(".brand-logo, .footer-logo");
 const leadForm = document.querySelector("[data-lead-form]");
+const consentStorageKey = "salonKarolaCookieConsent";
+
+const getGoogleConsentState = (value) => {
+  if (value === "granted") {
+    return window.salonKarolaConsentGranted || {
+      ad_storage: "granted",
+      ad_user_data: "granted",
+      ad_personalization: "granted",
+      analytics_storage: "granted",
+    };
+  }
+
+  return window.salonKarolaConsentDenied || {
+    ad_storage: "denied",
+    ad_user_data: "denied",
+    ad_personalization: "denied",
+    analytics_storage: "denied",
+  };
+};
+
+const updateGoogleConsent = (value) => {
+  if (typeof window.gtag === "function") {
+    window.gtag("consent", "update", getGoogleConsentState(value));
+  }
+};
+
+const readStoredConsent = () => {
+  try {
+    return localStorage.getItem(consentStorageKey);
+  } catch (error) {
+    return null;
+  }
+};
+
+const writeStoredConsent = (value) => {
+  try {
+    localStorage.setItem(consentStorageKey, value);
+  } catch (error) {}
+};
+
+const initCookieConsent = () => {
+  const storedConsent = readStoredConsent();
+  if (storedConsent === "granted" || storedConsent === "denied") {
+    updateGoogleConsent(storedConsent);
+    return;
+  }
+
+  const banner = document.createElement("section");
+  banner.className = "cookie-consent";
+  banner.setAttribute("aria-label", "Cookie-Einstellungen");
+  banner.innerHTML = `
+    <div class="cookie-consent-copy">
+      <p class="cookie-consent-title">Cookie-Einstellungen</p>
+      <p>Wir nutzen Google Tags nur mit Ihrer Zustimmung. Sie können Analyse- und Marketing-Cookies akzeptieren oder ablehnen.</p>
+    </div>
+    <div class="cookie-consent-actions">
+      <button class="button button-ghost" type="button" data-consent-choice="denied">Ablehnen</button>
+      <button class="button button-primary" type="button" data-consent-choice="granted">Akzeptieren</button>
+    </div>
+  `;
+
+  banner.addEventListener("click", (event) => {
+    const button = event.target.closest("[data-consent-choice]");
+    if (!button) return;
+
+    const choice = button.dataset.consentChoice === "granted" ? "granted" : "denied";
+    writeStoredConsent(choice);
+    updateGoogleConsent(choice);
+    banner.remove();
+  });
+
+  document.body.appendChild(banner);
+};
+
+initCookieConsent();
 
 if (menuToggle && siteNav) {
   const closeMenu = () => {
