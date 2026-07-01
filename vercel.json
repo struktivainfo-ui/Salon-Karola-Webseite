@@ -12,6 +12,16 @@
       "source": "/kundenkarte/",
       "destination": "https://salon-karola-crm.onrender.com/qr-kundenkarte",
       "permanent": false
+    },
+    {
+      "source": "/bonuscard/:token",
+      "destination": "https://salon-karola-crm.onrender.com/bonuscard/:token",
+      "permanent": false
+    },
+    {
+      "source": "/bonuscard/:token/",
+      "destination": "https://salon-karola-crm.onrender.com/bonuscard/:token",
+      "permanent": false
     }
   ],
   "headers": [
