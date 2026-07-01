@@ -6,6 +6,7 @@ const openingStatus = document.querySelector("#opening-status");
 const logoImages = document.querySelectorAll(".brand-logo, .footer-logo");
 const leadForm = document.querySelector("[data-lead-form]");
 const consentStorageKey = "salonKarolaCookieConsent";
+const bookingMessage = "Hallo Salon Karola, ich möchte gerne einen Termin anfragen.";
 
 const getGoogleConsentState = (value) => {
   if (value === "granted") {
@@ -80,6 +81,20 @@ const initCookieConsent = () => {
 };
 
 initCookieConsent();
+
+const initMobileBookingBar = () => {
+  const bar = document.createElement("nav");
+  bar.className = "mobile-booking-bar";
+  bar.setAttribute("aria-label", "Schnelle Terminanfrage");
+  bar.innerHTML = `
+    <a href="tel:+4970516344">Anrufen</a>
+    <a href="https://wa.me/4970516344?text=${encodeURIComponent(bookingMessage)}" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+    <a href="/kontakt">Formular</a>
+  `;
+  document.body.appendChild(bar);
+};
+
+initMobileBookingBar();
 
 if (menuToggle && siteNav) {
   const closeMenu = () => {
@@ -247,20 +262,14 @@ Vielen Dank.`;
 
       if (values.website) return;
 
-      if (!values.name || !values.phone) {
+      if (!leadForm.checkValidity()) {
         setStatus(
-          "Bitte geben Sie mindestens Ihren Namen und Ihre Telefonnummer oder WhatsApp-Nummer ein.",
+          "Bitte füllen Sie Name, Telefon oder WhatsApp, gewünschte Leistung, Wunschzeit und kurze Nachricht aus.",
           "error"
         );
-        const firstMissingField = leadForm.querySelector(values.name ? '[name="phone"]' : '[name="name"]');
+        leadForm.reportValidity();
+        const firstMissingField = leadForm.querySelector(":invalid");
         if (firstMissingField) firstMissingField.focus();
-        return;
-      }
-
-      if (!values.privacy) {
-        setStatus("Bitte bestätigen Sie den Datenschutzhinweis, bevor Sie Ihre Anfrage senden.", "error");
-        const privacyField = leadForm.querySelector('[name="privacy"]');
-        if (privacyField) privacyField.focus();
         return;
       }
 
