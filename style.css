@@ -1015,6 +1015,31 @@ h3 {
   line-height: 1.35;
 }
 
+.gallery-theme {
+  width: min(920px, 100%);
+  margin: clamp(30px, 5vw, 52px) auto 0;
+}
+
+.gallery-theme h3 {
+  max-width: 720px;
+  margin: 6px 0 18px;
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.45rem, 3vw, 2rem);
+  line-height: 1.12;
+}
+
+.gallery-theme-card {
+  width: min(460px, 100%);
+  aspect-ratio: auto;
+  max-height: none;
+  display: block;
+}
+
+.gallery-theme-card .gallery-image {
+  height: auto;
+  aspect-ratio: 457 / 319;
+}
+
 .faq-section {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
