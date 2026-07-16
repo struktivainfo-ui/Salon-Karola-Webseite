@@ -1083,8 +1083,8 @@ h3 {
 }
 
 .before-after-panel {
-  width: min(680px, 100%);
-  max-width: 680px;
+  width: min(760px, 100%);
+  max-width: 760px;
   margin-inline: auto;
   border-radius: 28px;
 }
@@ -1098,6 +1098,28 @@ h3 {
 
 .before-after-panel h2 {
   font-size: clamp(1.95rem, 3.1vw, 2.65rem);
+}
+
+.before-after-list {
+  display: grid;
+  gap: clamp(24px, 4vw, 36px);
+}
+
+.before-after-entry {
+  display: grid;
+  gap: 14px;
+}
+
+.before-after-entry + .before-after-entry {
+  padding-top: clamp(22px, 3.5vw, 32px);
+  border-top: 1px solid rgba(245, 215, 110, 0.2);
+}
+
+.before-after-entry h3 {
+  margin: 0;
+  font-size: clamp(1.25rem, 2.2vw, 1.65rem);
+  line-height: 1.25;
+  text-wrap: balance;
 }
 
 .before-after-pair {
@@ -1122,6 +1144,17 @@ h3 {
   object-fit: contain;
   object-position: center;
   padding: 8px;
+}
+
+.before-after-pair--portrait img {
+  height: clamp(330px, 48vw, 430px);
+  padding: 0;
+}
+
+.before-after-caption {
+  max-width: 66ch;
+  margin: 0;
+  color: var(--muted);
 }
 
 .before-after-pair span {
@@ -1756,6 +1789,10 @@ h3 {
 
   .before-after-pair img {
     height: min(58vw, 220px);
+  }
+
+  .before-after-pair--portrait img {
+    height: min(112vw, 430px);
   }
 
   .hours-row {
