@@ -947,8 +947,47 @@ h3 {
 .person-portrait--jessi,
 .team-photo--jessi { object-position: center 56%; }
 
-.person-portrait--ute,
-.team-photo--ute { object-position: center top; }
+.section-heading--center {
+  max-width: 680px;
+  margin-inline: auto;
+  text-align: center;
+}
+
+.team-grid--solo {
+  width: min(920px, 100%);
+  grid-template-columns: minmax(0, 780px);
+}
+
+.team-card--solo {
+  display: grid;
+  max-width: 780px;
+  grid-template-columns: minmax(260px, 0.85fr) minmax(280px, 1fr);
+  align-items: center;
+  overflow: hidden;
+}
+
+.team-card--solo .team-photo-wrap {
+  height: clamp(310px, 34vw, 430px);
+  max-height: 430px;
+  border-radius: 26px 0 0 26px;
+}
+
+.team-card--solo .team-photo {
+  height: 100%;
+  max-height: none;
+}
+
+.team-card--solo .team-card-content {
+  padding: clamp(28px, 5vw, 58px);
+}
+
+.team-card--solo h3 {
+  margin-top: 10px;
+}
+
+.overview-side-images--solo img {
+  object-fit: cover;
+}
 
 .team-card-content {
   padding: 16px 18px 20px;
@@ -1669,6 +1708,10 @@ h3 {
   .team-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .team-grid--solo {
+    grid-template-columns: minmax(0, 700px);
+  }
 }
 
 @media (max-width: 700px) {
@@ -1762,6 +1805,16 @@ h3 {
   .multipage-gallery,
   .before-after-panel {
     width: min(360px, 100%);
+  }
+
+  .team-card--solo {
+    grid-template-columns: 1fr;
+  }
+
+  .team-card--solo .team-photo-wrap {
+    height: clamp(260px, 78vw, 340px);
+    max-height: 340px;
+    border-radius: 26px 26px 18px 18px;
   }
 
   .team-card {
