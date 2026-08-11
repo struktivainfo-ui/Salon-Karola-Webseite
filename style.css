@@ -255,16 +255,95 @@ strong {
 
 .menu-toggle {
   display: none;
-  width: 52px;
-  height: 52px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: auto;
+  min-width: 106px;
+  height: 46px;
+  padding: 0 13px;
   border: 1px solid rgba(255, 226, 138, 0.45);
   border-radius: 999px;
-  background: radial-gradient(circle at 45% 35%, rgba(255, 236, 171, 0.22), rgba(18, 17, 36, 0.9));
+  background:
+    linear-gradient(135deg, rgba(255, 219, 113, 0.16), rgba(255, 79, 216, 0.1)),
+    rgba(12, 8, 10, 0.94);
   color: var(--gold-soft);
   font-weight: 900;
-  font-size: 1.25rem;
+  font-size: 0.88rem;
+  letter-spacing: 0.02em;
   cursor: pointer;
-  box-shadow: 0 0 24px rgba(245, 215, 110, 0.12);
+  box-shadow:
+    0 0 24px rgba(245, 215, 110, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  transition: border-color 180ms ease, background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.menu-toggle::after {
+  content: "Menü";
+  line-height: 1;
+}
+
+.menu-toggle:hover,
+.menu-toggle:focus-visible,
+.menu-toggle[aria-expanded="true"] {
+  border-color: rgba(255, 172, 224, 0.68);
+  background:
+    linear-gradient(135deg, rgba(255, 219, 113, 0.22), rgba(255, 79, 216, 0.17)),
+    rgba(12, 8, 10, 0.96);
+  box-shadow:
+    0 0 26px rgba(255, 79, 216, 0.16),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.menu-toggle:focus-visible {
+  outline: 2px solid rgba(255, 238, 184, 0.9);
+  outline-offset: 3px;
+}
+
+.menu-toggle[aria-expanded="true"]::after {
+  content: "Schließen";
+}
+
+.menu-letter {
+  position: relative;
+  flex: 0 0 auto;
+  width: 18px;
+  height: 16px;
+  color: #ffe48f;
+  font-size: 0;
+}
+
+.menu-letter::before,
+.menu-letter::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: currentColor;
+  transition: top 180ms ease, transform 180ms ease, opacity 180ms ease, box-shadow 180ms ease;
+}
+
+.menu-letter::before {
+  top: 1px;
+  box-shadow: 0 6px 0 currentColor, 0 12px 0 currentColor;
+}
+
+.menu-letter::after {
+  top: 7px;
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-letter::before {
+  top: 7px;
+  transform: rotate(45deg);
+  box-shadow: none;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-letter::after {
+  opacity: 1;
+  transform: rotate(-45deg);
 }
 
 .service-marquee {
@@ -1883,8 +1962,7 @@ h3 {
   }
 
   .menu-toggle {
-    display: grid;
-    place-items: center;
+    display: inline-flex;
   }
 
   .multipage-hero,
@@ -1929,6 +2007,14 @@ h3 {
   body {
     background-attachment: scroll;
     padding-bottom: 76px;
+  }
+
+  .header-inner {
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 8px;
   }
 
   .container,
