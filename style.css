@@ -534,14 +534,14 @@ h3 {
 .before-after-panel h2 {
   color: #fff1c9;
   text-shadow:
-    0 0 1px rgba(255, 255, 255, 0.56),
-    0 0 8px rgba(255, 211, 111, 0.24),
-    0 0 19px rgba(236, 89, 189, 0.2),
-    0 12px 34px rgba(0, 0, 0, 0.62);
+    0 0 1px rgba(255, 255, 255, 0.52),
+    0 0 5px rgba(255, 255, 255, 0.16),
+    0 0 11px rgba(255, 79, 216, 0.15),
+    0 0 18px rgba(255, 174, 0, 0.1),
+    0 10px 28px rgba(0, 0, 0, 0.72);
   filter:
-    drop-shadow(0 0 1px rgba(255, 255, 255, 0.72))
-    drop-shadow(0 0 8px rgba(255, 207, 103, 0.26))
-    drop-shadow(0 0 16px rgba(236, 89, 189, 0.18));
+    drop-shadow(0 0 4px rgba(255, 79, 216, 0.16))
+    drop-shadow(0 0 8px rgba(0, 229, 255, 0.08));
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
@@ -554,28 +554,34 @@ h3 {
   .hours-card h2,
   .contact-band h2,
   .before-after-panel h2 {
-    background-image: linear-gradient(
-      104deg,
-      #fff0c4 0%,
-      #ffd36f 8%,
-      #ff91c7 16%,
-      #c995ff 24%,
-      #87e8ed 32%,
-      #fff2c7 40%,
-      #ff8bc8 48%,
-      #ffd36f 56%,
-      #8de7ee 64%,
-      #c897ff 72%,
-      #ff93cc 80%,
-      #fff1c4 88%,
-      #ffd77a 100%
-    );
-    background-position: 0% 50%;
-    background-size: 220% auto;
+    color: transparent;
+    background-image:
+      linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.25) 0%,
+        rgba(255, 255, 255, 0.04) 38%,
+        rgba(255, 255, 255, 0) 52%,
+        rgba(0, 0, 0, 0.12) 76%,
+        rgba(255, 255, 255, 0.04) 100%
+      ),
+      repeating-linear-gradient(
+        90deg,
+        #ff1744 0%,
+        #ff9100 4%,
+        #ffea00 8%,
+        #00e676 12%,
+        #00e5ff 16%,
+        #2979ff 20%,
+        #8e24aa 24%,
+        #ff4fd8 28%,
+        #ff1744 32%
+      );
+    background-position: 0 0, 0% 50%;
+    background-size: 100% 100%, 250% auto;
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
-    animation: rainbowHeadingShine 8s ease-in-out infinite;
+    animation: rainbowHeadingShine 10s ease-in-out infinite;
   }
 }
 
@@ -589,21 +595,21 @@ h3 {
 .contact-band h2::before,
 .before-after-panel h2::before {
   background:
-    radial-gradient(72% 92% at 45% 48%, rgba(255, 219, 126, 0.2), transparent 68%),
-    radial-gradient(68% 88% at 18% 28%, rgba(255, 91, 190, 0.19), transparent 72%),
-    radial-gradient(70% 82% at 82% 58%, rgba(128, 223, 234, 0.12), transparent 72%),
-    radial-gradient(62% 72% at 60% 24%, rgba(174, 112, 255, 0.12), transparent 74%);
-  filter: blur(14px);
+    radial-gradient(72% 92% at 45% 48%, rgba(255, 198, 75, 0.11), transparent 68%),
+    radial-gradient(68% 88% at 18% 28%, rgba(255, 79, 216, 0.11), transparent 72%),
+    radial-gradient(70% 82% at 82% 58%, rgba(0, 229, 255, 0.06), transparent 72%),
+    radial-gradient(62% 72% at 60% 24%, rgba(142, 36, 170, 0.08), transparent 74%);
+  filter: blur(11px);
 }
 
 @keyframes rainbowHeadingShine {
   0%,
   100% {
-    background-position: 0% 50%;
+    background-position: 0 0, 0% 50%;
   }
 
   50% {
-    background-position: 100% 50%;
+    background-position: 0 0, 100% 50%;
   }
 }
 
@@ -2090,6 +2096,6 @@ h3 {
   .contact-band h2,
   .before-after-panel h2 {
     animation: none !important;
-    background-position: 48% 50%;
+    background-position: 0 0, 48% 50%;
   }
 }
