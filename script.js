@@ -5,6 +5,7 @@ const revealItems = document.querySelectorAll(".reveal");
 const openingStatus = document.querySelector("#opening-status");
 const logoImages = document.querySelectorAll(".brand-logo, .footer-logo");
 const leadForm = document.querySelector("[data-lead-form]");
+const temporaryNotices = document.querySelectorAll("[data-temporary-notice]");
 const consentStorageKey = "salonKarolaCookieConsent";
 const bookingMessage = "Hallo Salon Karola, ich möchte gerne einen Termin anfragen.";
 
@@ -81,6 +82,25 @@ const initCookieConsent = () => {
 };
 
 initCookieConsent();
+
+const initTemporaryNotices = () => {
+  const now = Date.now();
+
+  temporaryNotices.forEach((notice) => {
+    const expiresAt = Date.parse(notice.dataset.expires || "");
+    const remainingTime = expiresAt - now;
+
+    if (!Number.isFinite(expiresAt) || remainingTime <= 0) {
+      notice.remove();
+      return;
+    }
+
+    notice.hidden = false;
+    window.setTimeout(() => notice.remove(), Math.min(remainingTime, 2147483647));
+  });
+};
+
+initTemporaryNotices();
 
 const initMobileBookingBar = () => {
   const bar = document.createElement("nav");
