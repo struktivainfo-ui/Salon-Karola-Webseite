@@ -1378,6 +1378,87 @@ h3 {
   aspect-ratio: 457 / 319;
 }
 
+.signature-looks-section {
+  position: relative;
+  overflow: clip;
+}
+
+.signature-looks-grid {
+  width: min(980px, 100%);
+  margin: clamp(28px, 5vw, 52px) auto 0;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(24px, 4vw, 48px);
+  align-items: start;
+}
+
+.signature-look {
+  min-width: 0;
+  margin: 0;
+}
+
+.signature-look-image {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border: 1px solid rgba(255, 208, 151, 0.34);
+  border-radius: 28px;
+  background: rgba(12, 8, 7, 0.88);
+  box-shadow:
+    0 24px 56px rgba(0, 0, 0, 0.44),
+    0 0 32px rgba(245, 90, 200, 0.09),
+    inset 0 0 0 1px rgba(255, 247, 226, 0.04);
+}
+
+.signature-look-image::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(180deg, transparent 68%, rgba(10, 6, 5, 0.17));
+}
+
+.signature-look img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transition: transform 650ms cubic-bezier(0.22, 1, 0.36, 1), filter 300ms ease;
+}
+
+.signature-look--contrast img {
+  object-position: center 38%;
+}
+
+.signature-look:hover img {
+  transform: scale(1.025);
+  filter: saturate(1.03) contrast(1.02);
+}
+
+.signature-look figcaption {
+  padding: clamp(18px, 3vw, 26px) 4px 0;
+}
+
+.signature-look figcaption .eyebrow {
+  margin-bottom: 8px;
+}
+
+.signature-look h3 {
+  margin: 0;
+  color: var(--cream);
+  font-family: "Playfair Display", Georgia, serif;
+  font-size: clamp(1.45rem, 2.5vw, 2.1rem);
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+.signature-look figcaption p:last-child {
+  max-width: 52ch;
+  margin: 12px 0 0;
+  color: rgba(255, 247, 226, 0.78);
+}
+
 .faq-section {
   display: grid;
   grid-template-columns: minmax(0, 0.85fr) minmax(320px, 1.15fr);
@@ -2115,8 +2196,18 @@ h3 {
   .team-grid,
   .mini-gallery,
   .multipage-gallery,
+  .signature-looks-grid,
   .before-after-panel {
     width: min(360px, 100%);
+  }
+
+  .signature-looks-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .signature-look-image {
+    border-radius: 24px;
   }
 
   .team-card--solo {
