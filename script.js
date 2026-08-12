@@ -8,6 +8,7 @@ const leadForm = document.querySelector("[data-lead-form]");
 const temporaryNotices = document.querySelectorAll("[data-temporary-notice]");
 const consentStorageKey = "salonKarolaCookieConsent";
 const bookingMessage = "Hallo Salon Karola, ich möchte gerne einen Termin anfragen.";
+const routeConversionId = "AW-18122361756/TRbZCNHD4rkcEJyXtcFD";
 
 const getGoogleConsentState = (value) => {
   if (value === "granted") {
@@ -82,6 +83,26 @@ const initCookieConsent = () => {
 };
 
 initCookieConsent();
+
+const isGoogleMapsRouteLink = (link) => {
+  if (!link) return false;
+
+  try {
+    const url = new URL(link.href, window.location.href);
+    return url.hostname === "www.google.com" && url.pathname.startsWith("/maps/");
+  } catch (error) {
+    return false;
+  }
+};
+
+document.addEventListener("click", (event) => {
+  const routeLink = event.target.closest("a[href]");
+  if (!isGoogleMapsRouteLink(routeLink) || typeof window.gtag !== "function") return;
+
+  window.gtag("event", "conversion", {
+    send_to: routeConversionId,
+  });
+});
 
 const initTemporaryNotices = () => {
   const now = Date.now();
