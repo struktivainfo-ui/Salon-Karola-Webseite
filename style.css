@@ -1622,6 +1622,65 @@ h3 {
   font-weight: 900;
 }
 
+/* Five compact review excerpts: three above, two centred below. */
+.reviews-grid--five {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  margin-top: clamp(20px, 2.5vw, 30px);
+}
+
+.reviews-grid--five .review-card--compact {
+  grid-column: span 2;
+  min-height: 0;
+  padding: clamp(17px, 2vw, 22px);
+}
+
+.reviews-grid--five .review-card--compact:nth-child(1) { --card-accent-rgb: var(--rose-rgb); }
+.reviews-grid--five .review-card--compact:nth-child(2) { --card-accent-rgb: var(--gold-rgb); }
+.reviews-grid--five .review-card--compact:nth-child(3) { --card-accent-rgb: 0, 229, 255; }
+.reviews-grid--five .review-card--compact:nth-child(4) { --card-accent-rgb: 0, 230, 118; grid-column: 2 / span 2; }
+.reviews-grid--five .review-card--compact:nth-child(5) { --card-accent-rgb: var(--violet-rgb); }
+
+.review-card--compact::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  z-index: 1;
+  height: 2px;
+  background: linear-gradient(90deg, #ff4fd8, #ff9100, #ffea00, #00e676, #00e5ff, #2979ff, #8e24aa, #ff4fd8);
+  background-size: 220% auto;
+  box-shadow: 0 0 14px rgba(255, 121, 205, 0.34);
+  animation: reviewRainbowShine 12s ease-in-out infinite;
+}
+
+.review-card--compact .reviews-stars {
+  display: inline-block;
+  margin: 0;
+  background: linear-gradient(90deg, #ff4fd8, #ff9100, #ffea00, #00e676, #00e5ff, #2979ff, #8e24aa);
+  background-size: 220% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 7px rgba(255, 208, 109, 0.22));
+  animation: reviewRainbowShine 12s ease-in-out infinite;
+}
+
+.reviews-grid--five .review-text {
+  margin-block: 12px 14px;
+  font-size: clamp(0.96rem, 1.2vw, 1.04rem);
+  line-height: 1.55;
+}
+
+.reviews-grid--five .review-author {
+  font-size: 0.97rem;
+}
+
+@keyframes reviewRainbowShine {
+  0%,
+  100% { background-position: 0% center; }
+  50% { background-position: 100% center; }
+}
+
 .review-cta,
 .contact-band {
   width: min(760px, 100%);
@@ -2023,6 +2082,25 @@ h3 {
   .services-grid,
   .reviews-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reviews-grid--five .review-card--compact,
+  .reviews-grid--five .review-card--compact:nth-child(4) {
+    grid-column: auto;
+  }
+
+  .reviews-grid--five .review-card--compact:nth-child(5) {
+    grid-column: 1 / -1;
+    width: calc(50% - 11px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 700px) {
+  .reviews-grid--five .review-card--compact:nth-child(5) {
+    grid-column: auto;
+    width: auto;
+    justify-self: stretch;
   }
 }
 
