@@ -1021,12 +1021,46 @@ h2,
   justify-self: end;
 }
 
+.salon-overview-media--jessica {
+  display: grid;
+  gap: 12px;
+}
+
 .overview-main-image img {
   width: 100%;
   height: clamp(210px, 27vw, 330px);
   object-fit: contain;
   object-position: center;
   padding: 10px;
+}
+
+.overview-main-image--jessica {
+  width: min(100%, 370px);
+  margin: 0 auto;
+}
+
+.overview-main-image--jessica .person-portrait {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  padding: 0;
+  object-fit: contain;
+  object-position: center;
+}
+
+.overview-support-image {
+  width: min(100%, 370px);
+  margin: 0 auto;
+}
+
+.overview-support-image img {
+  display: block;
+  width: 100%;
+  height: clamp(150px, 15vw, 190px);
+  padding: 8px;
+  object-fit: contain;
+  object-position: center;
 }
 
 .overview-side-images {
@@ -1282,6 +1316,10 @@ h2,
   width: min(920px, 100%);
   margin-inline: auto;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.mini-gallery--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .mini-gallery img {
