@@ -1541,6 +1541,20 @@ h3 {
   text-wrap: balance;
 }
 
+.before-after-feature {
+  margin: 0;
+  overflow: hidden;
+  border: 1px solid rgba(255, 226, 138, 0.24);
+  border-radius: 22px;
+  background: #05070a;
+}
+
+.before-after-feature img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
 .before-after-pair {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
