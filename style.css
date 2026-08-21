@@ -1392,6 +1392,11 @@ h3 {
   align-items: start;
 }
 
+.signature-looks-grid--compact {
+  display: block;
+  width: min(760px, 100%);
+}
+
 .signature-look {
   min-width: 0;
   margin: 0;
@@ -1429,6 +1434,10 @@ h3 {
 
 .signature-look--contrast img {
   object-position: center 38%;
+}
+
+.signature-look--duo .signature-look-image {
+  aspect-ratio: 1731 / 909;
 }
 
 .signature-look:hover img {
@@ -2297,6 +2306,11 @@ h3 {
     grid-template-columns: 1fr;
     width: min(300px, 100%);
     gap: 40px;
+  }
+
+  .signature-looks-grid--compact {
+    width: min(360px, 100%);
+    gap: 0;
   }
 
   .signature-look-image {
