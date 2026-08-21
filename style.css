@@ -1252,6 +1252,10 @@ h3 {
   text-align: center;
 }
 
+.signature-looks-section .section-heading--center p {
+  margin-inline: auto;
+}
+
 .team-grid--solo {
   width: min(920px, 100%);
   grid-template-columns: minmax(0, 780px);
