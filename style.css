@@ -1378,6 +1378,16 @@ h3 {
   aspect-ratio: 457 / 319;
 }
 
+.gallery-theme-card--feature {
+  width: min(760px, 100%);
+}
+
+.gallery-theme-card--feature .gallery-image {
+  display: block;
+  aspect-ratio: 1728 / 910;
+  padding: 0;
+}
+
 .signature-looks-section {
   position: relative;
   overflow: clip;
